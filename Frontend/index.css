@@ -1,0 +1,15 @@
+<style>
+    .navbar {
+      margin-bottom: 0px;
+      border-radius: 0;
+    }
+    .jumbotron {
+      margin-bottom: 0;
+      background-color: #7979d2;
+    }
+    footer {
+      background-color: #4f5b66;
+      color: #ffffff;
+      padding: 160px;
+    }
+  </style>
