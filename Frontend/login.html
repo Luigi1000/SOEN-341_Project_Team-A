@@ -9,8 +9,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
+  
   <!-- link your own css here -->
+  <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheet/login.css">
 </head>
 <body>
 
@@ -85,7 +87,7 @@
                       </div>
                     </div>
                 </li>
-                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
             </ul>
         </div>
@@ -146,130 +148,40 @@
     
   </div>
   
-  <!-- content here -->
-  <div class="container-fluid">
-		
-		<!-- toggleable menu -->
-	  <ul class="nav nav-tabs">
-	  <li><a data-toggle="tab" href="#buyandsell">buy and sell</a></li>
-	  <li><a data-toggle="tab" href="#cars">cars & vehicles</a></li>
-	  <li><a data-toggle="tab" href="#pets">Pets</a></li>
-	  <li><a data-toggle="tab" href="#jobs">jobs</a></li>
-	  <li><a data-toggle="tab" href="#services">services</a></li>
-	  </ul>
+  <!-- Login section -->
+<div class="container center">
+  <form class="form-group login" action="#" method="post">
+    <!-- Username Section -->
+    <div >
+      <label class="head" for="username" >Sign in</label>
+      <!-- <input type="text" placeholder="Enter username or email" required="Required" size="25px" style="visibility: hidden;"> -->
+    </div>
+    <div >
+      <label for="username" ><span>Username</span></label>
+      <input type="text" placeholder="Enter username or email" required="Required" size="25px">
+    </div>
+    <!-- Password section -->
+    <div  class="form-group login">
+      <label for="password"><span>Password</span></label>
+      <input type="password"  placeholder="Password" required="Required" size="25px">
+    </div>
+    <div>
+      <label class="forgot" >
+        <a href="#">forgot your password?</a>
+      </label>
+      <!-- <input type="text" placeholder="Enter username or email" required="Required" size="25px" style="visibility: hidden;"> -->
+    </div>
+    <!-- Checkbox "Remember me" -->
+    <div align="right" class="checkbox">
+      <label>
+        <input type="checkbox" value="remember"> Remember me
+      </label>
+    </div>
+    <!-- Submib button -->
+    <button class="btn btn-lg btn-success" type="submit">Sign in</button>
+  </form>
 
-	  <div class="tab-content">
-	   
-		<div id="blank" class="tab-pane fade in active">
-		</div>
-		<!-- choice for buy and sell -->
-		<div id="buyandsell" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">art collectibles</a></li>
-			  <li><a href="#">audio</a></li>
-			  <li><a href="#">baby items</a></li>
-			  <li><a href="#">bikes</a></li>
-			  <li><a href="#">books</a></li>
-			  <li><a href="#">business, industrial</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">clothing</a></li>
-			  <li><a href="#">computers</a></li>
-			  <li><a href="#">furniture</a></li>
-			  <li><a href="#">tickets</a></li>
-			  <li><a href="#">home-indoor</a></li>
-			  <li><a href="#">home-outdoor</a></li>
-			</ul>
-		  </div>     
-		</div>
-		<!-- choice for cars -->
-		<div id="cars" class="tab-pane fade">
-		   <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">auto parts,tires</a></li>
-			  <li><a href="#">cars & trucks</a></li>
-			  <li><a href="#">motorcycles</a></li>
-			  <li><a href="#">boats, watercraft</a></li>
-			  <li><a href="#">heavy quipment</a></li>
-			  <li><a href="#">classic cars</a></li>
-			</ul>
-		  </div>
-		</div>
-		<!-- choice for pets -->
-		<div id="pets" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">assesories</a></li>
-			  <li><a href="#">animal, pet services</a></li>
-			  <li><a href="#">birds for rehoming</a></li>
-			  <li><a href="#">fish for rehoming</a></li>
-			  <li><a href="#">dogs, puppies</a></li>
-			  <li><a href="#">cats, kittens for rehoming</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">small animals for rehoming</a></li>
-			  <li><a href="#">livestock</a></li>
-			  <li><a href="#">horse, ponies for rehoming</a></li>
-			</ul>
-		  </div>
-		</div>
-		<!-- choice for jobs -->
-		<div id="jobs" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">bar, food, hospitality</a></li>
-			  <li><a href="#">general labour</a></li>
-			  <li><a href="#">driver, security</a></li>
-			  <li><a href="#">construction</a></li>
-			  <li><a href="#">sales, retail sales</a></li>
-			  <li><a href="#">child care</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">health care</a></li>
-			  <li><a href="#">programmers, computer</a></li>
-			  <li><a href="#">part time, students</a></li>
-			  <li><a href="#">cleaning</a></li>
-			  <li><a href="#">hair stylist</a></li>
-			</ul>
-		  </div>
-		</div>
-		<!-- choice for service -->
-		<div id="services" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">skilled trades</a></li>
-			  <li><a href="#">health, beauty</a></li>
-			  <li><a href="#">tutors, languages </a></li>
-			  <li><a href="#">wedding</a></li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
-
-
-
-
-
-
-
-
-
-
-  </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-
-  </div>
+</div>
 
 
   <footer class="container-fluid text-center">
