@@ -1,0 +1,58 @@
+
+body {
+
+	background-color: #eee;
+}
+
+.container.center {
+
+	margin: 100px auto;
+	padding: 50px;
+	width:60%;
+	background-color: white;
+}
+
+.center {
+	margin: auto;
+	width: 70%;
+	background-color: green;
+}
+
+.form-group.login {
+
+	font-size: 16px;
+	max-width: 340px;
+	margin: 0 auto;
+
+}
+
+.forgot {
+
+	font-size: 12px;
+	max-width: 340px;
+	margin: -1px auto;
+}
+
+.head {
+
+	font-size: 26px;
+	color: blue;
+}
+
+.checkbox {
+
+	margin-top: -2px;
+	
+}
+
+input,label {
+
+	padding: 10px;
+}
+
+.form-group.login span{
+
+	text-align: left;
+	display: block;
+	width: 70px;
+}
