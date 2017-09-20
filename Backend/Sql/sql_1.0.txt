@@ -1,0 +1,67 @@
+
+1.user Table
+
+Description : Table contains authenticated user information. Value gets inserted into this table during registration process.
+
+CREATE TABLE user (
+ UserId int(11) NOT NULL,
+  UserName varchar(45) NOT NULL,
+  Email varchar(45) NOT NULL,
+  Password varchar(45) NOT NULL,
+  Address varchar(45) DEFAULT NULL,
+  CityName varchar(45) DEFAULT NULL,
+  Province varchar(45) DEFAULT NULL,
+  Country varchar(45) DEFAULT NULL,
+  PRIMARY KEY (UserId),
+  UNIQUE KEY Email_UNIQUE (Email),
+  UNIQUE KEY UserName_UNIQUE (UserName)
+);
+
+
+
+2. guest_user Table
+Description: Table contains guest user information. Value gets insterted into this table when user enters information when trying to buy or contact seller to know about product.
+
+CREATE TABLE guest_user (
+  UserId int(11) NOT NULL,
+  Email varchar(45) NOT NULL,
+  PhoneNumber varchar(45) NOT NULL,
+  PRIMARY KEY (UserId)
+) 
+
+
+3. product Table
+
+Description : Table contains all product information available in the website. Value gets inserted into this table during post ads process.This table contains UserId which is the foreign key which points to user table. Only authenticated user can sell the product.
+
+CREATE TABLE product (
+  ProductId int(11) NOT NULL AUTO_INCREMENT,
+  ProductName varchar(45) NOT NULL,
+  ProductDetail varchar(45) NOT NULL,
+  Price varchar(45) NOT NULL,
+  Image1 varchar(45) NOT NULL,
+  Image2 varchar(45) DEFAULT NULL,
+  UserId int(11) DEFAULT NULL,
+  PRIMARY KEY (ProductId),
+  KEY UserId (UserId),
+  CONSTRAINT product_ibfk_1 FOREIGN KEY (UserId) REFERENCES user (UserId)
+) 
+
+
+4. booking Table
+
+Description : Table contains all booking information available in the website. Value gets inserted into this table once the order is placed.This table contains two foreign keys: UserId which is  which points to user table and guestUserId which points to guestUser table. If user is the authenticated user than its value will be stored as UserId and guestUserId will be blank , and if User is GuestUser its value will be stored as GuestUserId and UserId will be blank.
+
+CREATE TABLE booking (
+  OrderId int(11) NOT NULL AUTO_INCREMENT,
+  ProductId int(11) DEFAULT NULL,
+  UserId int(11) DEFAULT NULL,
+  GuestUserId int(11) DEFAULT NULL,
+  TimeStamp datetime(6) DEFAULT NULL,
+  PRIMARY KEY (OrderId),
+  KEY UserId (UserId),
+  KEY GuestUserId (GuestUserId),
+  CONSTRAINT booking_ibfk_1 FOREIGN KEY (UserId) REFERENCES user(UserId),
+  CONSTRAINT booking_ibfk_2 FOREIGN KEY (GuestUserId) REFERENCES guest_user(UserId)
+)
+
