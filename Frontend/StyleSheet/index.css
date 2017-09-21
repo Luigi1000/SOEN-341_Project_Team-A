@@ -1,0 +1,60 @@
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .jumbotron {
+      margin-bottom: 0px;
+      background-color: #7979d2;
+    }
+    footer {
+      background-color: #4f5b66;
+      color: #ffffff;
+      padding: 160px;
+    }
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 80px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+      border-radius: 50%;
+      border-style: solid;
+      border-color: #ffffff;
+    }
+
+    .fa:hover {
+        opacity: 0.7;
+    }
+
+    .fa-facebook {
+      background: #4f5b66;
+      color: white;
+    }
+
+    .fa-twitter {
+      background: #4f5b66;
+      color: white;
+    }
+
+    .fa-google {
+      background: #4f5b66;
+      color: white;
+    }
+
+    .fa-youtube {
+      background: #4f5b66;
+      color: white;
+    }
+
+    .fa-instagram {
+      background: #4f5b66;
+      color: white;
+    }
+	
+	.nav-tabs > li > a{
+      color:#4f5b66;
+    }
+
+  

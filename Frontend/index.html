@@ -1,101 +1,455 @@
+<!-- reference: w3c school online store theme -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Template using Bootstrap framework</title>
+  <title>Soen341 TeamA Projecr</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel = "stylesheet" type = "text/css" href = "index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
+  <!-- link your own css here -->
 </head>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1>Online Store</h1>
-    <a href="#"><img src="shop.png"></a>     
-    <p>Coming soon...</p>
+  <div class="jumbotron">
+    <div class="container text-center">
+      <h1>Online Store</h1>
+      <a href="#"><img src="images/shop.png"></a>     
+      <p>Coming soon...</p>
+    </div>
   </div>
-</div>
 
 <!--  Navigation bar -->
   <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-          <!-- Logo -->
-          <div class="navbar-header">
-              <a href="#" class="navbar-brand">Our WebSite Name</a>
-          </div>
+    <div class="container-fluid">
+        <!-- Logo -->
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">.SHOP</a>
+        </div>
 
-          <!-- Menu -->
-          <div>
-              <ul class="nav navbar-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Products</a></li>
-                  <li><a href="#">Contact</a></li>
+        <!-- Menu -->
+        <div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contact</a></li>
 
-                  <!-- drop down menu -->
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                          <li><a href="#">English</a></li>
-                          <li><a href="#">Mandarin</a></li>
-                          <li><a href="#">French</a></li>
-                      </ul>
-                  </li>
-              </ul>
+                <!-- drop down menu -->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Languages <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">Mandarin</a></li>
+                        <li><a href="#">French</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-              <!-- Right align -->
-              <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                  <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              </ul>
-          </div>
-
-
-
-      </div>
+            <!-- Right align -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
+                    <div class="modal fade" id="popUpWindow">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!--    header-->
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h2 class="modal-title">Register</h2>
+                          </div>
+                          <!--    body  (form)-->
+                          <div class="modal-body">
+                            <form role="form">
+                              <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email Address:">
+                              </div>
+                              <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password:">
+                              </div>
+                              <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Re-type Password:">
+                              </div>
+                              <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Nickname (optional):">
+                              </div>
+                            </form>
+                          </div>
+                          <!--    button  (submit)-->
+                          <div class="modal-footer">
+                            <button class="btn btn-success btn-block">Register</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
   </nav>
+  <!-- search bar -->
+  <div class="well text-center">
+    <form class="form-inline" action="#" method="post">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search for anything..." name="item" size="65">
+      </div>
+      <div class="form-group" >
+         <select class="form-control" name="Ads">
+          <option value="">All Ads</option>
+          <option value="">buy and sell</option>
+          <option value="">pets</option>
+          <option value="">cars & vehicles</option>
+          <option value="">jobs</option>
+          <option value="">services</option>
+         </select>
+      </div>  
+      <div class="input-group">
+        <!-- select dropdown menu -->
+          <select class="selectpicker form-control">
+            <optgroup>
+              <option value="">Select location...</option>
+            </optgroup>
+            <optgroup label="Alberta">
+              <option value="">Banff/Canmore</option>
+              <option value="">Edmonton Area</option>
+              <option value="">Fort McMurray</option>
+            </optgroup>
+            <optgroup label="British Columbia">
+              <option value="">Cariboo Area</option>
+              <option value="">Comox Valley Area</option>
+              <option value="">Cowicha Valley</option>
+            </optgroup>
+            <optgroup label="Ontario">
+              <option value="">Muskoka</option>
+              <option value="">North Bay</option>
+              <option value="">Toronto</option>
+            </optgroup>
+            <optgroup label="Quebec">
+              <option value="">Abitibi-Temiscamingue</option>
+              <option value="">Granby</option>
+              <option value="">Quebec City</option>
+              <option value="">Sherbrooke</option>
+              <option value="">Montreal</option>
+            </optgroup>
+          </select>
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    
+  </div>
+  
+  <!-- content here -->
+  <div class="container-fluid">
+		
+		<!-- toggleable menu -->
+	  <ul class="nav nav-tabs">
+	  <li><a data-toggle="tab" href="#buyandsell">buy and sell</a></li>
+	  <li><a data-toggle="tab" href="#cars">cars & vehicles</a></li>
+	  <li><a data-toggle="tab" href="#pets">Pets</a></li>
+	  <li><a data-toggle="tab" href="#jobs">jobs</a></li>
+	  <li><a data-toggle="tab" href="#services">services</a></li>
+	  </ul>
 
-<div class="well">
-  <form class="form-inline" action="#" method="post">
-    <div class="form-group col-md-offset-2 col-md-3">
-      <input type="text" class="form-control" placeholder="Search for anything..." name="item" size="65">
-    </div>
-    <div class="form-group col-md-3" >
-       <select class="form-control" name="Ads" style="width:80%">
-        <option value="">All Ads</option>
-        <option value="">buy and sell</option>
-        <option value="">pets</option>
-        <option value="">cars & vehicles</option>
-        <option value="">jobs</option>
-        <option value="">services</option>
-       </select>
-    </div>  
-    <div class="input-group col-md-2">
-      <input type="text" class="form-control" size="100" placeholder="Select location...">
-      <div class="input-group-btn">
-        <button class="btn btn-default" type="submit">
-          <i class="glyphicon glyphicon-search"></i>
-        </button>
+	  <div class="tab-content">
+	   
+		<div id="blank" class="tab-pane fade in active">
+		</div>
+		<!-- choice for buy and sell -->
+		<div id="buyandsell" class="tab-pane fade">
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">All categories</a></li>
+			  <li><a href="#">art collectibles</a></li>
+			  <li><a href="#">audio</a></li>
+			  <li><a href="#">baby items</a></li>
+			  <li><a href="#">bikes</a></li>
+			  <li><a href="#">books</a></li>
+			  <li><a href="#">business, industrial</a></li>
+			</ul>
+		  </div>
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">clothing</a></li>
+			  <li><a href="#">computers</a></li>
+			  <li><a href="#">furniture</a></li>
+			  <li><a href="#">tickets</a></li>
+			  <li><a href="#">home-indoor</a></li>
+			  <li><a href="#">home-outdoor</a></li>
+			</ul>
+		  </div>     
+		</div>
+		<!-- choice for cars -->
+		<div id="cars" class="tab-pane fade">
+		   <div class="col-md-4">
+			<ul>
+			  <li><a href="#">All categories</a></li>
+			  <li><a href="#">auto parts,tires</a></li>
+			  <li><a href="#">cars & trucks</a></li>
+			  <li><a href="#">motorcycles</a></li>
+			  <li><a href="#">boats, watercraft</a></li>
+			  <li><a href="#">heavy quipment</a></li>
+			  <li><a href="#">classic cars</a></li>
+			</ul>
+		  </div>
+		</div>
+		<!-- choice for pets -->
+		<div id="pets" class="tab-pane fade">
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">All categories</a></li>
+			  <li><a href="#">assesories</a></li>
+			  <li><a href="#">animal, pet services</a></li>
+			  <li><a href="#">birds for rehoming</a></li>
+			  <li><a href="#">fish for rehoming</a></li>
+			  <li><a href="#">dogs, puppies</a></li>
+			  <li><a href="#">cats, kittens for rehoming</a></li>
+			</ul>
+		  </div>
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">small animals for rehoming</a></li>
+			  <li><a href="#">livestock</a></li>
+			  <li><a href="#">horse, ponies for rehoming</a></li>
+			</ul>
+		  </div>
+		</div>
+		<!-- choice for jobs -->
+		<div id="jobs" class="tab-pane fade">
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">All categories</a></li>
+			  <li><a href="#">bar, food, hospitality</a></li>
+			  <li><a href="#">general labour</a></li>
+			  <li><a href="#">driver, security</a></li>
+			  <li><a href="#">construction</a></li>
+			  <li><a href="#">sales, retail sales</a></li>
+			  <li><a href="#">child care</a></li>
+			</ul>
+		  </div>
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">health care</a></li>
+			  <li><a href="#">programmers, computer</a></li>
+			  <li><a href="#">part time, students</a></li>
+			  <li><a href="#">cleaning</a></li>
+			  <li><a href="#">hair stylist</a></li>
+			</ul>
+		  </div>
+		</div>
+		<!-- choice for service -->
+		<div id="services" class="tab-pane fade">
+		  <div class="col-md-4">
+			<ul>
+			  <li><a href="#">All categories</a></li>
+			  <li><a href="#">skilled trades</a></li>
+			  <li><a href="#">health, beauty</a></li>
+			  <li><a href="#">tutors, languages </a></li>
+			  <li><a href="#">wedding</a></li>
+			</ul>
+		  </div>
+		</div>
+	  </div>
+   <!--  //menu list end -->
+    </br></br></br></br></br></br></br></br>
+   <!-- Images gallery  -->
+
+    <div class="row">
+      <div class="col-md-offset-2 col-md-8">
+        <div id="my-slider" class="carousel slide" data-ride="carousel">
+
+          <!--  indicator dot nov  -->
+          <ol class="carousel-indicators">
+            <li data-target="#my-slider" data-slide-to="0" class="active " ></li>
+            <li data-target="#my-slider" data-slide-to="1"></li>
+            <li data-target="#my-slider" data-slide-to="2"></li>
+            <li data-target="#my-slider" data-slide-to="3"></li>
+          </ol>
+
+          <!--  wrapper for slides  -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/b5.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/b6.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/b11.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/b12.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/b13.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/b7.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class="carousel-caption">
+                <h4>Books</h4>
+              </div>
+            </div>
+
+            <div class="item">
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/k1.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/k2.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/k3.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/k4.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/k5.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/k7.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class="carousel-caption">
+                <h4>Land</h4>
+              </div>
+            </div>
+
+            <div class="item">
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/d1.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/d2.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/d3.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/d4.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/d5.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+               <div class=" col-md-2">
+                <div class="panel panel-default">
+                  <div class="panel-body">
+                    <img class="img-responsive" width="350" height="350" src="images/d6.jpg" alt="">
+                  </div>
+                  <div class="panel-footer"> dumbo</div>
+                </div>
+              </div>
+              <div class="carousel-caption">
+                <h4>House</h4>
+              </div>
+            </div>
+          </div>
+
+          <!--  controls or next and pre buttons  -->
+          <a class="left carousel-control" href="#my-slider" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#my-slider" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>      
       </div>
     </div>
-    <div class="col-md-offset-2"></div>
-  </form>
-  
-</div>
-  
-<div class="container-fluid">
-
-
-
-
-
-
-                                    <!-- Your content should be here!   -->
-
-                                    <h1>Your content should be here!</h1>
 
 
 
@@ -105,54 +459,74 @@
 
 
 
-</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+  </br></br></br></br></br></br></br></br></br></br></br>
 
-</div>
-
-
-<footer class="container-fluid text-center">
-   
-  <div class="container"> 
-    <div class="row">
-      <div class="col-md-3">Our Website</div>
-      <div class="col-md-3">EXPLORE</div>
-      <div class="col-md-3">INFO</div>
-      <div class="col-md-3">SUPPORT</div>
-    </div>
   </div>
 
-  </br>
 
-  <div class="container"> 
-    <div class="row">
-      <div class="col-md-3"><a href="#">About</a></div>
-      <div class="col-md-3"><a href="#">Online Store Central</a></div>
-      <div class="col-md-3"><a href="#">Terms of Use</a></div>
-      <div class="col-md-3"><a href="#">Help</a></div>
+  <footer class="container-fluid text-center">
+     
+    <div class="container"> 
+      <div class="row">
+        <div class="col-md-3">OUR WEBSITE</div>
+        <div class="col-md-3">EXPLORE</div>
+        <div class="col-md-3">INFO</div>
+        <div class="col-md-3">SUPPORT</div>
+      </div>
     </div>
 
     </br>
-    
-    <div class="row">
-      <div class="col-md-3"><a href="#">Careers</a></div>
-      <div class="col-md-3"><a href="#">Online Store Performance</a></div>
-      <div class="col-md-3"><a href="#">Privacy Policy</a></div>
-      <div class="col-md-3"><a href="#">English</a></div>
-    </div>
 
-    </br>
-    
-    <div class="row">
-      <div class="col-md-3"><a href="#">Member Benefits</a></div>
-      <div class="col-md-3"><a href="#">eBay Classifieds Sites</a></div>
-      <div class="col-md-3"><a href="#">Posting Policy</a></div>
+    <div class="container"> 
+      <div class="row">
+        <div class="col-md-3"><a href="#">About</a></div>
+        <div class="col-md-3"><a href="#">Online Store Central</a></div>
+        <div class="col-md-3"><a href="#">Terms of Use</a></div>
+        <div class="col-md-3"><a href="#">Help</a></div>
+      </div>
+
+      </br>
+      
+      <div class="row">
+        <div class="col-md-3"><a href="#">Careers</a></div>
+        <div class="col-md-3"><a href="#">Online Store Performance</a></div>
+        <div class="col-md-3"><a href="#">Privacy Policy</a></div>
+        <div class="col-md-3"><a href="#">English</a></div>
+      </div>
+
+      </br>
+      
+      <div class="row">
+        <div class="col-md-3"><a href="#">Member Benefits</a></div>
+        <div class="col-md-3"><a href="#">eBay Classifieds Sites</a></div>
+        <div class="col-md-3"><a href="#">Posting Policy</a></div>
+      </div>
     </div>
-  </div>
-  </br></br></br></br>
-  <p>Online Store Copyright 2017</p> 
-  <p>All Rights Reserved ...</p> 
-  
-</footer>
+    </br></br></br></br>
+    <div class="container-fluid text-center">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-1">
+      <a href="#" class="fa fa-facebook"></a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="fa fa-twitter"></a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="fa fa-google"></a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="fa fa-youtube"></a>
+      </div>
+      <div class="col-md-1">
+        <a href="#" class="fa fa-instagram"></a>
+      </div>
+    </div>
+    </br></br></br></br></br></br>
+    <p>Online Store Copyright 2017</p> 
+    <p>All Rights Reserved ...</p> 
+    
+  </footer>
 
 </body>
 </html>
