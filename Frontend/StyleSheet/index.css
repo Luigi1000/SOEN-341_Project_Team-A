@@ -114,5 +114,16 @@
       font-weight: bold;
       font-size: 18px;
     }
+	
+	/*font style for image slides description*/
+    .panel-footer{
+      font-size: 14px;
+      color: #141766;
+      font-weight: bold;
+    }
+    .price{
+      color: red;
+    }
+
 
   

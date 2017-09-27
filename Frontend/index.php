@@ -33,11 +33,10 @@
 		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> furniture</a></li>
 	  </ul>
    <!--  //menu list end -->
-    </br></br></br></br></br></br></br></br>
+    </br></br></br>
    <!-- Images gallery  -->
-
+	<h1>Popular items</h1>
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
         <div id="my-slider" class="carousel slide" data-ride="carousel">
 
           <!--  indicator dot nov  -->
@@ -56,7 +55,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b5.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -64,7 +63,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b6.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -72,7 +71,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b11.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -80,7 +79,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b12.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -88,7 +87,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b13.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -96,21 +95,17 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b7.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
-              <div class="carousel-caption">
-                <h4>Books</h4>
-              </div>
-            </div>
-
+			</div>
             <div class="item">
                <div class=" col-md-2">
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k1.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -118,7 +113,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k2.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -126,7 +121,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k3.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -134,7 +129,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k4.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -142,7 +137,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k5.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -150,11 +145,8 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k7.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
-              </div>
-              <div class="carousel-caption">
-                <h4>Land</h4>
               </div>
             </div>
 
@@ -164,7 +156,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d1.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -172,7 +164,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d2.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -180,7 +172,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d3.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -188,7 +180,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d4.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -196,7 +188,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d5.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -204,12 +196,9 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d6.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
-              </div>
-              <div class="carousel-caption">
-                <h4>House</h4>
-              </div>
+              </div>         
             </div>
           </div>
 
@@ -224,7 +213,6 @@
           </a>
         </div>      
       </div>
-    </div>
 	<!-- categories with icon -->
     <!-- first row --> 
     <div class="container">
