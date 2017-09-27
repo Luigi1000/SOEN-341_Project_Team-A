@@ -55,6 +55,9 @@
 	
 	.nav-tabs > li > a{
       color:#4f5b66;
+      font-size: 20px;
+      font-family: Arial;
+      font-weight: bold;    
     }
 
   
