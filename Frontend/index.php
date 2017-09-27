@@ -225,6 +225,78 @@
         </div>      
       </div>
     </div>
+	<!-- categories with icon -->
+    <!-- first row --> 
+    <div class="container">
+      <div class="row">
+        <!-- car icon --> 
+        <div class="col-sm-3" style="text-align: center;">
+          <a href="#">
+            <li class="fa fa-car"></li>
+            <p class="item-category">car</p>
+          </a>
+        </div>
+        <!-- pets -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-paw"></li>
+          <p class="item-category">pet</p>
+        </a>
+      </div>
+      <!-- book -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-book"></li>
+          <p class="item-category">book</p>
+        </a>
+      </div>
+      <!-- phone -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-mobile"></li>
+          <p class="item-category">phone</p>
+        </a>
+      </div>
+        
+      </div> 
+    </div><br><br>
+    <!--// first row --> 
+
+    <!-- second row -->
+    <div class="container">
+      <!-- first row -->   
+      <div class="row">
+        <!-- car icon --> 
+        <div class="col-sm-3" style="text-align: center;">
+          <a href="#">
+            <li class="fa fa-desktop"></li>
+            <p class="item-category">computer</p>
+          </a>
+        </div>
+        <!-- pets -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-shopping-cart"></li>
+          <p class="item-category">cloth</p>
+        </a>
+      </div>
+      <!-- book -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-suitcase"></li>
+          <p class="item-category">job</p>
+        </a>
+      </div>
+      <!-- phone -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-bed"></li>
+          <p class="item-category">furniture</p>
+        </a>
+      </div>        
+      </div>
+    </div><br>
+    <!-- second row -->
 
 
 
@@ -234,7 +306,7 @@
 
 
 
-  </br></br></br></br></br></br></br></br></br></br></br>
+  </br></br></br></br>
 
   </div>
 

@@ -59,5 +59,60 @@
       font-family: Arial;
       font-weight: bold;    
     }
+	
+	.fa-car{
+	  font-size: 50px;
+	  color: #41a0f4; 
+      width: 100%;
+	}
+
+    .fa-paw{
+      font-size: 50px;
+      color: #f4425c; 
+      width: 100%;
+	}
+
+	.fa-book{
+      font-size: 50px;
+      color: #41a0f4; 
+      width: 100%;
+	}
+
+    .fa-mobile{
+      font-size: 50px;
+      color: #f4425c; 
+      width: 100%;
+    }
+
+    .fa-desktop{
+      font-size: 50px;
+      color: #f4425c; 
+      width: 100%;
+    }
+
+    .fa-shopping-cart{
+      font-size: 50px;
+      color: #41a0f4; 
+      width: 100%;
+    }
+
+    .fa-suitcase{
+      font-size: 50px;
+      color: #f4425c; 
+      width: 100%;
+    }
+
+    .fa-bed{
+      font-size: 50px;
+      color: #41a0f4; 
+      width: 100%;
+    }
+
+    /*font style for the item category under item icon*/
+    .item-category{
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 18px;
+    }
 
   
