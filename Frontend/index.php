@@ -21,120 +21,22 @@
   <!-- content here -->
   <div class="container-fluid">
 		
-		<!-- toggleable menu -->
+		<!-- toggleable menu keep the category remove detail-->
 	  <ul class="nav nav-tabs">
-	  <li><a data-toggle="tab" href="#buyandsell">buy and sell</a></li>
-	  <li><a data-toggle="tab" href="#cars">cars & vehicles</a></li>
-	  <li><a data-toggle="tab" href="#pets">Pets</a></li>
-	  <li><a data-toggle="tab" href="#jobs">jobs</a></li>
-	  <li><a data-toggle="tab" href="#services">services</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> car</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> pet</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> book</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> phone</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> computer</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> cloth</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> job</a></li>
+		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> furniture</a></li>
 	  </ul>
-
-	  <div class="tab-content">
-	   
-		<div id="blank" class="tab-pane fade in active">
-		</div>
-		<!-- choice for buy and sell -->
-		<div id="buyandsell" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">art collectibles</a></li>
-			  <li><a href="#">audio</a></li>
-			  <li><a href="#">baby items</a></li>
-			  <li><a href="#">bikes</a></li>
-			  <li><a href="#">books</a></li>
-			  <li><a href="#">business, industrial</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">clothing</a></li>
-			  <li><a href="#">computers</a></li>
-			  <li><a href="#">furniture</a></li>
-			  <li><a href="#">tickets</a></li>
-			  <li><a href="#">home-indoor</a></li>
-			  <li><a href="#">home-outdoor</a></li>
-			</ul>
-		  </div>     
-		</div>
-		<!-- choice for cars -->
-		<div id="cars" class="tab-pane fade">
-		   <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">auto parts,tires</a></li>
-			  <li><a href="#">cars & trucks</a></li>
-			  <li><a href="#">motorcycles</a></li>
-			  <li><a href="#">boats, watercraft</a></li>
-			  <li><a href="#">heavy quipment</a></li>
-			  <li><a href="#">classic cars</a></li>
-			</ul>
-		  </div>
-		</div>
-		<!-- choice for pets -->
-		<div id="pets" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">assesories</a></li>
-			  <li><a href="#">animal, pet services</a></li>
-			  <li><a href="#">birds for rehoming</a></li>
-			  <li><a href="#">fish for rehoming</a></li>
-			  <li><a href="#">dogs, puppies</a></li>
-			  <li><a href="#">cats, kittens for rehoming</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">small animals for rehoming</a></li>
-			  <li><a href="#">livestock</a></li>
-			  <li><a href="#">horse, ponies for rehoming</a></li>
-			</ul>
-		  </div>
-		</div>
-		<!-- choice for jobs -->
-		<div id="jobs" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">bar, food, hospitality</a></li>
-			  <li><a href="#">general labour</a></li>
-			  <li><a href="#">driver, security</a></li>
-			  <li><a href="#">construction</a></li>
-			  <li><a href="#">sales, retail sales</a></li>
-			  <li><a href="#">child care</a></li>
-			</ul>
-		  </div>
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">health care</a></li>
-			  <li><a href="#">programmers, computer</a></li>
-			  <li><a href="#">part time, students</a></li>
-			  <li><a href="#">cleaning</a></li>
-			  <li><a href="#">hair stylist</a></li>
-			</ul>
-		  </div>
-		</div>
-		<!-- choice for service -->
-		<div id="services" class="tab-pane fade">
-		  <div class="col-md-4">
-			<ul>
-			  <li><a href="#">All categories</a></li>
-			  <li><a href="#">skilled trades</a></li>
-			  <li><a href="#">health, beauty</a></li>
-			  <li><a href="#">tutors, languages </a></li>
-			  <li><a href="#">wedding</a></li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
    <!--  //menu list end -->
-    </br></br></br></br></br></br></br></br>
+    </br></br></br>
    <!-- Images gallery  -->
-
+	<h1>Popular items</h1>
     <div class="row">
-      <div class="col-md-offset-2 col-md-8">
         <div id="my-slider" class="carousel slide" data-ride="carousel">
 
           <!--  indicator dot nov  -->
@@ -153,7 +55,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b5.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -161,7 +63,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b6.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -169,7 +71,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b11.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -177,7 +79,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b12.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -185,7 +87,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b13.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
               <div class=" col-md-2">
@@ -193,21 +95,17 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/b7.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
-              <div class="carousel-caption">
-                <h4>Books</h4>
-              </div>
-            </div>
-
+			</div>
             <div class="item">
                <div class=" col-md-2">
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k1.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -215,7 +113,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k2.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -223,7 +121,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k3.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -231,7 +129,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k4.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -239,7 +137,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k5.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -247,11 +145,8 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/k7.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
-              </div>
-              <div class="carousel-caption">
-                <h4>Land</h4>
               </div>
             </div>
 
@@ -261,7 +156,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d1.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -269,7 +164,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d2.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -277,7 +172,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d3.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -285,7 +180,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d4.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -293,7 +188,7 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d5.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
               </div>
                <div class=" col-md-2">
@@ -301,12 +196,9 @@
                   <div class="panel-body">
                     <img class="img-responsive" width="350" height="350" src="images/d6.jpg" alt="">
                   </div>
-                  <div class="panel-footer"> dumbo</div>
+                  <div class="panel-footer"> dumbo <div class="price">price：</div></div>
                 </div>
-              </div>
-              <div class="carousel-caption">
-                <h4>House</h4>
-              </div>
+              </div>         
             </div>
           </div>
 
@@ -321,7 +213,78 @@
           </a>
         </div>      
       </div>
-    </div>
+	<!-- categories with icon -->
+    <!-- first row --> 
+    <div class="container">
+      <div class="row">
+        <!-- car icon --> 
+        <div class="col-sm-3" style="text-align: center;">
+          <a href="#">
+            <li class="fa fa-car"></li>
+            <p class="item-category">car</p>
+          </a>
+        </div>
+        <!-- pets -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-paw"></li>
+          <p class="item-category">pet</p>
+        </a>
+      </div>
+      <!-- book -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-book"></li>
+          <p class="item-category">book</p>
+        </a>
+      </div>
+      <!-- phone -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-mobile"></li>
+          <p class="item-category">phone</p>
+        </a>
+      </div>
+        
+      </div> 
+    </div><br><br>
+    <!--// first row --> 
+
+    <!-- second row -->
+    <div class="container">
+      <!-- first row -->   
+      <div class="row">
+        <!-- car icon --> 
+        <div class="col-sm-3" style="text-align: center;">
+          <a href="#">
+            <li class="fa fa-desktop"></li>
+            <p class="item-category">computer</p>
+          </a>
+        </div>
+        <!-- pets -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-shopping-cart"></li>
+          <p class="item-category">cloth</p>
+        </a>
+      </div>
+      <!-- book -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-suitcase"></li>
+          <p class="item-category">job</p>
+        </a>
+      </div>
+      <!-- phone -->
+       <div class="col-sm-3" style="text-align: center;">
+        <a href="#">
+          <li class="fa fa-bed"></li>
+          <p class="item-category">furniture</p>
+        </a>
+      </div>        
+      </div>
+    </div><br>
+    <!-- second row -->
 
 
 
@@ -331,7 +294,7 @@
 
 
 
-  </br></br></br></br></br></br></br></br></br></br></br>
+  </br></br></br></br>
 
   </div>
 
