@@ -61,7 +61,7 @@
                           </div>
                           <!--    button  (submit)-->
                           <div class="modal-footer">
-                            <button class="btn btn-success btn-block" onclick = "return registerValidation()"  form="register">Register</button>
+                            <button class="btn btn-success btn-block" name="submit" onclick = "return registerValidation()"  form="register">Register</button>
                           </div>
                         </div>
                       </div>
@@ -74,6 +74,20 @@
         </div>
     </div>
   </nav>
+
+  <?php
+    if (isset($_POST['submit'])) 
+    {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $nickname = $_POST['username'];
+      $hashed_pwd = md5($password); // the password must be hashed before insert into DB
+
+      // the SQL query goes here, in order to insert data into DB 
+    }
+  ?>
+
+
   <!-- search bar -->
   <div class="well text-center">
     <form class="form-inline" action="#" method="post">
