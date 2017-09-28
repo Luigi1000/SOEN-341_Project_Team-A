@@ -40,24 +40,28 @@
                           </div>
                           <!--    body  (form)-->
                           <div class="modal-body">
-                            <form role="form">
+                            <form role="form" action="./index.php" method="post" id="register">
                               <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email Address:">
+                                <label>Email</label>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email Address: " required>
                               </div>
                               <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password:">
+                                <label class="control-label">Password</label>
+                                <input type="password" name="password" id="pwd" class="form-control" placeholder="Password: " required>
+                                <div class="help-block">Minimum of 8 characters</div>
                               </div>
                               <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Re-type Password:">
+                                <input type="password" name="repassword" id="repwd" class="form-control" placeholder="Re-type Password: " required">
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nickname (optional):">
+                                <label>Nickname</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Nickname: " required>
                               </div>
                             </form>
                           </div>
                           <!--    button  (submit)-->
                           <div class="modal-footer">
-                            <button class="btn btn-success btn-block">Register</button>
+                            <button class="btn btn-success btn-block" name="submit" onclick = "return registerValidation()"  form="register">Register</button>
                           </div>
                         </div>
                       </div>
@@ -70,6 +74,20 @@
         </div>
     </div>
   </nav>
+
+  <?php
+    if (isset($_POST['submit'])) 
+    {
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $nickname = $_POST['username'];
+      $hashed_pwd = md5($password); // the password must be hashed before insert into DB
+
+      // the SQL query goes here, in order to insert data into DB 
+    }
+  ?>
+
+
   <!-- search bar -->
   <div class="well text-center">
     <form class="form-inline" action="#" method="post">
