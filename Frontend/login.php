@@ -12,6 +12,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- A bootstrap validator plugin -->
+  <!-- reference: https://github.com/1000hz/bootstrap-validator -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
   
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
@@ -23,7 +27,7 @@
   <!-- Login section -->
 <div class="container center">
   <div class="row">
-    <form class="form-horizontal" action="login2.php" method="post" data-toggle="validator" role="form">
+    <form class="form-horizontal" action="login.php" method="post" data-toggle="validator" role="form">
     <!-- "Sign in" header -->
     <div class="form-group" id="signin">
       <label class="control-label" >Sign in</label>
