@@ -87,7 +87,12 @@
                     <?php } ?>
                 </li>
                
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <!-- when the user is logged in, Login button should be invisible -->
+                <?php if(!isset($_SESSION['username'])) {  ?>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <?php  }  ?>
+
+                <!-- Logout button should stay invisible until a user is logged in -->
                 <?php if(isset($_SESSION['username'])) {  ?>
                     <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php  }  ?>
