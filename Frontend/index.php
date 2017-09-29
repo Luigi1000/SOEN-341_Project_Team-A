@@ -23,14 +23,14 @@
 		
 		<!-- toggleable menu keep the category remove detail-->
 	  <ul class="nav nav-tabs">
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> car</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> pet</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> book</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> phone</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> computer</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> cloth</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> job</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> furniture</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> car</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> pet</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> book</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> phone</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> computer</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> cloth</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> job</a></li>
+		  <li><a href="listings.php"><span class="glyphicon glyphicon-hand-right"></span> furniture</a></li>
 	  </ul>
    <!--  //menu list end -->
     </br></br></br>
@@ -219,28 +219,28 @@
       <div class="row">
         <!-- car icon --> 
         <div class="col-sm-3" style="text-align: center;">
-          <a href="#">
+          <a href="listings.php">
             <li class="fa fa-car"></li>
             <p class="item-category">car</p>
           </a>
         </div>
         <!-- pets -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php">
           <li class="fa fa-paw"></li>
           <p class="item-category">pet</p>
         </a>
       </div>
       <!-- book -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php">
           <li class="fa fa-book"></li>
           <p class="item-category">book</p>
         </a>
       </div>
       <!-- phone -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php">
           <li class="fa fa-mobile"></li>
           <p class="item-category">phone</p>
         </a>
@@ -256,28 +256,28 @@
       <div class="row">
         <!-- car icon --> 
         <div class="col-sm-3" style="text-align: center;">
-          <a href="#">
+          <a href="listings.php">
             <li class="fa fa-desktop"></li>
             <p class="item-category">computer</p>
           </a>
         </div>
         <!-- pets -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php">
           <li class="fa fa-shopping-cart"></li>
           <p class="item-category">cloth</p>
         </a>
       </div>
       <!-- book -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php">
           <li class="fa fa-suitcase"></li>
           <p class="item-category">job</p>
         </a>
       </div>
       <!-- phone -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php">
           <li class="fa fa-bed"></li>
           <p class="item-category">furniture</p>
         </a>
