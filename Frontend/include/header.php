@@ -1,3 +1,18 @@
+<?php session_start(); ?>  
+<?php                      // session validation      
+  if (isset($_POST['submit'])) 
+  {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $nickname = $_POST['username'];
+    $hashed_pwd = md5($password); // the password must be hashed before insert into DB
+    $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
+    $_SESSION['email'] = $_POST['email'];        // also can be used in user info retrive for the MyProfile page
+    echo ($hashed_pwd);
+  // the SQL query goes here, in order to insert data into DB 
+
+  }
+?>
   <div class="jumbotron">
     <div class="container text-center">
       <h1>Online Store</h1>
@@ -22,13 +37,16 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Products</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
 
             <!-- Right align -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                  <?php if(isset($_SESSION['username'])) {  ?>
+                  <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a></p>
+                  <?php  }  ?>
+                  <?php if(!isset($_SESSION['username'])) { ?>
                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
                     <div class="modal fade" id="popUpWindow">
                       <div class="modal-dialog">
@@ -66,26 +84,17 @@
                         </div>
                       </div>
                     </div>
+                    <?php } ?>
                 </li>
                
                 <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <?php if(isset($_SESSION['username'])) {  ?>
+                    <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <?php  }  ?>
             </ul>
         </div>
     </div>
   </nav>
-
-  <?php
-    if (isset($_POST['submit'])) 
-    {
-      $email = $_POST['email'];
-      $password = $_POST['password'];
-      $nickname = $_POST['username'];
-      $hashed_pwd = md5($password); // the password must be hashed before insert into DB
-
-      // the SQL query goes here, in order to insert data into DB 
-    }
-  ?>
 
 
   <!-- search bar -->
