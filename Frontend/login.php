@@ -15,43 +15,53 @@
   
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
-  <link rel="stylesheet" type="text/css" href="StyleSheet/login.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheet/mylogin.css">
 </head>
 <body>
 <?php include('include/header.php'); ?>
   
   <!-- Login section -->
 <div class="container center">
-  <form class="form-group login" action="#" method="post">
-    <!-- Username Section -->
-    <div >
-      <label class="head" for="username" >Sign in</label>
-      <!-- <input type="text" placeholder="Enter username or email" required="Required" size="25px" style="visibility: hidden;"> -->
+  <div class="row">
+    <form class="form-horizontal" action="login2.php" method="post" data-toggle="validator" role="form">
+    <!-- "Sign in" header -->
+    <div class="form-group" id="signin">
+      <label class="control-label" >Sign in</label>
     </div>
-    <div >
-      <label for="username" ><span>Username</span></label>
-      <input type="text" placeholder="Enter username or email" required="Required" size="25px">
+
+    <div class="form-group">
+      <label for="username" class="col-sm-4 control-label" style="text-align: left;">Username or Email</label>
+      <div class="col-sm-8">
+        <input type="text" class="form-control col-sm-1" id="username" data-error="* Required field"required>
+        <div class="help-block with-errors" style="margin-bottom: 0px;"></div>
+      </div>
     </div>
-    <!-- Password section -->
-    <div  class="form-group login">
-      <label for="password"><span>Password</span></label>
-      <input type="password"  placeholder="Password" required="Required" size="25px">
+
+    <div class="form-group">
+      <label for="password" class="col-sm-4 control-label"  style="text-align: left;">Password</label>
+      <div class="col-sm-8">
+        <input type="password" class="form-control" id="password" data-minlength="8" data-error="* Minimum of 8 characters" required="Required">
+        <div class="help-block with-errors" style="margin-bottom: 0px;"></div>
+      </div>
     </div>
-    <div>
-      <label class="forgot" >
+    
+    <div id="forget">
+      <label class="col-sm-3 control-label"></label>
+      <label class="col-sm-5 control-label">
         <a href="#">forgot your password?</a>
       </label>
-      <!-- <input type="text" placeholder="Enter username or email" required="Required" size="25px" style="visibility: hidden;"> -->
-    </div>
-    <!-- Checkbox "Remember me" -->
-    <div align="right" class="checkbox">
-      <label>
+      <!-- <label class="col-sm-1 control-label"></label> -->
+      <!-- Checkbox "Remember me" -->
+      <label class="col-sm-4 control-label">
         <input type="checkbox" value="remember"> Remember me
       </label>
     </div>
     <!-- Submib button -->
-    <button class="btn btn-lg btn-success" type="submit">Sign in</button>
+    <div class="form-group">
+      <button class="btn btn-primary btn-lg btn-success" type="submit" style="margin-left: 10px;">Sign in</button>
+    </div>
   </form>
+  </div>
 
 </div>
 
