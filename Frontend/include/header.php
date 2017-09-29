@@ -4,7 +4,7 @@
   {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $nickname = $_POST['username'];
+    $username = $_POST['username'];
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
     $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
     $_SESSION['email'] = $_POST['email'];        // also can be used in user info retrive for the MyProfile page
@@ -72,8 +72,8 @@
                                 <input type="password" name="repassword" id="repwd" class="form-control" placeholder="Re-type Password: " required">
                               </div>
                               <div class="form-group">
-                                <label>Nickname</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Nickname: " required>
+                                <label>Username</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username: " required>
                               </div>
                             </form>
                           </div>
