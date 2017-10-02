@@ -1,0 +1,63 @@
+you can sort a result set by adding an ORDER BY clause that names the column or columns which you want to sort.
+
+
+
+Syntax
+
+
+SELECT field1, field2,...fieldN  table_name1, table_name2...
+ORDER BY field1, [field2...] [ASC [DESC]]
+
+
+
+
+
+Explanation
+
+
+
+You can sort the returned result on any field, if that field is being listed out.
+
+You can sort the result on more than one field.
+
+You can use the keyword ASC or DESC to get result in ascending or descending order. By default, it's the ascending order.
+
+You can use the WHERE...LIKE clause in the usual way to put a condition.
+
+
+
+
+php script
+
+
+<?php
+   $dbhost = 'localhost:3036';
+   $dbuser = 'root';
+   $dbpass = 'rootpassword';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   $sql = 'SELECT tutorial_id, tutorial_title, 
+      tutorial_author, submission_date
+      FROM tutorials_tbl
+      ORDER BY  tutorial_author DESC';
+
+   mysql_select_db('TUTORIALS');
+   $retval = mysql_query( $sql, $conn );
+   
+   if(! $retval ) {
+      die('Could not get data: ' . mysql_error());
+   }
+
+   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+      echo "Tutorial ID :{$row['tutorial_id']}  <br> ".
+      "Title: {$row['tutorial_title']} <br> ".
+      "Author: {$row['tutorial_author']} <br> ".
+      "Submission Date : {$row['submission_date']} <br> ".
+      "--------------------------------<br>";
+   } 
+   echo "Fetched data successfully\n";
+   mysql_close($conn);
+?>

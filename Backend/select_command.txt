@@ -1,0 +1,75 @@
+The SQL SELECT command is used to fetch data from a MySQL table. We can use a conditional clause called the WHERE Clause to filter out the results.
+
+Syntax
+
+
+SELECT field1, field2,...fieldN 
+FROM table_name1, table_name2...
+[WHERE Clause] 
+
+
+
+Example
+
+
+SELECT username, userpassword
+FROM (tablename) i.e user_data
+WHERE username= ''an''
+
+Explanation
+
+You can use one or more tables separated by comma to include various conditions using a WHERE clause, but the WHERE clause is an optional part of the SELECT command.
+
+You can fetch one or more fields in a single SELECT command.
+
+You can specify star (*) in place of fields. In this case, SELECT will return all the fields.
+
+You can specify any condition using the WHERE clause. It is the place where you specify the conditions.
+
+
+
+
+
+PHP SCRIPT
+
+You can use the same SQL SELECT command into a PHP function mysql_query(). This function is used to execute the SQL command and then later another PHP function mysql_fetch_array() can be used to fetch all the selected data.
+
+
+<?php
+   $dbhost = 'localhost:3036';
+   $dbuser = 'root';
+   $dbpass = 'rootpassword';
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   $sql = 'SELECT tutorial_id, tutorial_title, tutorial_author, submission_date
+      FROM tutorials_tbl';
+
+   mysql_select_db('TUTORIALS');
+   $retval = mysql_query( $sql, $conn );
+   
+   if(! $retval ) {
+      die('Could not get data: ' . mysql_error());
+   }
+   
+   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+      echo "Tutorial ID :{$row['tutorial_id']}  <br> ".
+         "Title: {$row['tutorial_title']} <br> ".
+         "Author: {$row['tutorial_author']} <br> ".
+         "Submission Date : {$row['submission_date']} <br> ".
+         "--------------------------------<br>";
+   } 
+   echo "Fetched data successfully\n";
+   mysql_close($conn);
+?>
+
+
+
+
+
+
+
+
+

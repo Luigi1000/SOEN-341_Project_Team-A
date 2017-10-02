@@ -1,0 +1,35 @@
+filter the values of the fields by using different type of patterns.
+
+
+
+
+
+REGEXP operator.
+
+Pattern	What the pattern matches
+^	Beginning of string
+$	End of string
+.	Any single character
+[...]	Any character listed between the square brackets
+[^...]	Any character not listed between the square brackets
+p1|p2|p3	Alternation; matches any of the patterns p1, p2, or p3
+*	Zero or more instances of preceding element
++	One or more instances of preceding element
+{n}	n instances of preceding element
+{m,n}	m through n instances of preceding element
+
+
+
+
+
+Examples
+
+
+Consider we have a table called person_tbl and it is having a field called name -
+
+Query to find all the names starting with 'st' -
+
+mysql> SELECT name FROM person_tbl WHERE name REGEXP '^st';
+Query to find all the names ending with 'ok' -
+
+mysql> SELECT name FROM person_tbl WHERE name REGEXP 'ok$';
