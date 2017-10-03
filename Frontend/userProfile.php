@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>UserProfile</title>
+  <title>My Profile</title>
 
   <?php include('include/dbConnector.php'); ?>
 
@@ -22,16 +22,16 @@
   <!-- user profile -->
   <div class="container">
     <ul class="nav nav-tabs">
-      <li class="active"><a data-toggle="tab" href="#summary">Account Summary</a></li>
+      <li class="active"><a data-toggle="tab" href="#summary">Account Details</a></li>
       <li><a data-toggle="tab" href="#ads">My Ads</a></li>
       <li><a data-toggle="tab" href="#edit">Edit Profile</a></li>
     </ul>
 
     <div class="tab-content">
       <!-- view user information -->
-      <!-- NEED RETRIEVE INFO FROM DATA BASE, NEED HELF FROM BACK END -->
+      <!-- NEED RETRIEVE INFO FROM DATA BASE, NEED HELP FROM BACK END -->
       <div id="summary" class="tab-pane fade in active">
-        <h1>Account Summary</h1>
+        <h1>Account Details</h1>
         <table class="table">
           <tbody>
             <tr>
