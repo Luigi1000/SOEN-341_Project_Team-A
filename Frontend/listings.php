@@ -46,161 +46,48 @@
       <div class="col-sm-9 text-left">
         <div class="list-group">
           <!-- first item -->
-          <a href="#" class="list-group-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="images/k2.jpg" alt="" width="100%" height="100%">
+		  <?php
+		  
+		  $stmt = $db->query("SELECT ProductId FROM product");
+		  $rowcount = $stmt->rowCount();
+		  $cntr=1;
+		  $loc = $db->query("SELECT CityName FROM user WHERE UserId = '1'");
+		  $location = $loc->fetch(\PDO::FETCH_ASSOC);
+		  $dblocation = "".$location["CityName"];
+		  
+		foreach($db->query("SELECT * FROM product WHERE ProductCategory = 'Test' ORDER BY ProductId ASC") as $temp1)
+		{
+			
+			echo "<a href=\"#\" class=\"list-group-item\">
+            <div class=\"row\">
+              <div class=\"col-sm-3\">
+                <img src=\"images/".$temp1['Image1']."\" alt=\"\" width=\"100%\" height=\"100%\">
               </div>
-              <div class="col-sm-9">
+              <div class=\"col-sm-9\">
                 <div>
-                  <h3 style="font-weight: bold;">ITEM NAME 1</h3>
+                  <h3 style=\"font-weight: bold;\">".$temp1['ProductName']."</h3>
                 </div>
-                <div class="pull-right" style="color: #27a34a" >
-                  <h4><span class="glyphicon glyphicon-usd"></span>50</h4>
+                <div class=\"pull-right\" style=\"color: #27a34a\" >
+                  <h4><span class=\"glyphicon glyphicon-usd\">".$temp1['Price']."</span></h4>
                 </div>
-                <div class="">
-                  location <span class="glyphicon glyphicon-time"></span>
+                <div class=\"\">
+                  ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
                   post time
                 </div><br>
                 <div>
-                  <p style="color:#1f0935;font-weight:bold;">
-                    description here
+                  <p style=\"color:#1f0935;font-weight:bold;\">
+                    ".$temp1['ProductDetail']."
                   </p>
                 </div>
               </div>
             </div>
-          </a>
+          </a>";
+			
+			$cntr++;
+		}
+		  ?>
           <!-- //end item  -->
-          <!-- next item -->
-          <a href="#" class="list-group-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="images/k3.jpg" alt="" width="100%" height="100%">
-              </div>
-              <div class="col-sm-9">
-                <div>
-                  <h3 style="font-weight: bold;">ITEM NAME 2</h3>
-                </div>
-                <div class="pull-right" style="color: #27a34a" >
-                  <h4><span class="glyphicon glyphicon-usd"></span>80</h4>
-                </div>
-                <div class="">
-                  location <span class="glyphicon glyphicon-time"></span>
-                  post time
-                </div><br>
-                <div>
-                  <p style="color:#1f0935;font-weight:bold;">
-                    description here
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <!-- //end item  -->
-          <!-- next item -->
-          <a href="#" class="list-group-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="images/k4.jpg" alt="" width="100%" height="100%">
-              </div>
-              <div class="col-sm-9">
-                <div>
-                  <h3 style="font-weight: bold;">ITEM NAME3</h3>
-                </div>
-                <div class="pull-right" style="color: #27a34a" >
-                  <h4><span class="glyphicon glyphicon-usd"></span>20</h4>
-                </div>
-                <div class="">
-                  location <span class="glyphicon glyphicon-time"></span>
-                  post time
-                </div><br>
-                <div>
-                  <p style="color:#1f0935;font-weight:bold;">
-                    description here
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <!-- //end item  -->
-          <!-- next item -->
-          <a href="#" class="list-group-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="images/k5.jpg" alt="" width="100%" height="100%">
-              </div>
-              <div class="col-sm-9">
-                <div>
-                  <h3 style="font-weight: bold;">ITEM NAME4</h3>
-                </div>
-                <div class="pull-right" style="color: #27a34a" >
-                  <h4><span class="glyphicon glyphicon-usd"></span>12</h4>
-                </div>
-                <div class="">
-                  location <span class="glyphicon glyphicon-time"></span>
-                  post time
-                </div><br>
-                <div>
-                  <p style="color:#1f0935;font-weight:bold;">
-                    description here
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <!-- //end item  -->
-          <!-- next item -->
-          <a href="#" class="list-group-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="images/k6.jpg" alt="" width="100%" height="100%">
-              </div>
-              <div class="col-sm-9">
-                <div>
-                  <h3 style="font-weight: bold;">ITEM NAME 5</h3>
-                </div>
-                <div class="pull-right" style="color: #27a34a" >
-                  <h4><span class="glyphicon glyphicon-usd"></span>99</h4>
-                </div>
-                <div class="">
-                  location <span class="glyphicon glyphicon-time"></span>
-                  post time
-                </div><br>
-                <div>
-                  <p style="color:#1f0935;font-weight:bold;">
-                    description here
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <!-- //end item  -->
-          <!-- next item -->
-          <a href="#" class="list-group-item">
-            <div class="row">
-              <div class="col-sm-3">
-                <img src="images/k7.jpg" alt="" width="100%" height="100%">
-              </div>
-              <div class="col-sm-9">
-                <div>
-                  <h3 style="font-weight: bold;">ITEM NAME 6</h3>
-                </div>
-                <div class="pull-right" style="color: #27a34a" >
-                  <h4><span class="glyphicon glyphicon-usd"></span>65</h4>
-                </div>
-                <div class="">
-                  location <span class="glyphicon glyphicon-time"></span>
-                  post time
-                </div><br>
-                <div>
-                  <p style="color:#1f0935;font-weight:bold;">
-                    description here
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <!-- //end item  -->
+         
         </div>
       </div>
     </div>
