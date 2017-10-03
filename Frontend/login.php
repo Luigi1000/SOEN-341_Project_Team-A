@@ -19,11 +19,24 @@
   
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
-  <link rel="stylesheet" type="text/css" href="StyleSheet/mylogin.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheet/mylogin2.css">
 </head>
 <body>
-<?php include('include/header.php'); ?>
-  
+  <?php include('include/loginheader.php'); ?>
+
+   <!--   Incorrect warning -->
+    <?php if ($_SESSION['wrong']) {  ?>
+    
+    <div class="container header">
+        <div class="alert alert-danger fade in">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span class="glyphicon glyphicon-remove"></span> &nbsp;&nbsp; Email address and password combination is incorrect. 
+        </div>
+    </div>
+    <?php } ?>
+    
+   
+   
   <!-- Login section -->
 <div class="container center">
   <div class="row">
@@ -36,15 +49,18 @@
     <div class="form-group">
       <label for="username" class="col-sm-4 control-label" style="text-align: left;">Username or Email</label>
       <div class="col-sm-8">
-        <input type="text" class="form-control col-sm-1" id="username" data-error="* Required field"required>
+        <input type="email" class="form-control col-sm-1" id="username" name="username"
+    pattern=".*@\w{2,}\.\w{2,}"
+    
+    data-error="* Please enter valid email address" required>
         <div class="help-block with-errors" style="margin-bottom: 0px;"></div>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="password" class="col-sm-4 control-label"  style="text-align: left;">Password</label>
+      <label for="password" class="col-sm-4 control-label" style="text-align: left;">Password</label>
       <div class="col-sm-8">
-        <input type="password" class="form-control" id="password" data-minlength="8" data-error="* Minimum of 8 characters" required="Required">
+        <input type="password" class="form-control" name="inputPwd" id="password" data-minlength="8" data-error="* Minimum of 8 characters" required="Required">
         <div class="help-block with-errors" style="margin-bottom: 0px;"></div>
       </div>
     </div>
@@ -62,7 +78,7 @@
     </div>
     <!-- Submib button -->
     <div class="form-group">
-      <button class="btn btn-primary btn-lg btn-success" type="submit" style="margin-left: 10px;">Sign in</button>
+      <button class="btn btn-primary btn-lg btn-success" name="login" type="submit" style="margin-left: 10px;">Sign in</button>
     </div>
   </form>
   </div>

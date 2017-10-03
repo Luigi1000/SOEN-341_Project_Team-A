@@ -2,7 +2,7 @@
 <?php                      // session validation      
   if (isset($_POST['submit'])) 
   {
-    $email = $_POST['email'];
+	$email = $_POST['email'];
     $password = $_POST['password'];
     $username = $_POST['username'];
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
@@ -11,7 +11,19 @@
     echo ($hashed_pwd);
   // the SQL query goes here, in order to insert data into DB 
 
+    // if the user manages to register, he is logged in automatically
+    $_SESSION['is_login'] = true;
   }
+  // when the index page is opened for the first time, no users are logged in.
+  else
+  {
+      if(!isset($_SESSION['is_login']))
+      {
+          $_SESSION['is_login'] = false;
+      }
+      
+  }
+
 ?>
   <div class="jumbotron">
     <div class="container text-center">
@@ -43,10 +55,10 @@
             <!-- Right align -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                  <?php if(isset($_SESSION['username'])) {  ?>
+                  <?php if($_SESSION['is_login']) {  ?>
                   <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a></p>
                   <?php  }  ?>
-                  <?php if(!isset($_SESSION['username'])) { ?>
+                  <?php if(!$_SESSION['is_login']) { ?>
                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
                     <div class="modal fade" id="popUpWindow">
                       <div class="modal-dialog">
@@ -88,12 +100,12 @@
                 </li>
                
                 <!-- when the user is logged in, Login button should be invisible -->
-                <?php if(!isset($_SESSION['username'])) {  ?>
+                <?php if(!$_SESSION['is_login']) {  ?>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 <?php  }  ?>
 
                 <!-- Logout button should stay invisible until a user is logged in -->
-                <?php if(isset($_SESSION['username'])) {  ?>
+                <?php if($_SESSION['is_login']) {  ?>
                     <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                 <?php  }  ?>
             </ul>
