@@ -78,7 +78,7 @@
                               <div class="form-group">
                                 <label class="control-label">Password</label>
                                 <input type="password" name="password" id="pwd" class="form-control" placeholder="Password: " required>
-                                <div class="help-block">Minimum of 8 characters</div>
+                                <div class="help-block">At least 8 characters with at least one Capital letter, at least one lower case letter and at least one number and at least one Special character:</div>
                               </div>
                               <div class="form-group">
                                 <input type="password" name="repassword" id="repwd" class="form-control" placeholder="Re-type Password: " required">
