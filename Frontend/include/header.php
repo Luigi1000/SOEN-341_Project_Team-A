@@ -106,7 +106,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                   <?php if($_SESSION['is_login']) {  ?>
-                  <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a></p>
+                  <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a><a href="./product.php" class="btn btn-warning btn-lg"> <span class="glyphicon glyphicon-pushpin"></span>   Post Ads</a></p>
                   <?php  }  ?>
                   <?php if(!$_SESSION['is_login']) { ?>
                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
