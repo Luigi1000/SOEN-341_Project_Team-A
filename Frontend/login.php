@@ -19,7 +19,7 @@
   
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
-  <link rel="stylesheet" type="text/css" href="StyleSheet/mylogin3.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheet/mylogin2.css">
 </head>
 <body>
   <?php include('include/loginheader.php'); ?>
@@ -30,7 +30,7 @@
     <div class="container header">
         <div class="alert alert-danger fade in">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <span class="glyphicon glyphicon-remove"></span> &nbsp;&nbsp; Email address and password combination is incorrect. 
+      <span class="glyphicon glyphicon-remove"></span> &nbsp;&nbsp; Email address and password combination is incorrect.
         </div>
     </div>
     <?php } ?>
@@ -46,38 +46,33 @@
       <label class="control-label" >Sign in</label>
     </div>
 
-    <div class="form-group" >
-      <div class="col-md-4">
-        <label for="username" class="control-label" style="text-align: left;">Username or Email</label>
-      </div>
-      <div class="col-md-8">
-        <input type="email" class="form-control" id="username" name="username"
+    <div class="form-group">
+      <label for="username" class="col-sm-4 control-label" style="text-align: left;">Username or Email</label>
+      <div class="col-sm-8">
+        <input type="email" class="form-control col-sm-1" id="username" name="username"
     pattern=".*@\w{2,}\.\w{2,}"
     
     data-error="* Please enter valid email address" required>
-        <div class="help-block with-errors" style="margin-bottom: 0px;font-size: small;"></div>
+        <div class="help-block with-errors" style="margin-bottom: 0px;"></div>
       </div>
     </div>
 
-    <div class="form-group" >
-      <div class="col-md-4">
-        <label for="password" class="control-label" style="text-align: left;">Password</label>
-      </div>
-      <div class="col-md-8">
-        <input type="password" class="form-control" name="inputPwd" id="password"  minlength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d$@$!%?&]{8,}$" 
-        data-error="* Minimum of 8 characters, including 1 upper case, 1 lower case and 1 number" required="Required">
-        <div class="help-block with-errors" style="margin-bottom: -20px; font-size: small;"></div>
+    <div class="form-group">
+      <label for="password" class="col-sm-4 control-label" style="text-align: left;">Password</label>
+      <div class="col-sm-8">
+        <input type="password" class="form-control" name="inputPwd" id="password" data-minlength="8" data-error="* Minimum of 8 characters" required="Required">
+        <div class="help-block with-errors" style="margin-bottom: 0px;"></div>
       </div>
     </div>
     
-    <div class="form-group" id="forget">
-      <label class="hidden-xs hidden-sm col-md-3 col-lg-2 control-label"></label>
-      <label class="col-xs-12 col-sm-5  col-md-5  control-label" >
+    <div id="forget">
+      <label class="col-sm-3 control-label"></label>
+      <label class="col-sm-5 control-label">
         <a href="#">forgot your password?</a>
       </label>
       <!-- <label class="col-sm-1 control-label"></label> -->
       <!-- Checkbox "Remember me" -->
-      <label class="col-xs-12 col-sm-5 col-md-4 control-label" >
+      <label class="col-sm-4 control-label">
         <input type="checkbox" value="remember"> Remember me
       </label>
     </div>
