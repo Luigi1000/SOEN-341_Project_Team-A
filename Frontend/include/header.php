@@ -2,17 +2,67 @@
 <?php                      // session validation      
   if (isset($_POST['submit'])) 
   {
-	$email = $_POST['email'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $username = $_POST['username'];
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
-    $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
-    $_SESSION['email'] = $_POST['email'];        // also can be used in user info retrive for the MyProfile page
-    echo ($hashed_pwd);
+    // echo ($hashed_pwd); // only for testing
   // the SQL query goes here, in order to insert data into DB 
+    $query1 = " SELECT email FROM userInfo"; // fetch data from db
+    $result1 = mysqli_query($conn, $query1); // run first query
+    $query2 = " SELECT userName FROM userInfo"; // fetch data from db
+    $result2 = mysqli_query($conn, $query2); // run second query
+    $check_email_result = false;
+    $check_usrname_result = false;
+  while($email_exist_check = mysqli_fetch_assoc($result1) ) // when do the registration, check the email has already exist or not
+    {
+      //echo ($email_exist_check['email']); // only for testing
+      if(strcmp($email_exist_check['email'], $email)==0) // if find out the email already exist , refuse to add it into the db
+      {
+        $check_email_result = true;
+        break;
+      }
+      else
+        $check_email_result = false;
+    }
 
-    // if the user manages to register, he is logged in automatically
-    $_SESSION['is_login'] = true;
+  while($usrname_exist_check = mysqli_fetch_assoc($result2) ) // when do the registration, check the userName has already exist or not
+    {
+      //echo ($email_exist_check['email']); // only for testing
+      if(strcmp($usrname_exist_check['userName'], $username)==0) // if find out the userName already exist , refuse to add it into the db
+      {
+        $check_usrname_result = true;
+        break;
+      }
+      else
+        $check_usrname_result = false;
+    }
+    if($check_usrname_result == false && $check_email_result == false) // if Both userName and email do not exist in db then good to insert into db
+    {
+      $sql = "INSERT INTO userInfo (email, password, userName) VALUES ('$email', '$hashed_pwd', '$username');" ; //insert user's info into the db 
+        if ($conn->query($sql) == TRUE) 
+        {
+          echo "new records inserted successed";
+        }
+        else
+        {
+          echo "error";
+        }
+
+      $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
+      $_SESSION['email'] = $_POST['email'];        // also can be used in user info retrive for the MyProfile page
+      // if the user manages to register, he is logged in automatically
+      $_SESSION['is_login'] = true;
+    }
+    else if($check_email_result == true)
+    {
+      echo ("<script type='text/javascript'>alert('This email address has already been used for registration before, please choose another one!!')</script>");
+    }
+    else
+    {
+      echo ("<script type='text/javascript'>alert('This username has already been used for registration before, please choose another one!!')</script>");
+    }
+
   }
   // when the index page is opened for the first time, no users are logged in.
   else
