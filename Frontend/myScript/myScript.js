@@ -56,3 +56,18 @@ function registerValidation()
 	else
 		return false;
 }
+
+function dragMe1()
+{
+    var slider = document.getElementById("myRange1").value;
+    var output = document.getElementById("range1");
+    output.innerHTML = slider + " km"; // Display the slider value
+    
+}
+function dragMe2()
+{
+    var slider = document.getElementById("myRange2").value;
+    var output = document.getElementById("range2");
+    output.innerHTML = slider + " CAD"; // Display the slider value
+    
+}
