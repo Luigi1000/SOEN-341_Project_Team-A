@@ -39,7 +39,7 @@
     }
     if($check_usrname_result == false && $check_email_result == false) // if Both userName and email do not exist in db then good to insert into db
     {
-      $sql = "INSERT INTO userInfo (email, password, userName) VALUES ('$email', '$hashed_pwd', '$username');" ; //insert user's info into the db 
+      $sql = "INSERT INTO user (UserId, UserName, Email, Password, Address, CityName, Province, Country) VALUES (NULL, '$username', '$email', '$hashed_pwd', NULL, NULL, NULL, NULL);" ; //insert user's info into the db 
         if ($conn->query($sql) == TRUE) 
         {
           echo "new records inserted successed";

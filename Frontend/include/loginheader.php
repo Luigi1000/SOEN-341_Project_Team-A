@@ -1,11 +1,16 @@
 <?php
     session_start(); 
 ?>  
+<?php include('include/dbConnector2.php'); ?>
 <?php                      // session validation      
   if (isset($_POST['login']))
   {
+	$username = @$_POST['username'];
+	$log = $db->query("SELECT * FROM `user` WHERE `Email` = '$username'");
+	$login = $log->fetch(\PDO::FETCH_ASSOC);
+	$password = md5(@$_POST['inputPwd']);
     //  check if the email and password are correct
-    if ($_POST['username'] == "wilson@gmail.com" && $_POST['inputPwd'] == "12345678")
+    if ($_POST['username'] == $login['Email'] && $password == $login['Password'])
 	{
 		$_SESSION['is_login'] = true;
         $_SESSION['wrong'] = false;

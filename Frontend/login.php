@@ -30,7 +30,7 @@
     <div class="container header">
         <div class="alert alert-danger fade in">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <span class="glyphicon glyphicon-remove"></span> &nbsp;&nbsp; Email address and password combination is incorrect. 
+      <span class="glyphicon glyphicon-remove"></span> &nbsp;&nbsp; Email address and password combination is incorrect.
         </div>
     </div>
     <?php } ?>
