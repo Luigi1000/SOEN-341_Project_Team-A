@@ -15,7 +15,8 @@ function registerValidation()
 
 	var s = true;
 	var pwd = document.getElementById("pwd");
-	var b = pwd.value.search(/^[a-zA-Z0-9]{8,}$/);
+	var patn2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/; // at least 8 characters with at least one Capital letter, at least one lower case letter and at least one number and at least one Special character.
+	var b = pwd.value.search(patn2);
 
 	if(b == -1 || pwd.length < 8)
 	{
