@@ -60,51 +60,52 @@
       font-weight: bold;    
     }
 	
-	.fa-car{
-	  font-size: 50px;
-	  color: #41a0f4; 
+	
+  .fa-car{
+    font-size: 50px;
+    color: #41a0f4;
       width: 100%;
-	}
+  }
 
     .fa-paw{
       font-size: 50px;
-      color: #f4425c; 
+      color: #f4425c;
       width: 100%;
-	}
+  }
 
-	.fa-book{
+  .fa-book{
       font-size: 50px;
-      color: #41a0f4; 
+      color: #41a0f4;
       width: 100%;
-	}
+  }
 
     .fa-mobile{
       font-size: 50px;
-      color: #f4425c; 
+      color: #f4425c;
       width: 100%;
     }
 
     .fa-desktop{
       font-size: 50px;
-      color: #f4425c; 
+      color: #f4425c;
       width: 100%;
     }
 
-    .fa-shopping-cart{
+    .fa-music{
       font-size: 50px;
-      color: #41a0f4; 
+      color: #41a0f4;
       width: 100%;
     }
 
-    .fa-suitcase{
+    .fa-bicycle{
       font-size: 50px;
-      color: #f4425c; 
+      color: #f4425c;
       width: 100%;
     }
 
-    .fa-bed{
+    .fa-television{
       font-size: 50px;
-      color: #41a0f4; 
+      color: #41a0f4;
       width: 100%;
     }
 

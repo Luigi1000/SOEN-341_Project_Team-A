@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>UserProfile</title>
+  <title>Listings</title>
 
   <?php include('include/dbConnector2.php'); ?>
 
@@ -15,34 +15,101 @@
 
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
-  <!-- <link rel="stylesheet" type="text/css" href="StyleSheet/login.css"> -->
+  <script src="myScript/myScript.js"></script>
 </head>
 <body>
   <?php include('include/header.php'); ?>
   <div class="container-fluid">
     <div class="row">
       <!-- side bar -->
+      <!-- dynamic change side bar -->
+      <!-- all item categorys EXAMPLE two level hierarchy -->
+      <?php
+        $category = $_GET['category'];
+        $subcategory = (isset($_GET['subcategory'])) ? $_GET['subcategory'] : " ";
+        $ssubcategory = (isset($_GET['ssubcategory'])) ? $_GET['ssubcategory'] : " ";
+        // may be have more variable for location and price
+        // query code...
+      ?>
+      <?php
+        $items = array('vehicle'=>array(
+                                  'Sedan'=>array('BMW-328','Adui-A6','Volvo-C40'),
+                                  'SUV'=>array('Caynne','LandRover','Audi-Q7'),
+                                  'Pickup Truck'=>array('RAM','Rock','Titan'),
+                                  'Van'=>array('Dodge Caravan','Nissan Sentra','Honda Odyssey')),
+                       'pet' => array(
+                                'Dog' => array('pug','chihuahua','yorkshire'),
+                                'Bird' => array('perroquet','canari','cockatiel'),
+                                'Cat' => array('bengal','persan')),
+                       'book' => array(
+                                'Textbook' => array('Accounting','Computer','History','Nursing'),
+                                'Cookbook' => array('Baking','Meals','Quik and Easy'),
+                                'Fiction' => array('Fantasy','Science Fiction','Gaming')),
+                       'phone' => array(
+                                 'Telephone' => array('Samsung','LG'),
+                                 'Smart phone' => array('Iphone','Samsung','Nokia','Black Berry')),
+                       'bike'=>array(
+                              'bike in road'=>array('Felt VR30','Felt Z6 Disc','Devinci Leo SL'),
+                              'bike in mountain'=>array('Devinci Troy','Rock Mountain Pipeline','Giant Iguana')),
+
+                       'instrument'=>array(
+                                    'Guitars'=>array('Electric Guitar','Acoustic Guitar','Base Guitar'),
+                                    'Piano'=>array('Classic Piano','Electric Piano','Mute Piano'),
+                                    'Drum'=>array('Jazz Drum','Electric Drum','Classic Drum')),
+                       'computer'=>array(
+                                    'Desk Computer'=>array('Dell','HP','Lenovo'),
+                                    'Laptop'=>array('Macbook Pro','Macbook Air','Thinkpad')),
+                        'TV'=>array(
+                              'LED'=>array('SONY','SHARP','SAMSUNG'),
+                              '4K UHD'=>array('SONY','SHARP','SAMSUNG')),
+
+                      );
+
+       ?>
       <div class="col-sm-3 sidenav">
+          <!-- dynamic category -->
         <div class="well text-left" >
-          <h4>Pets</h4>
-  			  <li><a href="#">assesories</a></li>
-  			  <li><a href="#">animal, pet services</a></li>
-  			  <li><a href="#">birds for rehoming</a></li>
-  			  <li><a href="#">fish for rehoming</a></li>
-  			  <li><a href="#">dogs, puppies</a></li>
-  			  <li><a href="#">cats, kittens for rehoming</a></li>
+          <!-- content in sidevar will change base on which category user click in index page-->
+          <?php foreach ($items as $category => $sub) { ?>
+            <?php if($_GET['category']==$category){ ?>
+            <h4><a href="listings.php?category=<?php echo $category?>"><?php echo $category?></a></h4>
+              <?php foreach ($sub as $key => $value) {?>
+                <li class="list-group-item">
+                  <a href="listings.php?category=<?php echo str_replace (" ", "", $category)?>&subcategory=<?php echo str_replace (" ", "", $key)?>" style="color:black"><?php echo $key?></a>
+                  <?php foreach ($value as $k => $v) { ?>
+                    <ul style="list-style:none">
+                        <li><a href="listings.php?category=<?php echo str_replace (" ", "", $category)?>&subcategory=<?php echo str_replace (" ", "", $key)?>&ssubcategory=<?php echo str_replace (" ", "", $v)?>"><?php echo $v?></a></li>
+                    </ul>
+                  <?php  }?>
+                </li>
+              <?php } ?>
+            <?php } ?>
+          <?php } ?>
         </div>
-        <div class="well text-center" >
-          <h3>not finish</h3>
-          <h3>may be add price search</h3>
+
+
+        <!-- search base on location  not implement  yet   -->
+        <div class="well text-center" > <!-- Distance range slider     -->
+          <!-- <form class="" action="listings.php?category=car" method=""> -->
+            <div id="slidecontainer" >
+              <input class="slider" id="myRange1" name="distance" type="range" value="50" min="0" max="500" oninput="dragMe1()" />
+                <p>Distance: <span id="range1">50 km</span></p>
+                <!-- <input type="submit"> -->
+            </div>
+          <!-- </form> -->
         </div>
-        <div class="well text-center" >
-          <h3>not finish</h3>
-          <h3>may be add something</h3>
+        <!-- search base on budget not implement yet  -->
+        <div class="well text-center" > <!-- Budget range slider     -->
+          <div id="slidecontainer" >
+            <input class="slider" id="myRange2" type="range" value="100" min="0" max="50000" step="10" oninput="dragMe2()" />
+              <p>Budget: <span id="range2">100 CAD</span></p>
+          </div>
         </div>
+      
       </div>
       <!-- //side bar end -->
 
+      <!-- list part -->
       <div class="col-sm-9 text-left">
         <div class="list-group">
           <!-- first item -->
