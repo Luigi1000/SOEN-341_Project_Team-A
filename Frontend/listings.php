@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>UserProfile</title>
+  <title>Listings</title>
 
   <?php include('include/dbConnector2.php'); ?>
 
