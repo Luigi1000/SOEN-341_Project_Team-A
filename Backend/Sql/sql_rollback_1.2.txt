@@ -1,0 +1,3 @@
+1. Rollback of the image data type change for Product table
+
+ALTER TABLE soen341.product MODIFY COLUMN Image1 varchar(45), Image2 varchar(45);
