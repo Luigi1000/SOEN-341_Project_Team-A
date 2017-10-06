@@ -8,9 +8,9 @@
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
     // echo ($hashed_pwd); // only for testing
   // the SQL query goes here, in order to insert data into DB 
-    $query1 = " SELECT email FROM userInfo"; // fetch data from db
+    $query1 = " SELECT email FROM user"; // fetch data from db
     $result1 = mysqli_query($conn, $query1); // run first query
-    $query2 = " SELECT userName FROM userInfo"; // fetch data from db
+    $query2 = " SELECT userName FROM user"; // fetch data from db
     $result2 = mysqli_query($conn, $query2); // run second query
     $check_email_result = false;
     $check_usrname_result = false;
