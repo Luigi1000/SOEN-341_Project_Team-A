@@ -15,6 +15,7 @@
 
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheet/listings.css">
   <script src="myScript/myScript.js"></script>
 </head>
 <body>
@@ -25,38 +26,39 @@
       <!-- dynamic change side bar -->
       <!-- all item categorys EXAMPLE two level hierarchy -->
       <?php
-        $category = $_GET['category'];
-        $subcategory = (isset($_GET['subcategory'])) ? $_GET['subcategory'] : " ";
-        $ssubcategory = (isset($_GET['ssubcategory'])) ? $_GET['ssubcategory'] : " ";
+      
+        $Category = (isset($_GET['category'])) ? $_GET['category'] : "All" ;
+        $Subcategory = (isset($_GET['subcategory'])) ? $_GET['subcategory'] : " ";
+        $SSubcategory = (isset($_GET['ssubcategory'])) ? $_GET['ssubcategory'] : " ";
         // may be have more variable for location and price
         // query code...
       ?>
       <?php
-        $items = array('vehicle'=>array(
+          $items = array('Vehicle'=>array(
                                   'Sedan'=>array('BMW-328','Adui-A6','Volvo-C40'),
                                   'SUV'=>array('Caynne','LandRover','Audi-Q7'),
                                   'Pickup Truck'=>array('RAM','Rock','Titan'),
                                   'Van'=>array('Dodge Caravan','Nissan Sentra','Honda Odyssey')),
-                       'pet' => array(
+                       'Pet' => array(
                                 'Dog' => array('pug','chihuahua','yorkshire'),
                                 'Bird' => array('perroquet','canari','cockatiel'),
                                 'Cat' => array('bengal','persan')),
-                       'book' => array(
+                       'Book' => array(
                                 'Textbook' => array('Accounting','Computer','History','Nursing'),
                                 'Cookbook' => array('Baking','Meals','Quik and Easy'),
                                 'Fiction' => array('Fantasy','Science Fiction','Gaming')),
-                       'phone' => array(
+                       'Phone' => array(
                                  'Telephone' => array('Samsung','LG'),
                                  'Smart phone' => array('Iphone','Samsung','Nokia','Black Berry')),
-                       'bike'=>array(
-                              'bike in road'=>array('Felt VR30','Felt Z6 Disc','Devinci Leo SL'),
-                              'bike in mountain'=>array('Devinci Troy','Rock Mountain Pipeline','Giant Iguana')),
+                       'Bike'=>array(
+                              'Bike in road'=>array('Felt VR30','Felt Z6 Disc','Devinci Leo SL'),
+                              'Bike in mountain'=>array('Devinci Troy','Rock Mountain Pipeline','Giant Iguana')),
 
-                       'instrument'=>array(
+                       'Instrument'=>array(
                                     'Guitars'=>array('Electric Guitar','Acoustic Guitar','Base Guitar'),
                                     'Piano'=>array('Classic Piano','Electric Piano','Mute Piano'),
                                     'Drum'=>array('Jazz Drum','Electric Drum','Classic Drum')),
-                       'computer'=>array(
+                       'Computer'=>array(
                                     'Desk Computer'=>array('Dell','HP','Lenovo'),
                                     'Laptop'=>array('Macbook Pro','Macbook Air','Thinkpad')),
                         'TV'=>array(
@@ -66,12 +68,12 @@
                       );
 
        ?>
-      <div class="col-sm-3 sidenav">
+     <div class="col-sm-3 sidenav">
           <!-- dynamic category -->
-        <div class="well text-left" >
+        <div class="well text-left leftsidebar" >
           <!-- content in sidevar will change base on which category user click in index page-->
           <?php foreach ($items as $category => $sub) { ?>
-            <?php if($_GET['category']==$category){ ?>
+            <?php if($Category==$category){ ?>
             <h4><a href="listings.php?category=<?php echo $category?>"><?php echo $category?></a></h4>
               <?php foreach ($sub as $key => $value) {?>
                 <li class="list-group-item">
@@ -84,6 +86,20 @@
                 </li>
               <?php } ?>
             <?php } ?>
+          <?php } ?>
+
+          <!-- display all category if user want to see all category -->
+          <?php if ($Category=='All') { ?>
+                <ul class="list-group">
+                  <li class="list-group-item"><h4><a href="listings.php?category=Vehicle">Vehicle</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=Pet">Pet</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=Book">Book</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=Phone">Phone</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=Computer">Computer</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=Instrument">Instrument</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=Bike">Bike</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=TV">TV</a></h4></li>
+                </ul>
           <?php } ?>
         </div>
 
