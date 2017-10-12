@@ -1,4 +1,5 @@
 <?php session_start(); ?>  
+<?php include('include/dbConnector2.php'); ?>
 <?php                      // session validation      
   if (isset($_POST['submit'])) 
   {
@@ -6,48 +7,31 @@
     $password = $_POST['password'];
     $username = $_POST['username'];
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
-    // echo ($hashed_pwd); // only for testing
-  // the SQL query goes here, in order to insert data into DB 
-    $query1 = " SELECT email FROM user"; // fetch data from db
-    $result1 = mysqli_query($conn, $query1); // run first query
-    $query2 = " SELECT userName FROM user"; // fetch data from db
-    $result2 = mysqli_query($conn, $query2); // run second query
-    $check_email_result = false;
-    $check_usrname_result = false;
-  while($email_exist_check = mysqli_fetch_assoc($result1) ) // when do the registration, check the email has already exist or not
+   
+	$result = $db->query("SELECT * FROM `user` WHERE `Email` = '$email'");
+	$dbResult = $result->fetch(\PDO::FETCH_ASSOC);
+	$nameResult = $db->query("SELECT `UserName` FROM `user` WHERE `UserName` = '$username'");
+	$dbNameResult = $nameResult->fetch(\PDO::FETCH_ASSOC);
+	
+    if(strcasecmp($dbResult['Email'], $email)==0) // if find out the email already exist , refuse to add it into the db
     {
-      //echo ($email_exist_check['email']); // only for testing
-      if(strcmp($email_exist_check['email'], $email)==0) // if find out the email already exist , refuse to add it into the db
-      {
-        $check_email_result = true;
-        break;
-      }
-      else
+		$check_email_result = true;
+    }
+    else
+	{
         $check_email_result = false;
-    }
-
-  while($usrname_exist_check = mysqli_fetch_assoc($result2) ) // when do the registration, check the userName has already exist or not
+	}
+	  
+    if(strcasecmp($dbNameResult['UserName'], $username)==0) // if find out the userName already exist , refuse to add it into the db
     {
-      //echo ($email_exist_check['email']); // only for testing
-      if(strcmp($usrname_exist_check['userName'], $username)==0) // if find out the userName already exist , refuse to add it into the db
-      {
         $check_usrname_result = true;
-        break;
-      }
-      else
-        $check_usrname_result = false;
     }
+    else
+        $check_usrname_result = false;
+	
     if($check_usrname_result == false && $check_email_result == false) // if Both userName and email do not exist in db then good to insert into db
     {
-      $sql = "INSERT INTO user (UserId, UserName, Email, Password, Address, CityName, Province, Country) VALUES (NULL, '$username', '$email', '$hashed_pwd', NULL, NULL, NULL, NULL);" ; //insert user's info into the db 
-        if ($conn->query($sql) == TRUE) 
-        {
-          echo "new records inserted successed";
-        }
-        else
-        {
-          echo "error";
-        }
+       $db->query("INSERT INTO user (UserId, UserName, Email, Password, Address, CityName, Province, Country) VALUES (NULL, '$username', '$email', '$hashed_pwd', NULL, NULL, NULL, NULL)");
 
       $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
       $_SESSION['email'] = $_POST['email'];        // also can be used in user info retrive for the MyProfile page
