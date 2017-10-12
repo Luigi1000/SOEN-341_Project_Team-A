@@ -4,7 +4,7 @@
 <head>
   <title>Login Page</title>
 
-  <?php include('include/dbConnector.php'); ?>
+  <?php include('include/dbConnector2.php'); ?>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
