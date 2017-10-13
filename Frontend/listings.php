@@ -129,7 +129,7 @@
       $dblocation = "".$location["CityName"];
       if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))  
       {
-          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$category' AND ProductCategory2= '$subcategory' AND ProductCategory3= '$ssubcategory' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"#\" class=\"list-group-item\">
@@ -160,7 +160,7 @@
       }
       if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
       {
-          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$category' AND ProductCategory2= '$subcategory' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"#\" class=\"list-group-item\">
@@ -191,7 +191,7 @@
       }
       if(isset($_GET['category']) && !isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
       {
-        $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$category' ORDER BY ProductId ASC");
+        $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' ORDER BY ProductId ASC");
         foreach($resultArray as $eachRow)
         {
           echo "<a href=\"#\" class=\"list-group-item\">
