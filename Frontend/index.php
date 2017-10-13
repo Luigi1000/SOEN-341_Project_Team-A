@@ -23,14 +23,16 @@
   <div class="container-fluid">
 		
 		<!-- category nav bar add link with query string-->
+    <!-- add a link named All category -->
 	  <ul class="nav nav-tabs">
-      <li><a href="listings.php?category=vehicle"><span class="glyphicon glyphicon-hand-right"></span> vehicle</a></li>
-      <li><a href="listings.php?category=pet"><span class="glyphicon glyphicon-hand-right"></span> pet</a></li>
-      <li><a href="listings.php?category=book"><span class="glyphicon glyphicon-hand-right"></span> book</a></li>
-      <li><a href="listings.php?category=phone"><span class="glyphicon glyphicon-hand-right"></span> phone</a></li>
-      <li><a href="listings.php?category=computer"><span class="glyphicon glyphicon-hand-right"></span> computer</a></li>
-      <li><a href="listings.php?category=instrument"><span class="glyphicon glyphicon-hand-right"></span> instrument</a></li>
-      <li><a href="listings.php?category=bike"><span class="glyphicon glyphicon-hand-right"></span> bike</a></li>
+      <li><a href="listings.php?category=All"><span class="glyphicon glyphicon-hand-right"></span> All category</a></li>
+      <li><a href="listings.php?category=Vehicle"><span class="glyphicon glyphicon-hand-right"></span> Vehicle</a></li>
+      <li><a href="listings.php?category=Pet"><span class="glyphicon glyphicon-hand-right"></span> Pet</a></li>
+      <li><a href="listings.php?category=Book"><span class="glyphicon glyphicon-hand-right"></span> Book</a></li>
+      <li><a href="listings.php?category=Phone"><span class="glyphicon glyphicon-hand-right"></span> Phone</a></li>
+      <li><a href="listings.php?category=Computer"><span class="glyphicon glyphicon-hand-right"></span> Computer</a></li>
+      <li><a href="listings.php?category=Instrument"><span class="glyphicon glyphicon-hand-right"></span> Instrument</a></li>
+      <li><a href="listings.php?category=Bike"><span class="glyphicon glyphicon-hand-right"></span> Bike</a></li>
       <li><a href="listings.php?category=TV"><span class="glyphicon glyphicon-hand-right"></span> TV</a></li>
     </ul>
    <!--  //menu list end -->
@@ -222,30 +224,30 @@
       <div class="row">
         <!-- car icon -->
         <div class="col-sm-3" style="text-align: center;">
-          <a href="listings.php?category=vehicle">
+          <a href="listings.php?category=Vehicle">
             <li class="fa fa-car"></li>
-            <p class="item-category">vehicle</p>
+            <p class="item-category">Vehicle</p>
           </a>
         </div>
         <!-- pets -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="listings.php?category=pet">
+        <a href="listings.php?category=Pet">
           <li class="fa fa-paw"></li>
-          <p class="item-category">pet</p>
+          <p class="item-category">Pet</p>
         </a>
       </div>
       <!-- book -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="listings.php?category=book">
+        <a href="listings.php?category=Book">
           <li class="fa fa-book"></li>
-          <p class="item-category">book</p>
+          <p class="item-category">Book</p>
         </a>
       </div>
       <!-- phone -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="listings.php?category=phone">
+        <a href="listings.php?category=Phone">
           <li class="fa fa-mobile"></li>
-          <p class="item-category">phone</p>
+          <p class="item-category">Phone</p>
         </a>
       </div>
 
