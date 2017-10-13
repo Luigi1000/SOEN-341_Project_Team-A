@@ -39,7 +39,7 @@
                        'Pet' => array(
                                 'Dog' => array('pug','chihuahua','yorkshire'),
                                 'Bird' => array('perroquet','canari','cockatiel'),
-                                'Cat' => array('bengal','persan')),
+                                'Cat' => array('bengal','persian')),
                        'Book' => array(
                                 'Textbook' => array('Accounting','Computer','History','Nursing'),
                                 'Cookbook' => array('Baking','Meals','Quik and Easy'),
@@ -66,15 +66,15 @@
           <!-- dynamic category -->
         <div class="well text-left leftsidebar" >
           <!-- content in sidevar will change base on which category user click in index page-->
-          <?php foreach ($items as $category => $sub) { ?>
-            <?php if($Category==$category){ ?>
-            <h4><a href="listings.php?category=<?php echo $category?>"><?php echo $category?></a></h4>
+          <?php foreach ($items as $multiArr => $sub) { ?>
+            <?php if($Category==$multiArr){ ?>
+            <h4><a href="listings.php?category=<?php echo $multiArr?>"><?php echo $multiArr?></a></h4>
               <?php foreach ($sub as $key => $value) {?>
                 <li class="list-group-item">
-                  <a href="listings.php?category=<?php echo str_replace (" ", "", $category)?>&subcategory=<?php echo str_replace (" ", "", $key)?>" style="color:black"><?php echo $key?></a>
+                  <a href="listings.php?category=<?php echo str_replace (" ", "", $multiArr)?>&subcategory=<?php echo str_replace (" ", "", $key)?>" style="color:black"><?php echo $key?></a>
                   <?php foreach ($value as $k => $v) { ?>
                     <ul style="list-style:none">
-                        <li><a href="listings.php?category=<?php echo str_replace (" ", "", $category)?>&subcategory=<?php echo str_replace (" ", "", $key)?>&ssubcategory=<?php echo str_replace (" ", "", $v)?>"><?php echo $v?></a></li>
+                        <li><a href="listings.php?category=<?php echo str_replace (" ", "", $multiArr)?>&subcategory=<?php echo str_replace (" ", "", $key)?>&ssubcategory=<?php echo str_replace (" ", "", $v)?>"><?php echo $v?></a></li>
                     </ul>
                   <?php  }?>
                 </li>
@@ -119,46 +119,112 @@
       <div class="col-sm-9 text-left">
         <div class="list-group">
           <!-- first item -->
-          <?php
-          
-          $stmt = $db->query("SELECT ProductId FROM product");
-          $rowcount = $stmt->rowCount();
-          $cntr=1;
-          $loc = $db->query("SELECT CityName FROM user WHERE UserId = '1'");
-          $location = $loc->fetch(\PDO::FETCH_ASSOC);
-          $dblocation = "".$location["CityName"];
-          
-        foreach($db->query("SELECT * FROM product WHERE ProductCategory = 'Test' ORDER BY ProductId ASC") as $temp1)
-        {
-            
+	<?php
+
+      $stmt = $db->query("SELECT ProductId FROM product");
+      $rowcount = $stmt->rowCount();
+      $cntr=1;
+      $loc = $db->query("SELECT CityName FROM user WHERE UserId = '1'");
+      $location = $loc->fetch(\PDO::FETCH_ASSOC);
+      $dblocation = "".$location["CityName"];
+      if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))  
+      {
+          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' ORDER BY ProductId ASC");
+          foreach($resultArray as $eachRow)
+          {
             echo "<a href=\"#\" class=\"list-group-item\">
-            <div class=\"row\">
-              <div class=\"col-sm-3\">
-                <img src=\"images/".$temp1['Image1']."\" alt=\"\" width=\"100%\" height=\"100%\">
-              </div>
-              <div class=\"col-sm-9\">
-                <div>
-                  <h3 style=\"font-weight: bold;\">".$temp1['ProductName']."</h3>
+                  <div class=\"row\">
+                    <div class=\"col-sm-3\">
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\">
+                    </div>
+                    <div class=\"col-sm-9\">
+                      <div>
+                        <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
+                      </div>
+                      <div class=\"pull-right\" style=\"color: #27a34a\" >
+                        <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
+                      </div>
+                      <div class=\"\">
+                        ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                        post time
+                      </div><br>
+                      <div>
+                        <p style=\"color:#1f0935;font-weight:bold;\">
+                          ".$eachRow['ProductDetail']."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>";
+          }
+      }
+      if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
+      {
+          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' ORDER BY ProductId ASC");
+          foreach($resultArray as $eachRow)
+          {
+            echo "<a href=\"#\" class=\"list-group-item\">
+                  <div class=\"row\">
+                    <div class=\"col-sm-3\">
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\"> 
+                    </div>
+                    <div class=\"col-sm-9\">
+                      <div>
+                        <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
+                      </div>
+                      <div class=\"pull-right\" style=\"color: #27a34a\" >
+                        <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
+                      </div>
+                      <div class=\"\">
+                        ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                        post time
+                      </div><br>
+                      <div>
+                        <p style=\"color:#1f0935;font-weight:bold;\">
+                          ".$eachRow['ProductDetail']."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>";
+          }
+      }
+      if(isset($_GET['category']) && !isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
+      {
+        $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' ORDER BY ProductId ASC");
+        foreach($resultArray as $eachRow)
+        {
+          echo "<a href=\"#\" class=\"list-group-item\">
+                <div class=\"row\">
+                  <div class=\"col-sm-3\">
+                    <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\">
+                  </div>
+                  <div class=\"col-sm-9\">
+                    <div>
+                      <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
+                    </div>
+                    <div class=\"pull-right\" style=\"color: #27a34a\" >
+                      <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
+                    </div>
+                    <div class=\"\">
+                      ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                      post time
+                    </div><br>
+                    <div>
+                      <p style=\"color:#1f0935;font-weight:bold;\">
+                        ".$eachRow['ProductDetail']."
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div class=\"pull-right\" style=\"color: #27a34a\" >
-                  <h4><span class=\"glyphicon glyphicon-usd\">".$temp1['Price']."</span></h4>
-                </div>
-                <div class=\"\">
-                  ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
-                  post time
-                </div><br>
-                <div>
-                  <p style=\"color:#1f0935;font-weight:bold;\">
-                    ".$temp1['ProductDetail']."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>";
-            
-            $cntr++;
+              </a>";
         }
-          ?>
+      }
+      
+      
+      $cntr++;
+    
+      ?>
           <!-- //end item  -->
          
         </div>

@@ -83,7 +83,8 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Contact</a></li>
+				<li><a href="listings.php">Listings</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
 
             <!-- Right align -->
