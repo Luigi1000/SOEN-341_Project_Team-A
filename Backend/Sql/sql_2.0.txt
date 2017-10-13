@@ -1,0 +1,13 @@
+
+1.product_category Table
+
+Description : Table contains mapping of product category.
+
+CREATE TABLE product_category(
+ Id int(11) NOT NULL,
+  First_Category varchar(50) NOT NULL,
+  Second_Category varchar(50) NOT NULL,
+ Third_Category varchar(50) NOT NULL,  PRIMARY KEY (Id)
+);
+
+
