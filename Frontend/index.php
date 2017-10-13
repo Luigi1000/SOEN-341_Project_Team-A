@@ -13,6 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
+  <script src="myScript/myScript.js"></script>
   <!-- link your own css here -->
 </head>
 <body>
@@ -21,17 +22,19 @@
   <!-- content here -->
   <div class="container-fluid">
 		
-		<!-- toggleable menu keep the category remove detail-->
+		<!-- category nav bar add link with query string-->
+    <!-- add a link named All category -->
 	  <ul class="nav nav-tabs">
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> car</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> pet</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> book</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> phone</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> computer</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> cloth</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> job</a></li>
-		  <li><a data-toggle="tab" href="#"><span class="glyphicon glyphicon-hand-right"></span> furniture</a></li>
-	  </ul>
+      <li><a href="listings.php?category=All"><span class="glyphicon glyphicon-hand-right"></span> All category</a></li>
+      <li><a href="listings.php?category=Vehicle"><span class="glyphicon glyphicon-hand-right"></span> Vehicle</a></li>
+      <li><a href="listings.php?category=Pet"><span class="glyphicon glyphicon-hand-right"></span> Pet</a></li>
+      <li><a href="listings.php?category=Book"><span class="glyphicon glyphicon-hand-right"></span> Book</a></li>
+      <li><a href="listings.php?category=Phone"><span class="glyphicon glyphicon-hand-right"></span> Phone</a></li>
+      <li><a href="listings.php?category=Computer"><span class="glyphicon glyphicon-hand-right"></span> Computer</a></li>
+      <li><a href="listings.php?category=Instrument"><span class="glyphicon glyphicon-hand-right"></span> Instrument</a></li>
+      <li><a href="listings.php?category=Bike"><span class="glyphicon glyphicon-hand-right"></span> Bike</a></li>
+      <li><a href="listings.php?category=TV"><span class="glyphicon glyphicon-hand-right"></span> TV</a></li>
+    </ul>
    <!--  //menu list end -->
     </br></br></br>
    <!-- Images gallery  -->
@@ -213,79 +216,81 @@
           </a>
         </div>      
       </div>
+
 	<!-- categories with icon -->
-    <!-- first row --> 
+  <!-- CHANG ALL LINK , then the link along with category -->
+    <!-- first row -->
     <div class="container">
       <div class="row">
-        <!-- car icon --> 
+        <!-- car icon -->
         <div class="col-sm-3" style="text-align: center;">
-          <a href="#">
+          <a href="listings.php?category=Vehicle">
             <li class="fa fa-car"></li>
-            <p class="item-category">car</p>
+            <p class="item-category">Vehicle</p>
           </a>
         </div>
         <!-- pets -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php?category=Pet">
           <li class="fa fa-paw"></li>
-          <p class="item-category">pet</p>
+          <p class="item-category">Pet</p>
         </a>
       </div>
       <!-- book -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php?category=Book">
           <li class="fa fa-book"></li>
-          <p class="item-category">book</p>
+          <p class="item-category">Book</p>
         </a>
       </div>
       <!-- phone -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
+        <a href="listings.php?category=Phone">
           <li class="fa fa-mobile"></li>
-          <p class="item-category">phone</p>
+          <p class="item-category">Phone</p>
         </a>
       </div>
-        
-      </div> 
+
+      </div>
     </div><br><br>
-    <!--// first row --> 
+    <!--// first row -->
 
     <!-- second row -->
     <div class="container">
-      <!-- first row -->   
+
       <div class="row">
-        <!-- car icon --> 
+        <!-- computer icon -->
         <div class="col-sm-3" style="text-align: center;">
-          <a href="#">
+          <a href="listings.php?category=computer">
             <li class="fa fa-desktop"></li>
             <p class="item-category">computer</p>
           </a>
         </div>
-        <!-- pets -->
+        <!-- clothe icon -->
+        <div class="col-sm-3" style="text-align: center;">
+         <a href="listings.php?category=instrument">
+           <li class="fa fa-music"></li>
+           <p class="item-category">instrument</p>
+         </a>
+       </div>
+       <!-- bike icon 20171002 yang-->
+        <div class="col-sm-3" style="text-align: center;">
+         <a href="listings.php?category=bike">
+           <li class="fa fa-bicycle"></li>
+           <p class="item-category">bike</p>
+         </a>
+       </div>
+      <!-- TV 20171002 YANG -->
        <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
-          <li class="fa fa-shopping-cart"></li>
-          <p class="item-category">cloth</p>
+        <a href="listings.php?category=TV">
+          <li class="fa fa-television"></li>
+          <p class="item-category">TV</p>
         </a>
-      </div>
-      <!-- book -->
-       <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
-          <li class="fa fa-suitcase"></li>
-          <p class="item-category">job</p>
-        </a>
-      </div>
-      <!-- phone -->
-       <div class="col-sm-3" style="text-align: center;">
-        <a href="#">
-          <li class="fa fa-bed"></li>
-          <p class="item-category">furniture</p>
-        </a>
-      </div>        
+       </div>
+
       </div>
     </div><br>
     <!-- second row -->
-
 
 
 

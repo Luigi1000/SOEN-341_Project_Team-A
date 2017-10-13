@@ -1,0 +1,22 @@
+/*Category*/
+.leftsidebar > h4{
+  font-family: Arial;
+  font-weight: bold;
+
+}
+
+.leftsidebar >ul > li > h4{
+  font-family: Arial;
+  font-weight: bold;
+}
+
+/*sub category*/
+.leftsidebar > li{
+  font-weight: bold;
+}
+
+/*sub-sub category*/
+.leftsidebar > li >ul >li >a{
+  font-weight: bold;
+  color:#338c4b;
+}

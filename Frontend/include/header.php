@@ -1,3 +1,64 @@
+<?php session_start(); ?>  
+<?php include('include/dbConnector2.php'); ?>
+<?php                      // session validation      
+  if (isset($_POST['submit'])) 
+  {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $username = $_POST['username'];
+    $hashed_pwd = md5($password); // the password must be hashed before insert into DB
+   
+	$result = $db->query("SELECT * FROM `user` WHERE `Email` = '$email'");
+	$dbResult = $result->fetch(\PDO::FETCH_ASSOC);
+	$nameResult = $db->query("SELECT `UserName` FROM `user` WHERE `UserName` = '$username'");
+	$dbNameResult = $nameResult->fetch(\PDO::FETCH_ASSOC);
+	
+    if(strcasecmp($dbResult['Email'], $email)==0) // if find out the email already exist , refuse to add it into the db
+    {
+		$check_email_result = true;
+    }
+    else
+	{
+        $check_email_result = false;
+	}
+	  
+    if(strcasecmp($dbNameResult['UserName'], $username)==0) // if find out the userName already exist , refuse to add it into the db
+    {
+        $check_usrname_result = true;
+    }
+    else
+        $check_usrname_result = false;
+	
+    if($check_usrname_result == false && $check_email_result == false) // if Both userName and email do not exist in db then good to insert into db
+    {
+       $db->query("INSERT INTO user (UserId, UserName, Email, Password, Address, CityName, Province, Country) VALUES (NULL, '$username', '$email', '$hashed_pwd', NULL, NULL, NULL, NULL)");
+
+      $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
+      $_SESSION['email'] = $_POST['email'];        // also can be used in user info retrive for the MyProfile page
+      // if the user manages to register, he is logged in automatically
+      $_SESSION['is_login'] = true;
+    }
+    else if($check_email_result == true)
+    {
+      echo ("<script type='text/javascript'>alert('This email address has already been used for registration before, please choose another one!!')</script>");
+    }
+    else
+    {
+      echo ("<script type='text/javascript'>alert('This username has already been used for registration before, please choose another one!!')</script>");
+    }
+
+  }
+  // when the index page is opened for the first time, no users are logged in.
+  else
+  {
+      if(!isset($_SESSION['is_login']))
+      {
+          $_SESSION['is_login'] = false;
+      }
+      
+  }
+
+?>
   <div class="jumbotron">
     <div class="container text-center">
       <h1>Online Store</h1>
@@ -22,13 +83,16 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Products</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
 
             <!-- Right align -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
+                  <?php if($_SESSION['is_login']) {  ?>
+                  <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a><a href="./product.php" class="btn btn-warning btn-lg"> <span class="glyphicon glyphicon-pushpin"></span>   Post Ads</a></p>
+                  <?php  }  ?>
+                  <?php if(!$_SESSION['is_login']) { ?>
                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
                     <div class="modal fade" id="popUpWindow">
                       <div class="modal-dialog">
@@ -40,36 +104,50 @@
                           </div>
                           <!--    body  (form)-->
                           <div class="modal-body">
-                            <form role="form">
+                            <form role="form" action="./index.php" method="post" id="register">
                               <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email Address:">
+                                <label>Email</label>
+                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email Address: " required>
                               </div>
                               <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Password:">
+                                <label class="control-label">Password</label>
+                                <input type="password" name="password" id="pwd" class="form-control" placeholder="Password: " required>
+                                <div class="help-block">At least 8 characters with at least one Capital letter, at least one lower case letter and at least one number and at least one Special character:</div>
                               </div>
                               <div class="form-group">
-                                <input type="password" class="form-control" placeholder="Re-type Password:">
+                                <input type="password" name="repassword" id="repwd" class="form-control" placeholder="Re-type Password: " required">
                               </div>
                               <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nickname (optional):">
+                                <label>Username</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username: " required>
                               </div>
                             </form>
                           </div>
                           <!--    button  (submit)-->
                           <div class="modal-footer">
-                            <button class="btn btn-success btn-block">Register</button>
+                            <button class="btn btn-success btn-block" name="submit" onclick = "return registerValidation()"  form="register">Register</button>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <?php } ?>
                 </li>
                
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <!-- when the user is logged in, Login button should be invisible -->
+                <?php if(!$_SESSION['is_login']) {  ?>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <?php  }  ?>
+
+                <!-- Logout button should stay invisible until a user is logged in -->
+                <?php if($_SESSION['is_login']) {  ?>
+                    <li><a href="./logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <?php  }  ?>
             </ul>
         </div>
     </div>
   </nav>
+
+
   <!-- search bar -->
   <div class="well text-center">
     <form class="form-inline" action="#" method="post">

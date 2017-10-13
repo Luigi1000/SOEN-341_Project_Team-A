@@ -1,7 +1,7 @@
   <?php
       $servername = 'localhost';
-      $username = '';
-      $dbname = '';
+      $username = 'root';
+      $dbname = 'soen341';
       $password = '';
 
       // make connection   (connecting to where + user name + password + DBname)
