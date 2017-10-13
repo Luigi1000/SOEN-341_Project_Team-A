@@ -10,19 +10,25 @@ ORDER BY field1, [field2...] [ASC [DESC]]
 
 
 
+Example
+
+
+SELECT username, user_email
+ORDER BY username [ASC]
+
 
 
 Explanation
 
 
 
-You can sort the returned result on any field, if that field is being listed out.
+->You can sort the returned result on any field, if that field is being listed out.
 
-You can sort the result on more than one field.
+->You can sort the result on more than one field.
 
-You can use the keyword ASC or DESC to get result in ascending or descending order. By default, it's the ascending order.
+->You can use the keyword ASC or DESC to get result in ascending or descending order. By default, it's the ascending order.
 
-You can use the WHERE...LIKE clause in the usual way to put a condition.
+->You can use the WHERE...LIKE clause in the usual way to put a condition.
 
 
 

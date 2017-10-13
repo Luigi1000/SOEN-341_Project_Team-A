@@ -3,16 +3,13 @@
 <html lang="en">
 <head>
   <title>Listings</title>
-
   <?php include('include/dbConnector2.php'); ?>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   <!-- link your own css here -->
   <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
   <link rel="stylesheet" type="text/css" href="StyleSheet/listings.css">
@@ -53,7 +50,6 @@
                        'Bike'=>array(
                               'Bike in road'=>array('Felt VR30','Felt Z6 Disc','Devinci Leo SL'),
                               'Bike in mountain'=>array('Devinci Troy','Rock Mountain Pipeline','Giant Iguana')),
-
                        'Instrument'=>array(
                                     'Guitars'=>array('Electric Guitar','Acoustic Guitar','Base Guitar'),
                                     'Piano'=>array('Classic Piano','Electric Piano','Mute Piano'),
@@ -64,9 +60,7 @@
                         'TV'=>array(
                               'LED'=>array('SONY','SHARP','SAMSUNG'),
                               '4K UHD'=>array('SONY','SHARP','SAMSUNG')),
-
                       );
-
        ?>
      <div class="col-sm-3 sidenav">
           <!-- dynamic category -->
@@ -87,7 +81,6 @@
               <?php } ?>
             <?php } ?>
           <?php } ?>
-
           <!-- display all category if user want to see all category -->
           <?php if ($Category=='All') { ?>
                 <ul class="list-group">
@@ -102,8 +95,6 @@
                 </ul>
           <?php } ?>
         </div>
-
-
         <!-- search base on location  not implement  yet   -->
         <div class="well text-center" > <!-- Distance range slider     -->
           <!-- <form class="" action="listings.php?category=car" method=""> -->
@@ -124,7 +115,6 @@
       
       </div>
       <!-- //side bar end -->
-
       <!-- list part -->
       <div class="col-sm-9 text-left">
         <div class="list-group">
@@ -240,7 +230,6 @@
         </div>
       </div>
     </div>
-
   </div>
   <br><br>
   <!-- fake pages -->
@@ -264,8 +253,6 @@
     <li></li>
   </ul>
   </div>
-
   <?php include('include/footer.php') ;?>
-
 </body>
 </html>

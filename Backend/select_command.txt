@@ -9,22 +9,26 @@ FROM table_name1, table_name2...
 
 
 
-Example
-
+Example 1
 
 SELECT username, userpassword
 FROM (tablename) i.e user_data
 WHERE username= ''an''
 
+Example 2
+
+SELECT *
+FROM user_table
+
 Explanation
 
-You can use one or more tables separated by comma to include various conditions using a WHERE clause, but the WHERE clause is an optional part of the SELECT command.
+->You can use one or more tables separated by comma to include various conditions using a WHERE clause, but the WHERE clause is an optional part of the SELECT command.
 
-You can fetch one or more fields in a single SELECT command.
+->You can fetch one or more fields in a single SELECT command.
 
-You can specify star (*) in place of fields. In this case, SELECT will return all the fields.
+->You can specify star (*) in place of fields. In this case, SELECT will return all the fields.
 
-You can specify any condition using the WHERE clause. It is the place where you specify the conditions.
+->You can specify any condition using the WHERE clause. It is the place where you specify the conditions.
 
 
 
