@@ -13,7 +13,7 @@
 
     <div class="container"> 
       <div class="row">
-        <div class="col-md-3"><a href="#">About</a></div>
+        <div class="col-md-3"><a href="about.php">About</a></div>
         <div class="col-md-3"><a href="#">Online Store Central</a></div>
         <div class="col-md-3"><a href="#">Terms of Use</a></div>
         <div class="col-md-3"><a href="#">Help</a></div>
