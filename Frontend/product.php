@@ -15,10 +15,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- link your own css here -->
     <link rel="stylesheet" type="text/css" href="StyleSheet/index.css">
+
+<script type="text/javascript" src="category_ajax.js"></script>
   </head>
   <body>
     <?php include('include/header.php'); ?>
-    <!-- Add Product -->
+
+
+    
     <div class="container">
       <form action="include/addItemToDB.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
@@ -38,26 +42,32 @@
           </label>
           <input type="text" class="form-control" placeholder="enter price" name="price">
         </div>
+
         <div class="form-group">
-          <label for="productCategory">Product Category:*
-          </label>
-          <select name="productCategory">
-            <option selected="selected">Choose one
-            </option>
-            <?php
-// A sample product array
-$products = array("Car", "TV", "Fridge", "Bike","Others");
-// Iterating through the product array
-foreach($products as $item){
-?>
-            <option value="<?php echo strtolower($item); ?>">
-              <?php echo $item; ?>
-            </option>
-            <?php
-}
-?>
-          </select>
+         <label>Product Category level1 :*</label>
+		<select name="productCategory1" id="productCategory1">
+			<option value=''>------- Select --------</option>
+			<?php 
+			$sql = "select * from `category_level1`";
+			$res = mysqli_query($conn, $sql);
+			if(mysqli_num_rows($res) > 0) {
+				while($row = mysqli_fetch_object($res)) {
+					echo "<option value='".$row->Id."'>".$row->First_Category."</option>";
+				}
+			}
+			?>
+		</select>
+    </div>
+	 <div class="form-group">
+    <label>Product Categroy Level 2:*</label>
+    <select name="product_category2" id="product_category2"><option>------- Select --------</option></select>
         </div>
+		 <div class="form-group">
+    <label>Product Categroy Level 3:*</label>
+    <select name="product_category3" id="product_category3"><option>------- Select --------</option></select>
+        </div>
+
+
         <div class="form-group">
           <label for="image1">Image 1:*
           </label>
