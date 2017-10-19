@@ -68,8 +68,7 @@ foreach($products as $item){
           </label>
           <input type="file" name="image2" id="fileToUpload2">
         </div>
-        <button type="submit" class="btn btn-success">Submit
-        </button>
+        <button type="submit" class="btn btn-success">Submit</button>
       </form>
     </div>
     </div>
