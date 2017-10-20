@@ -3,3 +3,10 @@ To rename a table, use the RENAME option of the ALTER TABLE statement.
 Try out the following example to rename testalter_tbl to alter_tbl.
 
 mysql> ALTER TABLE name_of_table RENAME TO new_name_of_table;
+
+
+EXAMPLE
+
+ALTER TABLE product_category TO product_cat
+
+now the new table name is product_cat instead of product_category.
