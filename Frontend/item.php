@@ -25,16 +25,18 @@
     <div class="row">
 
       <?php
-
+	  echo "Prev: ".$_SESSION['previous_page']." id: ".$_SESSION['ad'];		
+	  if(strcmp($_SESSION['previous_page'],"addItemToDBphp")==0){
+	  $id = $_SESSION['ad'];
+	  }
+	  else{
       $id = $_GET['ad'];
+	  }
 
       $result = $db->query("SELECT * FROM product WHERE ProductId='$id'");
       foreach ($result as $eachRow) {
-         echo "<div class=\"container\"> <h2> ".$eachRow['ProductName']." </h2> 
-        <p class=\"lead\"> $ ".$eachRow['Price']." </p>
-        <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" width=\"300\" height=\"300\">
-        <p class=\"text-muted\">".$eachRow['ProductDetail']." </p>
-        <button type=\"button\" class=\"btn btn-success\"> Contact </button> </div>";
+         echo "<div class=\"container\"> <h2> ".$eachRow['ProductName']." </h2>   <p class=\"lead\"> $ ".$eachRow['Price']." </p>  <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" width=\"300\" height=\"300\">  <p class=\"text-muted\">".$eachRow['ProductDetail']." </p> <button type=\"button\" class=\"btn btn-success\"> Contact </button> </div>"; 
+
       }
 
       ?>
