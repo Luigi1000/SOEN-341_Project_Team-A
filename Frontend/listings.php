@@ -68,7 +68,11 @@
           <!-- content in sidevar will change base on which category user click in index page-->
           <?php foreach ($items as $multiArr => $sub) { ?>
             <?php if($Category==$multiArr){ ?>
-            <h4><a href="listings.php?category=<?php echo $multiArr?>"><?php echo $multiArr?></a></h4>
+            <h4>
+              <a href="listings.php?category=<?php echo $multiArr?>"><?php echo $multiArr?></a>
+              &nbsp;&nbsp;
+              <a style="font-size: small;" href="listings.php?category=All"><span class="glyphicon glyphicon-chevron-up" style="font-size: small;"></span></a>
+            </h4>
               <?php foreach ($sub as $key => $value) {?>
                 <li class="list-group-item">
                   <a href="listings.php?category=<?php echo str_replace (" ", "", $multiArr)?>&subcategory=<?php echo str_replace (" ", "", $key)?>" style="color:black"><?php echo $key?></a>
