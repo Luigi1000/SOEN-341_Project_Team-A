@@ -10,5 +10,7 @@ $productDetail=mysqli_real_escape_string($conn,$_POST['text']);
 $sql="INSERT INTO product(productName,productDetail,productCategory,price,image1,image2) values('$productName','$productDetail','$productCategory','$price','$image1','$image2')";
 mysqli_query($conn,$sql);
 
+header("Location:../item.php") // redirect form to item listing
+
 exit();
 ?>
