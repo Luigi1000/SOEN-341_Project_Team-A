@@ -32,7 +32,7 @@ if(isset($_POST["submit"])){
 }
     
   
-$sql="INSERT INTO product(productName,productDetail,productCategory1,productCategory2,productCategory3,price,image1,image2,Email) values('$productName','$productDetail','$productCategory1Name','$productCategory2Name','$productCategory3Name','$price','$imgContent1','$imgContent2','neeluchawla@me.com')";
+$sql="INSERT INTO product(productName,productDetail,productCategory1,productCategory2,productCategory3,price,image1,image2,UserId) values('$productName','$productDetail','$productCategory1Name','$productCategory2Name','$productCategory3Name','$price','$imgContent1','$imgContent2','10')";
 mysqli_query($conn,$sql);
 
 exit();
