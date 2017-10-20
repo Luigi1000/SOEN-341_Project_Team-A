@@ -135,7 +135,7 @@
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                   <div class=\"row\">
                     <div class=\"col-sm-3\">
-                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\">
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
                     </div>
                     <div class=\"col-sm-9\">
                       <div>
@@ -166,7 +166,7 @@
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                   <div class=\"row\">
                     <div class=\"col-sm-3\">
-                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\"> 
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\"> 
                     </div>
                     <div class=\"col-sm-9\">
                       <div>
@@ -197,7 +197,7 @@
           echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                 <div class=\"row\">
                   <div class=\"col-sm-3\">
-                    <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\">
+                    <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
                   </div>
                   <div class=\"col-sm-9\">
                     <div>
@@ -229,7 +229,7 @@
           echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                 <div class=\"row\">
                   <div class=\"col-sm-3\">
-                    <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"300\" height=\"300\">
+                    <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
                   </div>
                   <div class=\"col-sm-9\">
                     <div>
