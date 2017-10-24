@@ -150,51 +150,54 @@
 
   <!-- search bar -->
   <div class="well text-center">
-    <form class="form-inline" action="#" method="post">
+    <form class="form-inline" action="listings.php" method="post">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for anything..." name="item" size="65">
       </div>
       <div class="form-group" >
          <select class="form-control" name="Ads">
           <option value="">All Ads</option>
-          <option value="">buy and sell</option>
-          <option value="">pets</option>
-          <option value="">cars & vehicles</option>
-          <option value="">jobs</option>
-          <option value="">services</option>
+          <option value="Vehicle">Vehicle</option>
+          <option value="Pet">Pet</option>
+          <option value="Book">Book</option>
+          <option value="Phone">Phone</option>
+          <option value="Computer">Computer</option>
+          <option value="Instrument">Instrument</option>
+          <option value="Bike">Bike</option>
+          <option value="TV">TV</option>
          </select>
       </div>
       <div class="input-group">
         <!-- select dropdown menu -->
-          <select class="selectpicker form-control">
+          <select class="selectpicker form-control" name="city">
             <optgroup>
               <option value="">Select location...</option>
             </optgroup>
             <optgroup label="Alberta">
-              <option value="">Banff/Canmore</option>
-              <option value="">Edmonton Area</option>
-              <option value="">Fort McMurray</option>
+              <option value="Banff/Canmore">Banff/Canmore</option>
+              <option value="Edmonton Area">Edmonton Area</option>
+              <option value="Fort McMurray">Fort McMurray</option>
             </optgroup>
             <optgroup label="British Columbia">
-              <option value="">Cariboo Area</option>
-              <option value="">Comox Valley Area</option>
-              <option value="">Cowicha Valley</option>
+              <option value="Cariboo Area">Cariboo Area</option>
+              <option value="Comox Valley Area">Comox Valley Area</option>
+              <option value="Cowicha Valley">Cowicha Valley</option>
             </optgroup>
             <optgroup label="Ontario">
-              <option value="">Muskoka</option>
-              <option value="">North Bay</option>
-              <option value="">Toronto</option>
+              <option value="Muskoka">Muskoka</option>
+              <option value="North Bay">North Bay</option>
+              <option value="Toronto">Toronto</option>
             </optgroup>
             <optgroup label="Quebec">
-              <option value="">Abitibi-Temiscamingue</option>
-              <option value="">Granby</option>
-              <option value="">Quebec City</option>
-              <option value="">Sherbrooke</option>
-              <option value="">Montreal</option>
+              <option value="Abitibi-Temiscamingue">Abitibi-Temiscamingue</option>
+              <option value="Granby">Granby</option>
+              <option value="Quebec City">Quebec City</option>
+              <option value="Sherbrooke">Sherbrooke</option>
+              <option value="Montreal">Montreal</option>
             </optgroup>
           </select>
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-default" type="submit" name="search">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
