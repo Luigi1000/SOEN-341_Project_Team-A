@@ -4,9 +4,9 @@
 	
 	class AddTest extends TestCase 
 	{
-		/**
-		 * @dataProvider mathValues
-		 */
+		
+		@dataProvider mathValues
+		 
 		public function testAdd($x, $y, $sum) 
 		{
 			$this->assertEquals($sum, $x+$y);
