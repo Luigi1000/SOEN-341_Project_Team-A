@@ -1,34 +1,34 @@
-<?php session_start(); ?>  
+<?php session_start(); ?>
 <?php include('include/dbConnector2.php'); ?>
-<?php                      // session validation      
-  if (isset($_POST['submit'])) 
+<?php                      // session validation
+  if (isset($_POST['submit']))
   {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $username = $_POST['username'];
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
-   
-	$result = $db->query("SELECT * FROM `user` WHERE `Email` = '$email'");
-	$dbResult = $result->fetch(\PDO::FETCH_ASSOC);
-	$nameResult = $db->query("SELECT `UserName` FROM `user` WHERE `UserName` = '$username'");
-	$dbNameResult = $nameResult->fetch(\PDO::FETCH_ASSOC);
-	
+
+  $result = $db->query("SELECT * FROM `user` WHERE `Email` = '$email'");
+  $dbResult = $result->fetch(\PDO::FETCH_ASSOC);
+  $nameResult = $db->query("SELECT `UserName` FROM `user` WHERE `UserName` = '$username'");
+  $dbNameResult = $nameResult->fetch(\PDO::FETCH_ASSOC);
+
     if(strcasecmp($dbResult['Email'], $email)==0) // if find out the email already exist , refuse to add it into the db
     {
-		$check_email_result = true;
+    $check_email_result = true;
     }
     else
-	{
+  {
         $check_email_result = false;
-	}
-	  
+  }
+
     if(strcasecmp($dbNameResult['UserName'], $username)==0) // if find out the userName already exist , refuse to add it into the db
     {
         $check_usrname_result = true;
     }
     else
         $check_usrname_result = false;
-	
+
     if($check_usrname_result == false && $check_email_result == false) // if Both userName and email do not exist in db then good to insert into db
     {
        $db->query("INSERT INTO user (UserId, UserName, Email, Password, Address, CityName, Province, Country) VALUES (NULL, '$username', '$email', '$hashed_pwd', NULL, NULL, NULL, NULL)");
@@ -55,14 +55,14 @@
       {
           $_SESSION['is_login'] = false;
       }
-      
+
   }
 
 ?>
-  <div class="jumbotron">
+  <div class="jumbotron jumbotron-custom">
     <div class="container text-center">
       <h1>Online Store</h1>
-      <a href="index.php"><img src="images/shop.png"></a>     
+      <a href="index.php"><img src="images/shop.png" height="100"></a>
       <p>Coming soon...</p>
     </div>
   </div>
@@ -72,9 +72,9 @@
         <!-- Logo -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                <span class="icon-bar"></span> 
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
             <a href="index.php" class="navbar-brand">.SHOP</a>
         </div>
@@ -83,8 +83,7 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-				<li><a href="listings.php">Listings</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
 
             <!-- Right align -->
@@ -133,7 +132,7 @@
                     </div>
                     <?php } ?>
                 </li>
-               
+
                 <!-- when the user is logged in, Login button should be invisible -->
                 <?php if(!$_SESSION['is_login']) {  ?>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -164,7 +163,7 @@
           <option value="">jobs</option>
           <option value="">services</option>
          </select>
-      </div>  
+      </div>
       <div class="input-group">
         <!-- select dropdown menu -->
           <select class="selectpicker form-control">
@@ -201,5 +200,5 @@
         </div>
       </div>
     </form>
-    
+
   </div>

@@ -7,3 +7,11 @@ SELECT DISTINCT Syntax
 
 SELECT DISTINCT column1, column2, ...
 FROM table_name;
+
+
+Example:
+
+SELECT DISTINCT product_id
+FROM product-table
+
+it will retrieve the all different values of product_id

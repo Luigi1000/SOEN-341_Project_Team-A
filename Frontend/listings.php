@@ -23,7 +23,7 @@
       <!-- dynamic change side bar -->
       <!-- all item categorys EXAMPLE two level hierarchy -->
       <?php
-      
+        $_SESSION['previous_page'] = "listingsphp";
         $Category = (isset($_GET['category'])) ? $_GET['category'] : "All" ;
         $Subcategory = (isset($_GET['subcategory'])) ? $_GET['subcategory'] : " ";
         $SSubcategory = (isset($_GET['ssubcategory'])) ? $_GET['ssubcategory'] : " ";
@@ -156,6 +156,8 @@
                     </div>
                   </div>
                 </a>";
+
+         
           }
       }
       if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
@@ -226,6 +228,7 @@
         $resultArray = $db->query("SELECT * FROM product ORDER BY ProductId ASC");
         foreach($resultArray as $eachRow)
         {
+ 
           echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                 <div class=\"row\">
                   <div class=\"col-sm-3\">
@@ -250,9 +253,8 @@
                   </div>
                 </div>
               </a>";
-        }
       }
-      
+    }
       
       $cntr++;
     
