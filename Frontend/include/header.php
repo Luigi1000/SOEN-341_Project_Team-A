@@ -171,7 +171,7 @@
       <div class="input-group">
         <!-- select dropdown menu -->
           <select class="selectpicker form-control" name="city" required>
-              <option value="" selected disabled>Select location...</option>          
+              <option value="" selected disabled>Select location...</option>
             <!-- <optgroup label="Alberta">
               <option value="Banff/Canmore">Banff/Canmore</option>
               <option value="Edmonton Area">Edmonton Area</option>
@@ -190,6 +190,7 @@
             <optgroup label="Quebec">
               <!-- <option value="Abitibi-Temiscamingue">Abitibi-Temiscamingue</option>
               <option value="Granby">Granby</option> -->
+              <option value="Quebec">All of Quebec</option>
               <option value="QuebecCity">Quebec City</option>
               <option value="Laval">Laval</option>
               <option value="Montreal">Montreal</option>
