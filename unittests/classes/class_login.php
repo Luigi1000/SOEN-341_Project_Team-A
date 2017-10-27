@@ -7,7 +7,7 @@
 		
 		public function login($inputName, $inputPwd) {
 			
-			$servername = 'localhost';
+			$servername = '108.63.132.18';
 			$username = "root";
 			$dbname = 'soen341';
 			$password = '';
