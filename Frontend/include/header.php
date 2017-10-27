@@ -83,7 +83,8 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="listings.php">Listings</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
 
             <!-- Right align -->
@@ -156,7 +157,7 @@
       </div>
       <div class="form-group" >
          <select class="form-control" name="Ads">
-          <option value="">All Ads</option>
+          <option value="All">All Ads</option>
           <option value="Vehicle">Vehicle</option>
           <option value="Pet">Pet</option>
           <option value="Book">Book</option>
@@ -169,11 +170,9 @@
       </div>
       <div class="input-group">
         <!-- select dropdown menu -->
-          <select class="selectpicker form-control" name="city">
-            <optgroup>
-              <option value="">Select location...</option>
-            </optgroup>
-            <optgroup label="Alberta">
+          <select class="selectpicker form-control" name="city" required>
+              <option value="" selected disabled>Select location...</option>
+            <!-- <optgroup label="Alberta">
               <option value="Banff/Canmore">Banff/Canmore</option>
               <option value="Edmonton Area">Edmonton Area</option>
               <option value="Fort McMurray">Fort McMurray</option>
@@ -187,12 +186,13 @@
               <option value="Muskoka">Muskoka</option>
               <option value="North Bay">North Bay</option>
               <option value="Toronto">Toronto</option>
-            </optgroup>
+            </optgroup> -->
             <optgroup label="Quebec">
-              <option value="Abitibi-Temiscamingue">Abitibi-Temiscamingue</option>
-              <option value="Granby">Granby</option>
-              <option value="Quebec City">Quebec City</option>
-              <option value="Sherbrooke">Sherbrooke</option>
+              <!-- <option value="Abitibi-Temiscamingue">Abitibi-Temiscamingue</option>
+              <option value="Granby">Granby</option> -->
+              <option value="Quebec">All of Quebec</option>
+              <option value="QuebecCity">Quebec City</option>
+              <option value="Laval">Laval</option>
               <option value="Montreal">Montreal</option>
             </optgroup>
           </select>
