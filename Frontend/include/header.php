@@ -157,7 +157,7 @@
       </div>
       <div class="form-group" >
          <select class="form-control" name="Ads">
-          <option value="">All Ads</option>
+          <option value="All">All Ads</option>
           <option value="Vehicle">Vehicle</option>
           <option value="Pet">Pet</option>
           <option value="Book">Book</option>
@@ -170,10 +170,8 @@
       </div>
       <div class="input-group">
         <!-- select dropdown menu -->
-          <select class="selectpicker form-control" name="city">
-            <optgroup>
-              <option value="" selected disabled>Select location...</option>
-            </optgroup>
+          <select class="selectpicker form-control" name="city" required>
+              <option value="" selected disabled>Select location...</option>          
             <!-- <optgroup label="Alberta">
               <option value="Banff/Canmore">Banff/Canmore</option>
               <option value="Edmonton Area">Edmonton Area</option>
