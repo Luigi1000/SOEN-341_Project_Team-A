@@ -60,6 +60,7 @@
                         'TV'=>array(
                               'LED'=>array('SONY','SHARP','SAMSUNG'),
                               '4K UHD'=>array('SONY','SHARP','SAMSUNG')),
+
                       );
        ?>
      <div class="col-sm-3 sidenav">
@@ -92,6 +93,7 @@
                   <li class="list-group-item"><h4><a href="listings.php?category=Instrument">Instrument</a></h4></li>
                   <li class="list-group-item"><h4><a href="listings.php?category=Bike">Bike</a></h4></li>
                   <li class="list-group-item"><h4><a href="listings.php?category=TV">TV</a></h4></li>
+                  <li class="list-group-item"><h4><a href="listings.php?category=others">Others</a></h4></li>
                 </ul>
           <?php } ?>
         </div>
@@ -112,7 +114,7 @@
               <p>Budget: <span id="range2">100 CAD</span></p>
           </div>
         </div>
-      
+
       </div>
       <!-- //side bar end -->
       <!-- list part -->
@@ -126,6 +128,10 @@
       $item = $_POST['item'];
       $Ads = $_POST['Ads'];
       $city = $_POST['city'];
+      if ($Ads=='All') {
+          $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE CityName = '$city' AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
+      }
+      else
       $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory ='$Ads' AND CityName = '$city' AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
 
       foreach($resultArray as $eachRow)
@@ -155,23 +161,23 @@
                 </div>
               </a>";
 
-       
+
         }
     }
-    
+
 
   ?>
-	<?php
+  <?php
 
       $stmt = $db->query("SELECT ProductId FROM product");
       $rowcount = $stmt->rowCount();
       $cntr=1;
-      $loc = $db->query("SELECT CityName FROM user WHERE UserId = '1'");
-      $location = $loc->fetch(\PDO::FETCH_ASSOC);
-      $dblocation = "".$location["CityName"];
-      if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))  
+      // $loc = $db->query("SELECT CityName FROM user WHERE UserId = '1'");
+      // $location = $loc->fetch(\PDO::FETCH_ASSOC);
+      // $dblocation = "".$location["CityName"];
+      if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))
       {
-          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -187,7 +193,7 @@
                         <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
                       </div>
                       <div class=\"\">
-                        ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
                         post time
                       </div><br>
                       <div>
@@ -199,18 +205,18 @@
                   </div>
                 </a>";
 
-         
+
           }
       }
       if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
       {
-          $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                   <div class=\"row\">
                     <div class=\"col-sm-3\">
-                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\"> 
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
                     </div>
                     <div class=\"col-sm-9\">
                       <div>
@@ -220,7 +226,7 @@
                         <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
                       </div>
                       <div class=\"\">
-                        ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
                         post time
                       </div><br>
                       <div>
@@ -235,7 +241,7 @@
       }
       if(isset($_GET['category']) && !isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
       {
-        $resultArray = $db->query("SELECT * FROM product WHERE ProductCategory = '$Category' ORDER BY ProductId ASC");
+        $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' ORDER BY ProductId ASC");
         foreach($resultArray as $eachRow)
         {
           echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -251,7 +257,7 @@
                       <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
                     </div>
                     <div class=\"\">
-                      ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                      ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
                       post time
                     </div><br>
                     <div>
@@ -267,10 +273,10 @@
 
       if($Category=="All" && !isset($_POST['search']))
       {
-        $resultArray = $db->query("SELECT * FROM product ORDER BY ProductId ASC");
+        $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId ORDER BY ProductId ASC");
         foreach($resultArray as $eachRow)
         {
- 
+
           echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                 <div class=\"row\">
                   <div class=\"col-sm-3\">
@@ -284,7 +290,7 @@
                       <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
                     </div>
                     <div class=\"\">
-                      ".$dblocation." <span class=\"glyphicon glyphicon-time\"></span>
+                      ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
                       post time
                     </div><br>
                     <div>
@@ -297,12 +303,12 @@
               </a>";
       }
     }
-      
+
       $cntr++;
-    
+
       ?>
           <!-- //end item  -->
-         
+
         </div>
       </div>
     </div>
