@@ -6,7 +6,8 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
 
-script: phpunit
+script: phpunit AddTest
+script: phpunit LoginTest
 
 matrix:
   allow_failures:
