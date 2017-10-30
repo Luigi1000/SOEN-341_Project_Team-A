@@ -11,7 +11,7 @@
 			$this->assertEquals($sum, $x+$y);
 		}
 		
-		public function mathValues{
+		public function mathValues(){
 			return[
 				[0,0,0],
 				[1,1,2],
