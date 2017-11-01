@@ -137,50 +137,63 @@
           <!-- first item -->
 
     <?php
-    if(isset($_POST['search']))
-    {
-      $item = $_POST['item'];
-      $Ads = $_POST['Ads'];
-      $city = $_POST['city'];
-      if ($Ads=='All') {
-          $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
-      }
-      else
-      $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory ='$Ads' AND (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
+    
+      // include('../unittests/classes/class_searchbar.php');
+      if(isset($_POST['search']))
+      {
+        $item = $_POST['item'];
+        $Ads = $_POST['Ads'];
+        $city = $_POST['city'];
 
-      foreach($resultArray as $eachRow)
-        {
-          echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
-                <div class=\"row\">
-                  <div class=\"col-sm-3\">
-                    <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
-                  </div>
-                  <div class=\"col-sm-9\">
-                    <div>
-                      <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
-                    </div>
-                    <div class=\"pull-right\" style=\"color: #27a34a\" >
-                      <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
-                    </div>
-                    <div class=\"\">
-                      ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
-                      post time
-                    </div><br>
-                    <div>
-                      <p style=\"color:#1f0935;font-weight:bold;\">
-                        ".$eachRow['ProductDetail']."
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </a>";
-
-
+        /**
+         * code below replace or not
+         */
+        if ($Ads=='All') {
+            $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
         }
-    }
+        else
+        $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory ='$Ads' AND (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
+
+          /**
+           * replace codes above with the following codes
+           */
+          // $searching = new SearchBar;
+          // $resultArray = $searching->search($item,$Ads,$city);
 
 
-  ?>
+        foreach($resultArray as $eachRow)
+          {
+            echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
+                  <div class=\"row\">
+                    <div class=\"col-sm-3\">
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
+                    </div>
+                    <div class=\"col-sm-9\">
+                      <div>
+                        <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
+                      </div>
+                      <div class=\"pull-right\" style=\"color: #27a34a\" >
+                        <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
+                      </div>
+                      <div class=\"\">
+                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
+                        post time
+                      </div><br>
+                      <div>
+                        <p style=\"color:#1f0935;font-weight:bold;\">
+                          ".$eachRow['ProductDetail']."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>";
+
+
+          }
+        }
+
+
+    ?>
   <?php
 
       $stmt = $db->query("SELECT ProductId FROM product");
