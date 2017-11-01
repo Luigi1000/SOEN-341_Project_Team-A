@@ -146,7 +146,7 @@
           $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
       }
       else
-      $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory ='$Ads' AND (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
+      $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
 
       foreach($resultArray as $eachRow)
         {
