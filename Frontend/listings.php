@@ -196,7 +196,7 @@
         $budget = $_POST['myBudget'];
         if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))
         {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' AND Price < $budget ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' AND Price < $budget ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -229,7 +229,7 @@
         }
         if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
         {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND Price < $budget ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND ProductCategory2= '$Subcategory' AND Price < $budget ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -260,7 +260,7 @@
         }
         if(isset($_GET['category']) && !isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
         {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND Price < $budget ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND Price < $budget ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -327,7 +327,7 @@
       {
         if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))
         {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -360,7 +360,7 @@
         }
         if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
         {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' AND ProductCategory2= '$Subcategory' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND ProductCategory2= '$Subcategory' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
@@ -391,7 +391,7 @@
         }
         if(isset($_GET['category']) && !isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
         {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory = '$Category' ORDER BY ProductId ASC");
+          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' ORDER BY ProductId ASC");
           foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
