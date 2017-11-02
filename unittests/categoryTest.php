@@ -15,7 +15,7 @@
 			$clickCategory = new Category;
 			$click = $clickCategory->chooseCategory("Pet");
 			foreach($click as $eachRow){
-          		$this->assertEquals($expectcategory, $eachRow['ProductCategory']);	     
+          		$this->assertEquals($expectCategory, $eachRow['ProductCategory1']);	     
           	}
 			
 		}
