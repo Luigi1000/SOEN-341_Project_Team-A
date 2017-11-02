@@ -36,7 +36,7 @@
       $result = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductId='$id'");
       foreach ($result as $eachRow) {
 
-         echo "<div class=\"container\"> <h2> ".$eachRow['ProductName']." <button type=\"button\" class=\"btn btn-default btn-sm\"> <span class=\"glyphicon glyphicon-user\"></span> ".$eachRow['UserName']." </button></h2>   <p class=\"lead\"> $ ".$eachRow['Price']." </p>  <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" width=\"300\" height=\"300\"> <p class=\"text-muted\">".$eachRow['ProductDetail']."</p>  <button type=\"button\" class=\"btn btn-success\"> Contact </button> </div>"; 
+         echo "<div class=\"container\"> <h2> ".$eachRow['ProductName']." <button type=\"button\" class=\"btn btn-default btn-sm\"> <span class=\"glyphicon glyphicon-user\"></span> ".$eachRow['UserName']." </button>  <img src=\"data:image/png;base64,".base64_encode($eachRow['image'])."\" width=\"30\" height=\"30\">  </h2>   <p class=\"lead\"> $ ".$eachRow['Price']." </p>  <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" width=\"300\" height=\"300\"> <p class=\"text-muted\">".$eachRow['ProductDetail']."</p>  <button type=\"button\" class=\"btn btn-success\"> Contact </button> </div>"; 
 
       }
 
