@@ -91,6 +91,14 @@
             </div>
             <!-- not add validation yet -->
             <div class="form-group">
+              <label for="adress">City:</label>
+              <input type="text" class="form-control" placeholder="city" name="city">
+            </div>
+            <div class="form-group">
+              <label for="adress">Province:</label>
+              <input type="text" class="form-control" placeholder="province" name="province">
+            </div>
+            <div class="form-group">
               <label for="phone">Phone Number:</label>
               <input type="text" class="form-control" placeholder="phone number" name="phone">
             </div>
