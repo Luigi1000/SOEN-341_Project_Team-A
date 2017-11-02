@@ -6,11 +6,14 @@ before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
 
-script: 
- - phpunit UnitTest unittests/AddTest.php
+script:
+ # - phpunit UnitTest unittests/AddTest.php
  - phpunit UnitTest unittests/LoginTest.php
+
+ - phpunit UnitTest unittests/SearchbarTest.php
  - phpunit UnitTest unittests/subcategoryTest.php
  - phpunit UnitTest unittests/categoryTest.php
+
 
 matrix:
   allow_failures:
