@@ -89,7 +89,6 @@
               <label for="adress">Address:</label>
               <input type="text" class="form-control" placeholder="address" name="address">
             </div>
-            <!-- not add validation yet -->
             <div class="form-group">
               <label for="adress">City:</label>
               <input type="text" class="form-control" placeholder="city" name="city">
