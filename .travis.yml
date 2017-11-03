@@ -6,7 +6,6 @@ services:
   - mysql  
   
 before_install:
-  - mysql -u 'root'
   - mysql -e 'CREATE DATABASE IF NOT EXISTS `soen341`;'
   - mysql -e 'USE `soen341`;'
   - mysql -e 'CREATE TABLE IF NOT EXISTS user (UserId int(11) NOT NULL AUTO_INCREMENT, UserName varchar(45) NOT NULL, Email varchar(45) NOT NULL, Password varchar(45) NOT NULL, Address varchar(45) DEFAULT NULL, CityName varchar(45) DEFAULT NULL, Province varchar(45) DEFAULT NULL, Country varchar(45) DEFAULT NULL, PRIMARY KEY (UserId), UNIQUE KEY Email_UNIQUE (Email), UNIQUE KEY UserName_UNIQUE (UserName));'
