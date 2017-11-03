@@ -1,0 +1,7 @@
+Test Description: To test if the user is able to edit profile correctly. 
+2 Test input:	      $userName = 'neel' 
+3 	              $address = '123 St catherine' 
+4                     $phoneNumber = '5146541232'
+5 Expected output:	The input value should match the value getting saved 
+6 Actual output:	  The function actually saves the input correctly into database which matches the expected output. 
+7 Result:	          The edit profile function passes the unit test. 

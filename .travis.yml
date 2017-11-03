@@ -23,7 +23,7 @@ script:
   - phpunit UnitTest unittests/ssubcategoryTest.php
   - phpunit UnitTest unittests/ItemListingTest.php
   - phpunit UnitTest unittests/SearchbarTest.php
-  
+  - phpunit UnitTest unittests/EditProfileTest.php
 
 matrix:
   allow_failures:
