@@ -5,20 +5,20 @@
 	use PHPUnit\Framework\TestCase;
 ?>
 <?php
-	class ssubcategoryTest extends TestCase 
+	class SsubcategoryTest extends TestCase 
 	{
 		
 		public function testCategorySuccess() 
 		{
 			
-			$expectSSubcategory = "pug";
-			$clickCategory = new SSubcategory;
+			$expectSsubcategory = "pug";
+			$clickCategory = new Ssubcategory;
 			$click = $clickCategory->chooseCategory("Pet", "Dog", "pug");
-			foreach($click as $eachRow)
-          	{
-          		$this->assertEquals($expectSSubcategory, $eachRow['ProductCategory3']);	     
+			foreach($click as $eachRow){
+          		$this->assertEquals($expectSsubcategory, $eachRow['ProductCategory3']);	     
           	}
 			
 		}
+		
 	}
 ?>

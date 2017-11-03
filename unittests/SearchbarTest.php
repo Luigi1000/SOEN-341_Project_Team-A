@@ -18,7 +18,7 @@
 
 			foreach($result as $eachRow){
 			$this->assertContains($expectedItem, $eachRow['ProductName'], '', true);
-			$this->assertEquals($expectedAds, $eachRow['ProductCategory']);
+			$this->assertEquals($expectedAds, $eachRow['ProductCategory1']);
 			$this->assertEquals($expectedCity, $eachRow['Province']);
 			
 			}
