@@ -14,6 +14,7 @@ script:
  - phpunit UnitTest unittests/SearchbarTest.php
  - phpunit UnitTest unittests/subcategoryTest.php
  - phpunit UnitTest unittests/categoryTest.php
+ - phpunit UnitTest unittests/EditProfileTest.php
 
 
 matrix:
