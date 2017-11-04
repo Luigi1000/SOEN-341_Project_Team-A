@@ -124,6 +124,30 @@
                 <?php if(isset($_POST['myBudget']) && $_POST['myBudget'] != 0) { ?>
                 <input class="slider" id="myRange2" name="myBudget" type="range" value="<?php echo $_POST['myBudget']; ?>" min="0" max="10000" step="5" oninput="dragMe2()" onMouseUp="this.form.submit()" />
                 <p>Budget: <span id="range2"> <?php echo $_POST['myBudget']," CAD"; ?></span></p>
+                <?php       
+                  if(isset($_GET['search']))
+                  {
+                    echo(" <input type='hidden' name='item' value='" .$_GET['item']. "'>
+                           <input type='hidden' name='Ads' value='" .$_GET['Ads']. "'>
+                           <input type='hidden' name='city' value='" .$_GET['city']. "'>  
+                           <input type='hidden' name='search' value='" .$_GET['search']. "'>  ");
+                  }
+                  if (isset($_GET['category']))
+                  {
+                    echo(" <input type='hidden' name='category' value='" .$_GET['category']. "'> ");
+                  }
+                  if (isset($_GET['subcategory']))
+                  {
+                    echo(" <input type='hidden' name='category' value='" .$_GET['category']. "'>
+                           <input type='hidden' name='subcategory' value='" .$_GET['subcategory']. "'> ");
+                  }
+                  if (isset($_GET['ssubcategory']))
+                  {
+                    echo(" <input type='hidden' name='category' value='" .$_GET['category']. "'>
+                           <input type='hidden' name='subcategory' value='" .$_GET['subcategory']. "'>
+                           <input type='hidden' name='ssubcategory' value='" .$_GET['ssubcategory']. "'> ");
+                  }
+                ?>
                 <?php } 
                 
                 // When the budget is not selected, the slider remains at "0".
