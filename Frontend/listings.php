@@ -426,7 +426,34 @@
          
           }
 
-    
+          else// if user only click the outer most category
+          {
+            if(isset($_GET['sortBasedOn']))  // if user want to sort
+            {
+              $sortingRequirement = $_GET['sortBy'];
+              if($sortingRequirement == 'dateAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY timeStamp ASC");
+              }
+              if($sortingRequirement == 'dateDesc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY timeStamp DESC");
+              }
+              if($sortingRequirement == 'priceDesc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY Price DESC");
+              }
+              if($sortingRequirement == 'priceAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY Price ASC");
+              }
+            }
+            else  // if user do not want to sort, just randomly display everyting order by ProductId
+            {
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY ProductId ASC");
+            }
+            
+          }
           foreach($resultArray as $eachRow)
           {
              echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
