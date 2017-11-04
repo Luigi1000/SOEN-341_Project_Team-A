@@ -11,5 +11,7 @@ CREATE TABLE product_category(
 );
 //change data type of price to decimal
 ALTER TABLE `product` CHANGE `Price` `Price` DECIMAL(45) NOT NULL;
+//add a column named timeStamp
+ALTER TABLE `product` ADD `timeStamp` TIMESTAMP(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6) AFTER `ProductCategory3`;
 
 
