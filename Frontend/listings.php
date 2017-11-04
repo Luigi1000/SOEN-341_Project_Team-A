@@ -152,44 +152,73 @@
                 <option value="priceAsc">Price: from lowest to highest</option>
                 <option value="priceDesc">Price: from highest to lowest</option>
                 </select>
-            
-                
+                <?php         // include('../unittests/classes/class_searchbar.php');
+                  if(isset($_GET['search']))
+                  {
+                    echo(" <input type='hidden' name='item' value='" .$_GET['item']. "'>
+                           <input type='hidden' name='Ads' value='" .$_GET['Ads']. "'>
+                           <input type='hidden' name='city' value='" .$_GET['city']. "'>  
+                           <input type='hidden' name='search' value='" .$_GET['search']. "'>  ");
+                  }
+                  if (isset($_GET['category']))
+                  {
+                    echo(" <input type='hidden' name='category' value='" .$_GET['category']. "'> ");
+                  }
+                  if (isset($_GET['subcategory']))
+                  {
+                    echo(" <input type='hidden' name='category' value='" .$_GET['category']. "'>
+                           <input type='hidden' name='subcategory' value='" .$_GET['subcategory']. "'> ");
+                  }
+                  if (isset($_GET['ssubcategory']))
+                  {
+                    echo(" <input type='hidden' name='category' value='" .$_GET['category']. "'>
+                           <input type='hidden' name='subcategory' value='" .$_GET['subcategory']. "'>
+                           <input type='hidden' name='ssubcategory' value='" .$_GET['ssubcategory']. "'> ");
+                  }
+                ?>
                 <button class="btn btn-success btn-xs" type="submit" name="sortBasedOn">
                   <i class="glyphicon glyphicon-filter"></i>
                 </button>         
               </div>
             </form>
           </div>
-
-    <?php
-
-    
-    // include('../unittests/classes/class_searchbar.php');
-    
-
-    if(isset($_POST['search']))
-    {
-      $item = $_POST['item'];
-      $Ads = $_POST['Ads'];
-      $city = $_POST['city'];
-	  /**
-	   * code below replace or not
-	   */
-      if ($Ads=='All') {
-          $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
-      }
-      else
-      $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province='$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ");
-
-
-          /**
-           * replace codes above with the following codes
-           */
-          // $searching = new SearchBar;
-          // $resultArray = $searching->search($item,$Ads,$city);
-
-
-        foreach($resultArray as $eachRow)
+        <?php
+        if(isset($_GET['search']))  // if user want to search based on the keywords
+        {
+          if($_GET['Ads'] == "All")
+          {
+            if(isset($_GET['sortBasedOn']))
+            {
+              $sortingRequirement = $_GET['sortBy'];
+              if($sortingRequirement == 'dateAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY timeStamp ASC ");
+              }
+             
+            }
+            else
+            {
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY ProductId ASC ");
+            }
+          }
+          else
+          {
+            if(isset($_GET['sortBasedOn']))  // if user want to sort based on the searching results
+            {
+              $sortingRequirement = $_GET['sortBy'];
+              if($sortingRequirement == 'dateAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY timeStamp ASC ");
+              }
+              
+            }
+            else
+            {
+               $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY ProductId ASC ");
+            }
+          }
+      
+          foreach($resultArray as $eachRow)
           {
             echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
                   <div class=\"row\">
@@ -204,8 +233,8 @@
                         <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
                       </div>
                       <div class=\"\">
-                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
-                        post time
+                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>"
+                        .$eachRow['timeStamp']."
                       </div><br>
                       <div>
                         <p style=\"color:#1f0935;font-weight:bold;\">
@@ -214,14 +243,10 @@
                       </div>
                     </div>
                   </div>
-                </a>";
-
-
+                </a>";  
           }
         }
-
-
-    ?>
+      ?>
   <?php
 
       $stmt = $db->query("SELECT ProductId FROM product");
