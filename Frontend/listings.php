@@ -24,11 +24,19 @@
       <!-- all item categorys EXAMPLE two level hierarchy -->
       <?php
         $_SESSION['previous_page'] = "listingsphp";
-        $Category = (isset($_GET['category'])) ? $_GET['category'] : "All" ;
+        $Category = (isset($_GET['category'])) ? $_GET['category'] : "No" ; // get the hierarchical categories that user clicked
         $Subcategory = (isset($_GET['subcategory'])) ? $_GET['subcategory'] : " ";
         $SSubcategory = (isset($_GET['ssubcategory'])) ? $_GET['ssubcategory'] : " ";
         // may be have more variable for location and price
         // query code...
+      ?>
+      <?php 
+        if(isset($_GET['search'])) // get the searching information
+        {
+          $item = $_GET['item'];
+          $Ads = $_GET['Ads'];
+          $city = $_GET['city'];
+        }
       ?>
       <?php
           $items = array('Vehicle'=>array(
@@ -83,7 +91,7 @@
             <?php } ?>
           <?php } ?>
           <!-- display all category if user want to see all category -->
-          <?php if ($Category=='All') { ?>
+          <?php if ($Category=='All' || $Category=='No') { ?>
                 <ul class="list-group">
                   <li class="list-group-item"><h4><a href="listings.php?category=Vehicle">Vehicle</a></h4></li>
                   <li class="list-group-item"><h4><a href="listings.php?category=Pet">Pet</a></h4></li>
@@ -134,7 +142,24 @@
       <!-- list part -->
       <div class="col-sm-9 text-left">
         <div class="list-group">
-          <!-- first item -->
+          <!-- sorted by -->
+          <div class="well text-right topBar">
+            <form action="listings.php" name="sortBy" method="get">
+              <div class="sort"> <kbd>Sort by</kbd>
+                <select class="selectpicker"  name="sortBy"> 
+                <option value="dateAsc">Posted: oldest first</option>
+                <option value="dateDesc" selected="selected">Posted: newest first</option>
+                <option value="priceAsc">Price: from lowest to highest</option>
+                <option value="priceDesc">Price: from highest to lowest</option>
+                </select>
+            
+                
+                <button class="btn btn-success btn-xs" type="submit" name="sortBasedOn">
+                  <i class="glyphicon glyphicon-filter"></i>
+                </button>         
+              </div>
+            </form>
+          </div>
 
     <?php
 
