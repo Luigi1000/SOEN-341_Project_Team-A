@@ -510,7 +510,7 @@
 
         }
 
-        if(!isset($_GET['search']) && !isset($_GET['category']))// directly open listings.php page
+        if(!isset($_GET['search']) && $Category == "No")// directly open listings.php page
         {     
                                                         
           if(isset($_GET['sortBasedOn'])) // if user want to sort
