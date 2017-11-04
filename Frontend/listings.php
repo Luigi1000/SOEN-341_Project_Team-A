@@ -198,6 +198,10 @@
               {
                 $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY timeStamp DESC ");
               }
+              if($sortingRequirement == 'priceAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY Price ASC ");
+              }
              
             }
             else
@@ -217,6 +221,10 @@
               if($sortingRequirement == 'dateDesc')
               {
                 $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY timeStamp DESC ");
+              }
+              if($sortingRequirement == 'priceAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY Price ASC ");
               }
               
             }
