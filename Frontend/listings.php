@@ -355,7 +355,10 @@
             {
               $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY Price DESC");
             }
-           
+            if($sortingRequirement == 'priceAsc')
+            {
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY Price ASC");
+            }
           }
           else  // if user do not want to sort, just randomly display everyting order by ProductId
           {
