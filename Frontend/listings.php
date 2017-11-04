@@ -290,24 +290,24 @@
               $sortingRequirement = $_GET['sortBy']; 
               if($sortingRequirement == 'dateAsc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY timeStamp ASC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' AND Price < $budget ORDER BY timeStamp ASC");
               }
               if($sortingRequirement == 'dateDesc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY timeStamp DESC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' AND Price < $budget ORDER BY timeStamp DESC");
               }
               if($sortingRequirement == 'priceDesc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY Price DESC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' AND Price < $budget ORDER BY Price DESC");
               }
               if($sortingRequirement == 'priceAsc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY Price ASC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' AND Price < $budget ORDER BY Price ASC");
               }   
             }
             else // if user do not want to sort, just randomly display everyting order by ProductId
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY ProductId ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' AND Price < $budget ORDER BY ProductId ASC");
             }
 
             foreach($resultArray as $eachRow)
@@ -346,24 +346,24 @@
             $sortingRequirement = $_GET['sortBy']; 
             if($sortingRequirement == 'dateAsc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY timeStamp ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' AND Price < $budget ORDER BY timeStamp ASC");
             }
             if($sortingRequirement == 'dateDesc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY timeStamp DESC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' AND Price < $budget ORDER BY timeStamp DESC");
             }
             if($sortingRequirement == 'priceDesc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY Price DESC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' AND Price < $budget ORDER BY Price DESC");
             }
             if($sortingRequirement == 'priceAsc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY Price ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' AND Price < $budget ORDER BY Price ASC");
             }
           }
           else  // if user do not want to sort, just randomly display everyting order by ProductId
           {
-            $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' ORDER BY ProductId ASC");
+            $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2 = '{$_GET['subcategory']}' AND Price < $budget ORDER BY ProductId ASC");
           }
         
           foreach($resultArray as $eachRow)
@@ -405,24 +405,24 @@
               $sortingRequirement = $_GET['sortBy'];
               if($sortingRequirement == 'dateAsc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY timeStamp ASC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY timeStamp ASC");
               }
               if($sortingRequirement == 'dateDesc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY timeStamp DESC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY timeStamp DESC");
               }
               if($sortingRequirement == 'priceDesc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY Price DESC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY Price DESC");
               }
               if($sortingRequirement == 'priceAsc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY Price ASC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY Price ASC");
               }
             }
             else // if user do not want to sort, just randomly display everyting order by ProductId
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY ProductId ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY ProductId ASC");
             }
          
           }
@@ -434,24 +434,24 @@
               $sortingRequirement = $_GET['sortBy'];
               if($sortingRequirement == 'dateAsc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY timeStamp ASC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND Price < $budget ORDER BY timeStamp ASC");
               }
               if($sortingRequirement == 'dateDesc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY timeStamp DESC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND Price < $budget ORDER BY timeStamp DESC");
               }
               if($sortingRequirement == 'priceDesc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY Price DESC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND Price < $budget ORDER BY Price DESC");
               }
               if($sortingRequirement == 'priceAsc')
               {
-                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY Price ASC");
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND Price < $budget ORDER BY Price ASC");
               }
             }
             else  // if user do not want to sort, just randomly display everyting order by ProductId
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' ORDER BY ProductId ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND Price < $budget ORDER BY ProductId ASC");
             }
             
           }
@@ -496,26 +496,26 @@
            
             if($sortingRequirement == 'dateAsc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY timeStamp ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY timeStamp ASC");
             }
             if($sortingRequirement == 'dateDesc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY timeStamp DESC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY timeStamp DESC");
             }
             if($sortingRequirement == 'priceDesc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY Price DESC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY Price DESC");
             }
             if($sortingRequirement == 'priceAsc')
             {
-              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY Price ASC");
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY Price ASC");
             }
         
           }
         
           else  // if not,  just randomly display everyting order by ProductId
           {
-            $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId ORDER BY ProductId ASC ");
+            $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId AND Price < $budget ORDER BY ProductId ASC ");
           }
           foreach($resultArray as $eachRow)
           {
