@@ -174,24 +174,21 @@
               <option value="" selected disabled>Select location...</option>
             <optgroup label="Alberta">
               <option value="Alberta">All of Alberta</option>
-              <option value="BanffCanmore">Banff/Canmore</option>
-              <option value="EdmontonArea">Edmonton Area</option>
-              <option value="FortMcMurray">Fort McMurray</option>
+              <option value="Calgary">Calgary</option>
+              <option value="Edmonton">Edmonton</option>
             </optgroup>
             <optgroup label="British Columbia">
               <option value="BritishColumbia">All of British Columbia</option>
-              <option value="CaribooArea">Cariboo Area</option>
-              <option value="CowichaValley">Cowicha Valley</option>
+              <option value="Vancouver">Vancouver</option>
+              <option value="Victoria">Victoria</option>
             </optgroup>
             <optgroup label="Ontario">
               <option value="Ontario">All of Ontario</option>
-              <option value="Muskoka">Muskoka</option>
-              <option value="NorthBay">North Bay</option>
+              <option value="Mississauga">Mississauga</option>
               <option value="Toronto">Toronto</option>
             </optgroup>
             <optgroup label="Quebec">
               <option value="Quebec">All of Quebec</option>
-              <option value="Laval">Laval</option>
               <option value="QuebecCity">Quebec City</option>
               <option value="Laval">Laval</option>
               <option value="Montreal">Montreal</option>
