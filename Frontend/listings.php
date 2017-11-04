@@ -146,9 +146,10 @@
           <div class="well text-right topBar">
             <form action="listings.php" name="sortBy" method="get">
               <div class="sort"> <kbd>Sort by</kbd>
-                <select class="selectpicker"  name="sortBy"> 
+                <select class="selectpicker"  name="sortBy" required>
+                <option value="" selected disabled>Please select...</option> 
                 <option value="dateAsc">Posted: oldest first</option>
-                <option value="dateDesc" selected="selected">Posted: newest first</option>
+                <option value="dateDesc">Posted: newest first</option>
                 <option value="priceAsc">Price: from lowest to highest</option>
                 <option value="priceDesc">Price: from highest to lowest</option>
                 </select>
