@@ -205,8 +205,7 @@
               if($sortingRequirement == 'priceDesc')
               {
                 $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY Price DESC ");
-              }
-             
+              }            
             }
             else
             {
@@ -233,8 +232,7 @@
               if($sortingRequirement == 'priceDesc')
               {
                 $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY Price DESC ");
-              }
-              
+              } 
             }
             else
             {
@@ -273,9 +271,9 @@
       ?>
   <?php
 
-      $stmt = $db->query("SELECT ProductId FROM product");
-      $rowcount = $stmt->rowCount();
-      $cntr=1;
+      // $stmt = $db->query("SELECT ProductId FROM product");
+      // $rowcount = $stmt->rowCount();
+      // $cntr=1;
       // $loc = $db->query("SELECT CityName FROM user WHERE UserId = '1'");
       // $location = $loc->fetch(\PDO::FETCH_ASSOC);
       // $dblocation = "".$location["CityName"];
@@ -284,39 +282,51 @@
       if (isset($_POST['myBudget']) && $_POST['myBudget'] != 0)
       {
         $budget = $_POST['myBudget'];
-        if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory']))
-        {
-          $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND ProductCategory2= '$Subcategory' AND ProductCategory3= '$SSubcategory' AND Price < $budget ORDER BY ProductId ASC");
-          foreach($resultArray as $eachRow)
+        if(isset($_GET['category']) && isset($_GET['subcategory']) && isset($_GET['ssubcategory'])) // if three layers of the categories have been clicked
           {
-            echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
-                    <div class=\"row\">
-                      <div class=\"col-sm-3\">
-                        <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
+            if(isset($_GET['sortBasedOn'])) // if user want to sort
+            {
+              $sortingRequirement = $_GET['sortBy']; 
+              if($sortingRequirement == 'dateAsc')
+              {
+                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY timeStamp ASC");
+              }
+              
+            }
+            else // if user do not want to sort, just randomly display everyting order by ProductId
+            {
+              $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '{$_GET['category']}' AND ProductCategory2= '{$_GET['subcategory']}' AND ProductCategory3= '{$_GET['ssubcategory']}' ORDER BY ProductId ASC");
+            }
+
+            foreach($resultArray as $eachRow)
+            {
+                echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
+                  <div class=\"row\">
+                    <div class=\"col-sm-3\">
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
+                    </div>
+                    <div class=\"col-sm-9\">
+                      <div>
+                        <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
                       </div>
-                      <div class=\"col-sm-9\">
-                        <div>
-                          <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
-                        </div>
-                        <div class=\"pull-right\" style=\"color: #27a34a\" >
-                          <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
-                        </div>
-                        <div class=\"\">
-                          ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>
-                          post time
-                        </div><br>
-                        <div>
-                          <p style=\"color:#1f0935;font-weight:bold;\">
-                            ".$eachRow['ProductDetail']."
-                          </p>
-                        </div>
+                      <div class=\"pull-right\" style=\"color: #27a34a\" >
+                        <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
+                      </div>
+                      <div class=\"\">
+                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>"
+                        .$eachRow['timeStamp']."
+                      </div><br>
+                      <div>
+                        <p style=\"color:#1f0935;font-weight:bold;\">
+                          ".$eachRow['ProductDetail']."
+                        </p>
                       </div>
                     </div>
-                  </a>";
-
-
+                  </div>
+                </a>";
+         
+            }
           }
-        }
         if(isset($_GET['category']) && isset($_GET['subcategory']) && !isset($_GET['ssubcategory']))
         {
           $resultArray = $db->query("SELECT * FROM product  INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 = '$Category' AND ProductCategory2= '$Subcategory' AND Price < $budget ORDER BY ProductId ASC");
