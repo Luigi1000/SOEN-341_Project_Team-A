@@ -17,12 +17,13 @@ before_script:
   - composer install --prefer-source --no-interaction
 
 script: 
-  - phpunit UnitTest unittests/LoginTest.php
-  - phpunit UnitTest unittests/catagoryTest.php
-  - phpunit UnitTest unittests/subcategoryTest.php
-  - phpunit UnitTest unittests/ssubcategoryTest.php
-  - phpunit UnitTest unittests/ItemListingTest.php
-  - phpunit UnitTest unittests/SearchbarTest.php
+  //- phpunit UnitTest unittests/LoginTest.php
+  //- phpunit UnitTest unittests/catagoryTest.php
+  //- phpunit UnitTest unittests/subcategoryTest.php
+  //- phpunit UnitTest unittests/ssubcategoryTest.php
+  //- phpunit UnitTest unittests/ItemListingTest.php
+  //- phpunit UnitTest unittests/SearchbarTest.php
+  - phpunit UnitTest unittests/unitTest.php
   
 
 matrix:
