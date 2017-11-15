@@ -151,7 +151,7 @@
 
   <!-- search bar -->
   <div class="well text-center">
-    <form class="form-inline" action="listings.php" method="post">
+    <form class="form-inline" action="listings.php" method="get">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for anything..." name="item" size="65">
       </div>
@@ -172,24 +172,22 @@
         <!-- select dropdown menu -->
           <select class="selectpicker form-control" name="city" required>
               <option value="" selected disabled>Select location...</option>
-            <!-- <optgroup label="Alberta">
-              <option value="Banff/Canmore">Banff/Canmore</option>
-              <option value="Edmonton Area">Edmonton Area</option>
-              <option value="Fort McMurray">Fort McMurray</option>
+            <optgroup label="Alberta">
+              <option value="Alberta">All of Alberta</option>
+              <option value="Calgary">Calgary</option>
+              <option value="Edmonton">Edmonton</option>
             </optgroup>
             <optgroup label="British Columbia">
-              <option value="Cariboo Area">Cariboo Area</option>
-              <option value="Comox Valley Area">Comox Valley Area</option>
-              <option value="Cowicha Valley">Cowicha Valley</option>
+              <option value="BritishColumbia">All of British Columbia</option>
+              <option value="Vancouver">Vancouver</option>
+              <option value="Victoria">Victoria</option>
             </optgroup>
             <optgroup label="Ontario">
-              <option value="Muskoka">Muskoka</option>
-              <option value="North Bay">North Bay</option>
+              <option value="Ontario">All of Ontario</option>
+              <option value="Mississauga">Mississauga</option>
               <option value="Toronto">Toronto</option>
-            </optgroup> -->
+            </optgroup>
             <optgroup label="Quebec">
-              <!-- <option value="Abitibi-Temiscamingue">Abitibi-Temiscamingue</option>
-              <option value="Granby">Granby</option> -->
               <option value="Quebec">All of Quebec</option>
               <option value="QuebecCity">Quebec City</option>
               <option value="Laval">Laval</option>
