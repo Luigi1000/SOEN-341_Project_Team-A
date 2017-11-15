@@ -60,11 +60,13 @@
     </div>
 	 <div class="form-group">
     <label>Product Categroy Level 2:*</label>
-    <select required name="product_category2" id="product_category2"><option>------- Select --------</option></select>
+
+    <select name="productCategory2" id="productCategory2"><option>------- Select --------</option></select>
         </div>
 		 <div class="form-group">
     <label>Product Categroy Level 3:*</label>
-    <select required name="product_category3" id="product_category3"><option>------- Select --------</option></select>
+    <select name="productCategory3" id="productCategory3"><option>------- Select --------</option></select>
+
         </div>
 
 
@@ -78,7 +80,12 @@
           </label>
           <input type="file" name="image2" id="fileToUpload2">
         </div>
+<<<<<<< Back-End-Test-Branch
+        <button type="submit" name="submit" class="btn btn-success">Submit
+        </button>
+=======
         <button type="submit" class="btn btn-success">Submit</button>
+>>>>>>> master
       </form>
     </div>
     </div>

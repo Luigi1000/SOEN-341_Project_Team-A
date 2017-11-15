@@ -1,3 +1,4 @@
+
 <!-- reference: w3c school online store theme -->
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +35,7 @@
         <h1>Account Details</h1>
         <table class="table">
           <tbody>
+		   
             <tr>
               <td><strong>User Name: </strong></td>
               <td><?php echo ($_SESSION["username"]) ?></td>
@@ -49,6 +51,17 @@
             <tr>
               <td><strong>Address: </strong></td>
               <td>BACK END DATA</td>
+            </tr>
+			<tr>
+              <td><strong>Profile Pics: </strong></td>
+              <td>
+			  <?php
+			  $sql = $conn->query("SELECT * FROM user WHERE Email ='neeluchawla@me.com'");
+			  $row=$sql->fetch_assoc();
+			 
+		echo '<img src="data:image/png;base64,' . base64_encode( $row['image'] ) . '" />'
+			
+			  ?><td>
             </tr>
           </tbody>
         </table>
@@ -80,7 +93,7 @@
       <!-- user can edit profile here -->
       <div id="edit" class="tab-pane fade">
         <div class="container">
-          <form action="userProfile.php" action="post">
+          <form action="include/editUserDetailToDB.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label for="userName">User Name:</label>
               <input type="text" class="form-control" placeholder="will be the user name now" name="userName">
@@ -89,14 +102,7 @@
               <label for="adress">Address:</label>
               <input type="text" class="form-control" placeholder="address" name="address">
             </div>
-            <div class="form-group">
-              <label for="adress">City:</label>
-              <input type="text" class="form-control" placeholder="city" name="city">
-            </div>
-            <div class="form-group">
-              <label for="adress">Province:</label>
-              <input type="text" class="form-control" placeholder="province" name="province">
-            </div>
+            <!-- not add validation yet -->
             <div class="form-group">
               <label for="phone">Phone Number:</label>
               <input type="text" class="form-control" placeholder="phone number" name="phone">
@@ -105,7 +111,13 @@
               <label for="pwd">Password:</label>
               <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
             </div> -->
-            <button type="submit" class="btn btn-success">Save Changes</button>
+			 <div class="form-group">
+          <label for="profilePics">Profile Pics:
+          </label>
+          <input type="file" name="image" id="fileToUpload1">
+        </div>
+	
+            <button type="submit" class="btn btn-success" name="submit">Save Changes</button>
           </form>
         </div>
       </div>
