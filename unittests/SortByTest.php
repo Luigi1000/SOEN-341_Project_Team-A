@@ -36,6 +36,21 @@
 			$this->assertGreaterThanOrEqual($second['Price'], $first['Price']);
 
 		}
+
+		public function testSortDateAsc()
+		{
+			$input = 'dateAsc';
+			
+			$sort = new SortBy;
+			$result = $sort->sort($input);
+
+			$first = $result->fetch(PDO::FETCH_ASSOC);
+			$second = $result->fetch(PDO::FETCH_ASSOC);
+
+			// test pass if Price of first item greater or equal than second item
+			$this->assertLessThanOrEqual($second['timeStamp'], $first['timeStamp']);
+
+		}
 		
 	}
 ?>
