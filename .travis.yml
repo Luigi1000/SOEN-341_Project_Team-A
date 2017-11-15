@@ -20,7 +20,7 @@ before_script:
 
 script: 
   - phpunit UnitTest unittests/LoginTest.php
-  - phpunit UnitTest unittests/catagoryTest.php
+  - phpunit UnitTest unittests/categoryTest.php
   - phpunit UnitTest unittests/subcategoryTest.php
   - phpunit UnitTest unittests/ssubcategoryTest.php
   - phpunit UnitTest unittests/ItemListingTest.php
