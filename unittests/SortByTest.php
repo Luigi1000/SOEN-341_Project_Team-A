@@ -47,7 +47,7 @@
 			$first = $result->fetch(PDO::FETCH_ASSOC);
 			$second = $result->fetch(PDO::FETCH_ASSOC);
 
-			// test pass if Price of first item greater or equal than second item
+			// test pass if publish date of first item less or equal than second item (first item older)
 			$this->assertLessThanOrEqual($second['timeStamp'], $first['timeStamp']);
 
 		}
@@ -62,7 +62,7 @@
 			$first = $result->fetch(PDO::FETCH_ASSOC);
 			$second = $result->fetch(PDO::FETCH_ASSOC);
 
-			// test pass if Price of first item greater or equal than second item
+			// test pass if publsh date of first item greater or equal than second item (first item newer)
 			$this->assertGreaterThanOrEqual($second['timeStamp'], $first['timeStamp']);
 
 		}
