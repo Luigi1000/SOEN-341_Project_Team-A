@@ -11,7 +11,7 @@
 		function chooseCategory($Category="")
 		{
 			
-			$serverName = '108.63.178.195';
+			$serverName = 'localhost';
 			$userName = "root";
 			$dbName = 'soen341';
 			$passWord = '';
