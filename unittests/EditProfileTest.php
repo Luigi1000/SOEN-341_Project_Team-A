@@ -12,7 +12,7 @@
  			 
  			$userName = 'neel'; 
  			$address = '123 St catherine'; 
-			$phoneNumber = '5146541232'
+			$phoneNumber = '5146541232';
  			$expect = true; 
  			$lg = new EditProfile(); 
  			$result = $lg->editProfile($userName, $address, $phoneNumber); 
