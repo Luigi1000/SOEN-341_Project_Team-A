@@ -26,6 +26,7 @@ script:
   - phpunit UnitTest unittests/ItemListingTest.php
   - phpunit UnitTest unittests/SearchbarTest.php
   - phpunit UnitTest unittests/EditProfileTest.php
+  - phpunit UnitTest unittests/SortByTest.php
   - phpunit UnitTest unittests/unitTest.php
 
 matrix:
