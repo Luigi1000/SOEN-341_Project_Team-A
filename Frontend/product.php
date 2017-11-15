@@ -28,24 +28,24 @@
         <div class="form-group">
           <label for="productName">Product Name :*
           </label>
-          <input type="text" class="form-control" placeholder="enter product name" name="productName">
+          <input type="text" class="form-control" placeholder="enter product name" name="productName" required="">
         </div>
         <div class="form-group">
-          <label for="productDetail">Product Detail:*
+          <label for="productDetail">Product Details :*
           </label>
-          <textarea name="text" class="form-control" placeholder="Enter description of product here.">
+          <textarea name="text" class="form-control" placeholder="Enter description of product here." required="">
           </textarea>
         </div>
         <!-- not add validation yet -->
         <div class="form-group">
           <label for="price">Price:*
           </label>
-          <input type="text" class="form-control" placeholder="enter price" name="price">
+          <input type="text" class="form-control" placeholder="enter price" name="price" required="">
         </div>
 
         <div class="form-group">
-         <label>Product Category level1 :*</label>
-		<select name="productCategory1" id="productCategory1">
+         <label>Product Category Level 1 :*</label>
+		<select required name="productCategory1" id="productCategory1">
 			<option value=''>------- Select --------</option>
 			<?php 
 			$sql = "select * from `category_level1`";
@@ -60,11 +60,13 @@
     </div>
 	 <div class="form-group">
     <label>Product Categroy Level 2:*</label>
+
     <select name="productCategory2" id="productCategory2"><option>------- Select --------</option></select>
         </div>
 		 <div class="form-group">
     <label>Product Categroy Level 3:*</label>
     <select name="productCategory3" id="productCategory3"><option>------- Select --------</option></select>
+
         </div>
 
 
@@ -78,8 +80,12 @@
           </label>
           <input type="file" name="image2" id="fileToUpload2">
         </div>
+<<<<<<< Back-End-Test-Branch
         <button type="submit" name="submit" class="btn btn-success">Submit
         </button>
+=======
+        <button type="submit" class="btn btn-success">Submit</button>
+>>>>>>> master
       </form>
     </div>
     </div>

@@ -2,15 +2,18 @@
     .navbar {
       margin-bottom: 0;
       border-radius: 0;
+      background-color: #063b60;
+      border:none;
     }
-    .jumbotron {
+     .jumbotron-custom {
       margin-bottom: 0px;
-      background-color: #7979d2;
+       background-image: url("../images/banner.jpg");
+
     }
-    footer {
-      background-color: #4f5b66;
-      color: #ffffff;
-      padding: 160px;
+  	footer {
+      background-color: #575c60;
+      color:#ffffff;
+      padding: 20px;
     }
     .fa {
       padding: 20px;

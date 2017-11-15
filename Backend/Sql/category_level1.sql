@@ -45,3 +45,6 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- add more level1 category and add others category
+INSERT INTO `category_level1` (`Id`, `First_Category`) VALUES ('3','Vehicle'),('4','Book')('5', 'Phone'), ('6', 'Bike'),('7', 'Computer'),('8', 'TV'), ('9', 'others');

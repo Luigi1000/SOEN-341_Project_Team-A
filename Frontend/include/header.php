@@ -1,34 +1,34 @@
-<?php session_start(); ?>  
+<?php session_start(); ?>
 <?php include('include/dbConnector2.php'); ?>
-<?php                      // session validation      
-  if (isset($_POST['submit'])) 
+<?php                      // session validation
+  if (isset($_POST['submit']))
   {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $username = $_POST['username'];
     $hashed_pwd = md5($password); // the password must be hashed before insert into DB
-   
-	$result = $db->query("SELECT * FROM `user` WHERE `Email` = '$email'");
-	$dbResult = $result->fetch(\PDO::FETCH_ASSOC);
-	$nameResult = $db->query("SELECT `UserName` FROM `user` WHERE `UserName` = '$username'");
-	$dbNameResult = $nameResult->fetch(\PDO::FETCH_ASSOC);
-	
+
+  $result = $db->query("SELECT * FROM `user` WHERE `Email` = '$email'");
+  $dbResult = $result->fetch(\PDO::FETCH_ASSOC);
+  $nameResult = $db->query("SELECT `UserName` FROM `user` WHERE `UserName` = '$username'");
+  $dbNameResult = $nameResult->fetch(\PDO::FETCH_ASSOC);
+
     if(strcasecmp($dbResult['Email'], $email)==0) // if find out the email already exist , refuse to add it into the db
     {
-		$check_email_result = true;
+    $check_email_result = true;
     }
     else
-	{
+  {
         $check_email_result = false;
-	}
-	  
+  }
+
     if(strcasecmp($dbNameResult['UserName'], $username)==0) // if find out the userName already exist , refuse to add it into the db
     {
         $check_usrname_result = true;
     }
     else
         $check_usrname_result = false;
-	
+
     if($check_usrname_result == false && $check_email_result == false) // if Both userName and email do not exist in db then good to insert into db
     {
        $db->query("INSERT INTO user (UserId, UserName, Email, Password, Address, CityName, Province, Country) VALUES (NULL, '$username', '$email', '$hashed_pwd', NULL, NULL, NULL, NULL)");
@@ -55,14 +55,14 @@
       {
           $_SESSION['is_login'] = false;
       }
-      
+
   }
 
 ?>
-  <div class="jumbotron">
+  <div class="jumbotron jumbotron-custom">
     <div class="container text-center">
       <h1>Online Store</h1>
-      <a href="index.php"><img src="images/shop.png"></a>     
+      <a href="index.php"><img src="images/shop.png" height="100"></a>
       <p>Coming soon...</p>
     </div>
   </div>
@@ -72,9 +72,9 @@
         <!-- Logo -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
-                <span class="icon-bar"></span> 
                 <span class="icon-bar"></span>
-                <span class="icon-bar"></span> 
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
             <a href="index.php" class="navbar-brand">.SHOP</a>
         </div>
@@ -83,7 +83,7 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-				<li><a href="listings.php">Listings</a></li>
+                <li><a href="listings.php">Listings</a></li>
                 <li><a href="contact.php">Contact</a></li>
             </ul>
 
@@ -133,7 +133,7 @@
                     </div>
                     <?php } ?>
                 </li>
-               
+
                 <!-- when the user is logged in, Login button should be invisible -->
                 <?php if(!$_SESSION['is_login']) {  ?>
                     <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -151,55 +151,57 @@
 
   <!-- search bar -->
   <div class="well text-center">
-    <form class="form-inline" action="#" method="post">
+    <form class="form-inline" action="listings.php" method="post">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for anything..." name="item" size="65">
       </div>
       <div class="form-group" >
          <select class="form-control" name="Ads">
-          <option value="">All Ads</option>
-          <option value="">buy and sell</option>
-          <option value="">pets</option>
-          <option value="">cars & vehicles</option>
-          <option value="">jobs</option>
-          <option value="">services</option>
+          <option value="All">All Ads</option>
+          <option value="Vehicle">Vehicle</option>
+          <option value="Pet">Pet</option>
+          <option value="Book">Book</option>
+          <option value="Phone">Phone</option>
+          <option value="Computer">Computer</option>
+          <option value="Instrument">Instrument</option>
+          <option value="Bike">Bike</option>
+          <option value="TV">TV</option>
          </select>
-      </div>  
+      </div>
       <div class="input-group">
         <!-- select dropdown menu -->
-          <select class="selectpicker form-control">
-            <optgroup>
-              <option value="">Select location...</option>
-            </optgroup>
-            <optgroup label="Alberta">
-              <option value="">Banff/Canmore</option>
-              <option value="">Edmonton Area</option>
-              <option value="">Fort McMurray</option>
+          <select class="selectpicker form-control" name="city" required>
+              <option value="" selected disabled>Select location...</option>
+            <!-- <optgroup label="Alberta">
+              <option value="Banff/Canmore">Banff/Canmore</option>
+              <option value="Edmonton Area">Edmonton Area</option>
+              <option value="Fort McMurray">Fort McMurray</option>
             </optgroup>
             <optgroup label="British Columbia">
-              <option value="">Cariboo Area</option>
-              <option value="">Comox Valley Area</option>
-              <option value="">Cowicha Valley</option>
+              <option value="Cariboo Area">Cariboo Area</option>
+              <option value="Comox Valley Area">Comox Valley Area</option>
+              <option value="Cowicha Valley">Cowicha Valley</option>
             </optgroup>
             <optgroup label="Ontario">
-              <option value="">Muskoka</option>
-              <option value="">North Bay</option>
-              <option value="">Toronto</option>
-            </optgroup>
+              <option value="Muskoka">Muskoka</option>
+              <option value="North Bay">North Bay</option>
+              <option value="Toronto">Toronto</option>
+            </optgroup> -->
             <optgroup label="Quebec">
-              <option value="">Abitibi-Temiscamingue</option>
-              <option value="">Granby</option>
-              <option value="">Quebec City</option>
-              <option value="">Sherbrooke</option>
-              <option value="">Montreal</option>
+              <!-- <option value="Abitibi-Temiscamingue">Abitibi-Temiscamingue</option>
+              <option value="Granby">Granby</option> -->
+              <option value="Quebec">All of Quebec</option>
+              <option value="QuebecCity">Quebec City</option>
+              <option value="Laval">Laval</option>
+              <option value="Montreal">Montreal</option>
             </optgroup>
           </select>
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-default" type="submit" name="search">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
       </div>
     </form>
-    
+
   </div>

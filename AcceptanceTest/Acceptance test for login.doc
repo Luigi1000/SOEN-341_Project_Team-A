@@ -1,0 +1,6 @@
+Test Description: To test if the login function correctly decides whether the input email address matches the input password and whether the input email address is already registered.
+Test input:	      $inputName = 'wilsonluyongtang@gmail.com'
+	                $inputPwd = 'Abc123456!'
+Expected output:	The function should return false since the input email address doesn’t exist in the database (i.e. the email address is not registered).
+Actual output:	  The function actually returned false which matches the expected output.
+Result:	          The login function passes the unit test.
