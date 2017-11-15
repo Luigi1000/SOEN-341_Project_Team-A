@@ -11,7 +11,7 @@ class EditProfile
  		public function editProfile($userName, $address, $phoneNumber) 
  		{ 
  			 
- 			$serverName = '108.63.178.195'; 
+ 			$serverName = 'localhost'; 
  			$userName = "root"; 
 			$dbName = 'soen341'; 
  			$passWord = ''; 
