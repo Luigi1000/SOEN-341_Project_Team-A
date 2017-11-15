@@ -11,7 +11,7 @@
 		public function item($itemNumber, $itemName, $itemPrice, $itemDescription, $userId) 
 		{
 
-			$servername = '108.63.178.195'; 
+			$servername = 'localhost'; 
  			$username = "root"; 
  			$dbname = 'soen341'; 
   			$passWord = ''; 
