@@ -83,14 +83,19 @@
         <div class="collapse navbar-collapse" id="mainNavBar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Home</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="listings.php">Listings</a></li>
+                <li><a href="contact.php">Contact</a></li>
             </ul>
 
             <!-- Right align -->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                   <?php if($_SESSION['is_login']) {  ?>
-                  <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a><a href="./product.php" class="btn btn-warning btn-lg"> <span class="glyphicon glyphicon-pushpin"></span>   Post Ads</a></p>
+                  <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>  
+                    <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a>
+                    <a href="./inbox.php" class="btn btn-info btn-lg"> <span class="glyphicon glyphicon-inbox"></span>   Inbox</a>
+                    <a href="./product.php" class="btn btn-warning btn-lg"> <span class="glyphicon glyphicon-pushpin"></span>   Post Ad</a>
+                  </p>
                   <?php  }  ?>
                   <?php if(!$_SESSION['is_login']) { ?>
                   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
