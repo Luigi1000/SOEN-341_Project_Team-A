@@ -10,15 +10,19 @@
 	{
 		public function testItemSuccess() 
 		{
-			$itemNumber = '13';
-			$itemName = 'calculator';
-			$itemPrice = '1000';
-			$itemDescription = 'item details';
-			$userId = '1'; 
-			$expect = true;
-			$click = new ItemListing();
-			$result = $click->item($itemNumber, $itemName, $itemPrice, $itemDescription, $userId); 
-			$this->assertEquals($expect, $result);
+			$expectedItemNumber = '7';
+			$expectedItemName = 'Pug Dog';
+			$expectedItemPrice = '500';
+			$expectedItemDescription = 'Available in black and brown';
+			$expectedUserId = '2'; 
+
+			$clickItem = new ItemListing;
+			$click = $clickItem->item($expectedItemNumber, $expectedItemName, $expectedItemPrice, $expectedItemDescription, $expectedUserId); 
+			$this->assertEquals($expectedItemNumber, $click['ProductId']);
+			$this->assertEquals($expectedItemName, $click['ProductName']);	
+			$this->assertEquals($expectedItemPrice, $click['Price']);	
+			$this->assertEquals($expectedItemDescription, $click['ProductDetail']);	
+			$this->assertEquals($expectedUserId, $click['UserId']);	
 		}
 	}
 
