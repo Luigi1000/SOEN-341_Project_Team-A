@@ -20,7 +20,7 @@ class EditProfile
 			$profile = $log->fetch(\PDO::FETCH_ASSOC); 
  			
  			 
- 			if ($userName == $profile ['UserName'] && $address == $profile['Address'] && $phoneNumber == $profile ['PhoneNumber']) 
+ 			if ($userName != $profile ['UserName'] && $address != $profile['Address'] && $phoneNumber != $profile ['PhoneNumber']) 
  				return true; 
  			else 
 				return false; 
