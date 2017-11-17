@@ -17,7 +17,7 @@
 			$login = $log->fetch(\PDO::FETCH_ASSOC);
 //			$password = md5($inputPwd);
 			
-			if ($inputName == $login['Email'] && inputPwd == $login['Password'])
+			if ($inputName == $login['Email'] && $inputPwd == $login['Password'])
 				return true;
 			else
 				return false;
