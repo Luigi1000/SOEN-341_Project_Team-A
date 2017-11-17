@@ -11,9 +11,9 @@
 		public function testItemSuccess() 
 		{
 			$expectedItemNumber = null;
-			$expectedItemName = 'Pug Dog';
-			$expectedItemPrice = '500';
-			$expectedItemDescription = 'Available in black and brown';
+			$expectedItemName = null;
+			$expectedItemPrice = null;
+			$expectedItemDescription = null;
 
 			$clickItem = new ItemListing;
 			$click = $clickItem->item($expectedItemNumber, $expectedItemName, $expectedItemPrice, $expectedItemDescription); 
