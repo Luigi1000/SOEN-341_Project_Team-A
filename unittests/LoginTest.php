@@ -11,7 +11,7 @@
 		{
 			
 			$inputName = 'wilsonluyongtang@gmail.com';
-			$inputPwd = 'Saviour33100605!';
+			$inputPwd = 'test123';
 			$expect = true;
 			$lg = new Login();
 			$result = $lg->login($inputName, $inputPwd);

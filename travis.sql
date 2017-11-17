@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `product` (
 # Add Data
 
 # User data
-INSERT IGNORE INTO `user`(`UserId`, `UserName`, `Email`, `Password`, `Address`, `CityName`, `Province`, `Country`, `image`, `PhoneNumber`) VALUES (Null,'yougtang','wilsonluyongtang@gmail.com','49ba742a6151092935053e64da7deb3e',Null,Null,Null,Null,Null,Null);
+INSERT IGNORE INTO `user`(`UserId`, `UserName`, `Email`, `Password`, `Address`, `CityName`, `Province`, `Country`, `image`, `PhoneNumber`) VALUES (Null,'yougtang','wilsonluyongtang@gmail.com','test123',Null,Null,Null,Null,Null,Null);
 
 INSERT IGNORE INTO `user`(`UserId`, `UserName`, `Email`, `Password`, `Address`, `CityName`, `Province`, `Country`, `image`, `PhoneNumber`) VALUES (Null,'neel','neel@gmail.com','59ba742a615135053e64da7deb3e','123 St catherine',Null,Null,Null,Null,'514-654-1232');
 
