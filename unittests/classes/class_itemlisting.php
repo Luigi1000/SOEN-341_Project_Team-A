@@ -8,7 +8,7 @@
 
 		}
 
-		public function item($itemNumber, $itemName, $itemPrice, $itemDescription, $userId) 
+		public function item($itemNumber, $itemName, $itemPrice, $itemDescription) 
 		{
 
 			$servername = 'localhost'; 
