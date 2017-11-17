@@ -155,51 +155,51 @@
 
   <!-- search bar -->
   <div class="well text-center">
-    <form class="form-inline" action="#" method="post">
+    <form class="form-inline" action="listings.php" method="get">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search for anything..." name="item" size="65">
       </div>
       <div class="form-group" >
          <select class="form-control" name="Ads">
-          <option value="">All Ads</option>
-          <option value="">buy and sell</option>
-          <option value="">pets</option>
-          <option value="">cars & vehicles</option>
-          <option value="">jobs</option>
-          <option value="">services</option>
+          <option value="All">All Ads</option>
+          <option value="Vehicle">Vehicle</option>
+          <option value="Pet">Pet</option>
+          <option value="Book">Book</option>
+          <option value="Phone">Phone</option>
+          <option value="Computer">Computer</option>
+          <option value="Instrument">Instrument</option>
+          <option value="Bike">Bike</option>
+          <option value="TV">TV</option>
          </select>
       </div>
       <div class="input-group">
         <!-- select dropdown menu -->
-          <select class="selectpicker form-control">
-            <optgroup>
-              <option value="">Select location...</option>
-            </optgroup>
+          <select class="selectpicker form-control" name="city" required>
+              <option value="" selected disabled>Select location...</option>
             <optgroup label="Alberta">
-              <option value="">Banff/Canmore</option>
-              <option value="">Edmonton Area</option>
-              <option value="">Fort McMurray</option>
+              <option value="Alberta">All of Alberta</option>
+              <option value="Calgary">Calgary</option>
+              <option value="Edmonton">Edmonton</option>
             </optgroup>
             <optgroup label="British Columbia">
-              <option value="">Cariboo Area</option>
-              <option value="">Comox Valley Area</option>
-              <option value="">Cowicha Valley</option>
+              <option value="BritishColumbia">All of British Columbia</option>
+              <option value="Vancouver">Vancouver</option>
+              <option value="Victoria">Victoria</option>
             </optgroup>
             <optgroup label="Ontario">
-              <option value="">Muskoka</option>
-              <option value="">North Bay</option>
-              <option value="">Toronto</option>
+              <option value="Ontario">All of Ontario</option>
+              <option value="Mississauga">Mississauga</option>
+              <option value="Toronto">Toronto</option>
             </optgroup>
             <optgroup label="Quebec">
-              <option value="">Abitibi-Temiscamingue</option>
-              <option value="">Granby</option>
-              <option value="">Quebec City</option>
-              <option value="">Sherbrooke</option>
-              <option value="">Montreal</option>
+              <option value="Quebec">All of Quebec</option>
+              <option value="QuebecCity">Quebec City</option>
+              <option value="Laval">Laval</option>
+              <option value="Montreal">Montreal</option>
             </optgroup>
           </select>
         <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-default" type="submit" name="search">
             <i class="glyphicon glyphicon-search"></i>
           </button>
         </div>
