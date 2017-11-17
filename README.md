@@ -15,4 +15,6 @@ The creation of a site which users can sell and/or buy items.
 * [Yongtang Lu](https://github.com/luyongtang)
 * [Anita Rai](https://github.com/anitarai)
 
-
+## View the website
+If you wish to view the website, a dedicated server is hosting a live version of it.   
+The IP Address of Live server: 173.206.18.58:8080
