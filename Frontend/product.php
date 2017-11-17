@@ -80,12 +80,8 @@
           </label>
           <input type="file" name="image2" id="fileToUpload2">
         </div>
-<<<<<<< Back-End-Test-Branch
         <button type="submit" name="submit" class="btn btn-success">Submit
         </button>
-=======
-        <button type="submit" class="btn btn-success">Submit</button>
->>>>>>> master
       </form>
     </div>
     </div>

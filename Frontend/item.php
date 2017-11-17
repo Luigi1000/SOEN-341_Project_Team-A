@@ -25,7 +25,7 @@
     <div class="row">
 
       <?php
-	  echo "Prev: ".$_SESSION['previous_page']." id: ".$_SESSION['ad'];		
+	  //echo "Prev: ".$_SESSION['previous_page']." id: ".$_SESSION['ad'];		
 	  if(strcmp($_SESSION['previous_page'],"addItemToDBphp")==0){
 	  $id = $_SESSION['ad'];
 	  }

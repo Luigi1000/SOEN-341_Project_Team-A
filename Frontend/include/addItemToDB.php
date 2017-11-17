@@ -4,7 +4,6 @@ include 'dbConnector.php';
 
 $productName=mysqli_real_escape_string($conn,$_POST['productName']);
 $price=mysqli_real_escape_string($conn,$_POST['price']);
-<<<<<<< Back-End-Test-Branch
 
 
 $sql= "select First_Category from `category_level1` where `Id`=".mysqli_real_escape_string($conn, $_POST['productCategory1']);
@@ -35,20 +34,6 @@ if(isset($_POST["submit"])){
     
   
 $sql="INSERT INTO product(productName,productDetail,productCategory1,productCategory2,productCategory3,price,image1,image2,UserId) values('$productName','$productDetail','$productCategory1Name','$productCategory2Name','$productCategory3Name','$price','$imgContent1','$imgContent2','10')";
-=======
-$productCategory=mysqli_real_escape_string($conn,$_POST['productCategory']);
-$image1=mysqli_real_escape_string($conn,$_FILES['image1']['name']);
-$image2=mysqli_real_escape_string($conn,$_FILES['image2']['name']);
-$productDetail=mysqli_real_escape_string($conn,$_POST['text']);	  
-
-$email=$_SESSION['email'];
-
-$searchQuery="SELECT UserId FROM user WHERE Email = '$email'"; 
-$userNum = mysqli_query($conn,$searchQuery);
-$userID = $userNum->fetch_assoc();
-
-$sql="INSERT INTO product(productName,productDetail,price,image1,image2,UserID,productCategory,productCategory2,productCategory3)values('$productName','$productDetail','$price','$image1','$image2','$userID[UserId]','$productCategory','Null','Null')";
->>>>>>> master
 mysqli_query($conn,$sql);
 
 $queryLast="SELECT * FROM product WHERE UserId = $userID[UserId] ORDER BY ProductId DESC LIMIT 1";
