@@ -10,7 +10,7 @@
 	{
 		public function testItemSuccess() 
 		{
-			$expectedItemNumber = '7';
+			$expectedItemNumber = null;
 			$expectedItemName = 'Pug Dog';
 			$expectedItemPrice = '500';
 			$expectedItemDescription = 'Available in black and brown';
