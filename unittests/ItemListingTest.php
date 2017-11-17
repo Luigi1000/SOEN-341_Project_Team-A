@@ -16,7 +16,7 @@
 			$expectedItemDescription = 'Available in black and brown';
 
 			$clickItem = new ItemListing;
-			$click = $clickItem->item($expectedItemNumber, $expectedItemName, $expectedItemPrice, $expectedItemDescription, $expectedUserId); 
+			$click = $clickItem->item($expectedItemNumber, $expectedItemName, $expectedItemPrice, $expectedItemDescription); 
 			$this->assertEquals($expectedItemNumber, $click['ProductId']);
 			$this->assertEquals($expectedItemName, $click['ProductName']);	
 			$this->assertEquals($expectedItemPrice, $click['Price']);	
