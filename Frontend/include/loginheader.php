@@ -14,8 +14,10 @@
 	{
 		$_SESSION['is_login'] = true;
         $_SESSION['wrong'] = false;
-        $_SESSION['username'] = $_POST['username'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
+        $_SESSION['username'] = $login['UserName'];  // keep the registration info in session later on use it for the nav bar dynamic changing (switch between My Profile and Register)
         $_SESSION['email'] = $_POST['username'];
+		$_SESSION['address'] = $login['Address'];
+		$_SESSION['phone'] = $login['PhoneNumber'];
         header('Location: index.php');
 	}
 	else 

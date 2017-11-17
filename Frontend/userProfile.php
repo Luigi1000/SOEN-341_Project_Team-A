@@ -46,17 +46,17 @@
             </tr>
             <tr>
               <td><strong>Phone Number: </strong></td>
-              <td>BACK END DATA</td>
+              <td><?php echo($_SESSION["phone"]) ?></td>
             </tr>
             <tr>
               <td><strong>Address: </strong></td>
-              <td>BACK END DATA</td>
+              <td><?php echo($_SESSION["address"]) ?></td>
             </tr>
 			<tr>
               <td><strong>Profile Pics: </strong></td>
               <td>
 			  <?php
-			  $sql = $conn->query("SELECT * FROM user WHERE Email ='neeluchawla@me.com'");
+			  $sql = $conn->query("SELECT * FROM user WHERE Email = $_SESSION["username"]");
 			  $row=$sql->fetch_assoc();
 			 
 		echo '<img src="data:image/png;base64,' . base64_encode( $row['image'] ) . '" />'
