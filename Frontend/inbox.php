@@ -25,9 +25,21 @@
   <div class="container">
     <h1>Inbox</h1>
 
+    <?php
+    $email=$_SESSION['email']; 
 
+    $searchQuery1 = $db->query("SELECT UserId FROM user WHERE Email='$email' LIMIT 1");
+    $searchQuery1->execute();
+    $row1=$searchQuery1->fetch();
+    $fromID=$row1['UserId']; //ID of loged-in user
 
+    $resultArray = $db->query("SELECT * FROM inbox INNER JOIN user ON inbox.ToUserID = user.UserId WHERE FromUserID = '$fromID'");
+    foreach($resultArray as $eachRow) 
+    {
+      echo "<div class=\"panel panel-default\"> <div class-\"panel-heading\"> Messages with: ".$eachRow['UserName']."</div> <div class=\"panel-body\"> ".$eachRow['Message']." </div></div>";
+    }
 
+    ?>
 
   </div>
   <br><br>
