@@ -106,15 +106,8 @@
           <?php } ?>
         </div>
         <!-- search base on location  not implement  yet   -->
-        <div class="well text-center" > <!-- Distance range slider     -->
-          <!-- <form class="" action="listings.php?category=car" method=""> -->
-            <div id="slidecontainer" >
-              <input class="slider" id="myRange1" name="distance" type="range" value="50" min="0" max="500" oninput="dragMe1()" />
-                <p>Distance: <span id="range1">50 km</span></p>
-                <!-- <input type="submit"> -->
-            </div>
-          <!-- </form> -->
-        </div>
+        <!-- This feature has been aborted!!   -->
+        
         <!-- search base on budget  -->
         <div class="well text-center" > <!-- Budget range slider     -->
           <div class="form-group">
