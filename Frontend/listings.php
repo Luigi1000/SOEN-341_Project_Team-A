@@ -268,7 +268,7 @@
           $endTime = microtime(true); //  implement the query processing time display on the web page
           if($startTime != null && $endTime != null)
           {
-            echo ("<kbd>return results in ".(number_format((($endTime-$startTime)),4)." seconds </kbd>"));
+            echo ("<kbd>return results in ".(number_format((($endTime-$startTime)),4)." seconds </kbd></br></br></br></br>"));
           }
       
           foreach($resultArray as $eachRow)
