@@ -210,6 +210,7 @@
         <?php
         if(isset($_GET['search']))  // if user want to search based on the keywords
         {
+          $startTime = microtime(true); // implement the query processing time display on the web page
           if($_GET['Ads'] == "All")
           {
             if(isset($_GET['sortBasedOn']))
@@ -263,6 +264,11 @@
             {
                $resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE ProductCategory1 ='$Ads' AND (CityName = '$city' OR Province = '$city') AND (ProductDetail LIKE '%{$item}%' OR ProductName LIKE '%{$item}%') ORDER BY ProductId ASC ");
             }
+          }
+          $endTime = microtime(true); //  implement the query processing time display on the web page
+          if($startTime != null && $endTime != null)
+          {
+            echo ("<kbd>return results in ".(number_format((($endTime-$startTime)),4)." seconds </kbd>"));
           }
       
           foreach($resultArray as $eachRow)
