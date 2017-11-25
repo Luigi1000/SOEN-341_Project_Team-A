@@ -34,7 +34,7 @@
   }
 ?>
 
-  <div class="jumbotron">
+  <div class="jumbotron-custom">
     <div class="container text-center">
       <h1>Online Store</h1>
       <a href="index.php"><img src="images/shop.png"></a>     
