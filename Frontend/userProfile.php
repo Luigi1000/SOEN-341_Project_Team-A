@@ -55,13 +55,15 @@
 			<tr>
               <td><strong>Profile Pics: </strong></td>
               <td>
-			  <?php
-			  $sql = $conn->query("SELECT * FROM user WHERE Email = $_SESSION["username"]");
-			  $row=$sql->fetch_assoc();
-			 
-		echo '<img src="data:image/png;base64,' . base64_encode( $row['image'] ) . '" />'
-			
-			  ?><td>
+          			  <?php
+          			  $resultArray = $db->query("SELECT * FROM user WHERE Email = '{$_SESSION["email"]}'");
+          			  foreach($resultArray as $eachRow)
+                  {
+                    echo "<img src=\"data:image/png;base64,".base64_encode($eachRow['image'])."\" alt=\"\" width=\"200\" height=\"200\">";
+                  }
+          			
+          			  ?>
+              </td>
             </tr>
           </tbody>
         </table>
