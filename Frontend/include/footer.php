@@ -55,6 +55,9 @@
       <div class="col-md-1">
         <a href="#" class="fa fa-instagram"></a>
       </div>
+      <div class="col-md-3">
+        <img src="./images/qrCode.png">
+      </div>
     </div>
     </br></br></br></br></br></br>
     <p>Online Store Copyright 2017</p> 
