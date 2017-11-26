@@ -68,43 +68,7 @@
                   <p><kbd>Welcome home <?php echo( $_SESSION['username'] ) ?> ! </kbd>   <a href="./userProfile.php" class="btn btn-primary btn-lg"> <span class="glyphicon glyphicon-duplicate"></span>   My Profile</a></p>
                   <?php  }  ?>
                   <?php if(!$_SESSION['is_login']) { ?>
-                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#popUpWindow"><span class="glyphicon glyphicon-user"></span>   Register</button>
-                    <div class="modal fade" id="popUpWindow">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <!--    header-->
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h2 class="modal-title">Register</h2>
-                          </div>
-                          <!--    body  (form)-->
-                          <div class="modal-body">
-                            <form role="form" action="./index.php" method="post" id="register">
-                              <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email Address: " required>
-                              </div>
-                              <div class="form-group">
-                                <label class="control-label">Password</label>
-                                <input type="password" name="password" id="pwd" class="form-control" placeholder="Password: " required>
-                                <div class="help-block">Minimum of 8 characters</div>
-                              </div>
-                              <div class="form-group">
-                                <input type="password" name="repassword" id="repwd" class="form-control" placeholder="Re-type Password: " required">
-                              </div>
-                              <div class="form-group">
-                                <label>Username</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Username: " required>
-                              </div>
-                            </form>
-                          </div>
-                          <!--    button  (submit)-->
-                          <div class="modal-footer">
-                            <button class="btn btn-success btn-block" name="submit" onclick = "return registerValidation()"  form="register">Register</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <p><a href="./register.php"><button class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-user"></span>  Register</button></a></p>
                     <?php } ?>
                 </li>
                
