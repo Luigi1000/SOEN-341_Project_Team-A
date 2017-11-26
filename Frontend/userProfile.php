@@ -46,11 +46,11 @@
             </tr>
             <tr>
               <td><strong>Phone Number: </strong></td>
-              <td><?php echo($_SESSION["phone"]) ?></td>
+              <td><?php if (isset($_SESSION["phone"])) echo($_SESSION["phone"]) ?></td>
             </tr>
             <tr>
               <td><strong>Address: </strong></td>
-              <td><?php echo($_SESSION["address"]) ?></td>
+              <td><?php if (isset($_SESSION["address"])) echo($_SESSION["address"]) ?></td>
             </tr>
 			<tr>
               <td><strong>Profile Pics: </strong></td>
