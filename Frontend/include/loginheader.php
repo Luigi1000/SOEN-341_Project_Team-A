@@ -37,7 +37,7 @@
   <div class="jumbotron-custom">
     <div class="container text-center">
       <h1>Online Store</h1>
-      <a href="index.php"><img src="images/shop.png"></a>     
+      <a href="index.php"><img src="images/shop.png" height="100"></a>     
       <p>Coming soon...</p>
     </div>
   </div>
