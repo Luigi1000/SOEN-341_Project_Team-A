@@ -111,7 +111,7 @@
         <!-- search base on budget  -->
         <div class="well text-center" > <!-- Budget range slider     -->
           <div class="form-group">
-            <form action="listings.php?category=<?php echo $Category;?>" method="post">
+            <form action="#<!--listings.php?category=<?php echo $Category;?>-->" method="post">
               <div id="slidecontainer" >
                 <!-- When the budget is selected, the system submits the form. -->
                 <?php if(isset($_POST['myBudget']) && $_POST['myBudget'] != 0) { ?>

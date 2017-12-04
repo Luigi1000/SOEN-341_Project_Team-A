@@ -70,10 +70,10 @@
       </div>
       <!-- view all lists(Ads) the user has posted -->
       <!-- NEED RETRIEVE INFO FROM DATA BASE, NEED HELF FROM BACK END -->
-      <div id="ads" class="tab-pane fade">
-        <h1>this page need pull data from back end</h1>
-        <p>just a frame now</p>
-        <table class="table table-bordered">
+     <div id="ads" class="tab-pane fade">
+        <h1>Your listed items:</h1>
+        <p></p>
+       <!-- <table class="table table-bordered">
           <tbody>
             <tr>
               <td>image here</td>
@@ -90,7 +90,40 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
+
+	<?php
+	$tmpname = $_SESSION['username'];
+ 	$resultArray = $db->query("SELECT * FROM product INNER JOIN user ON product.UserId = user.UserId WHERE UserName = '$tmpname' ORDER BY ProductId ASC");
+      
+          foreach($resultArray as $eachRow)
+          {
+            echo "<a href=\"item.php?ad=".$eachRow['ProductId']." class=\"list-group-item\">
+                  <div class=\"row\">
+                    <div class=\"col-sm-3\">
+                      <img src=\"data:image/png;base64,".base64_encode($eachRow['Image1'])."\" alt=\"\" width=\"200\" height=\"200\">
+                    </div>
+                    <div class=\"col-sm-9\">
+                      <div>
+                        <h3 style=\"font-weight: bold;\">".$eachRow['ProductName']."</h3>
+                      </div>
+                      <div class=\"pull-right\" style=\"color: #27a34a\" >
+                        <h4><span class=\"glyphicon glyphicon-usd\">".$eachRow['Price']."</span></h4>
+                      </div>
+                      <div class=\"\">
+                        ".$eachRow['CityName']." <span class=\"glyphicon glyphicon-time\"></span>"
+                        .$eachRow['timeStamp']."
+                      </div><br>
+                      <div>
+                        <p style=\"color:#1f0935;font-weight:bold;\">
+                          ".$eachRow['ProductDetail']."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>";  
+          }
+      ?>
       </div>
       <!-- user can edit profile here -->
       <div id="edit" class="tab-pane fade">
