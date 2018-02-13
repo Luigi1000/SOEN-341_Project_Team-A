@@ -11,7 +11,7 @@ The creation of a site which users can sell and/or buy items.
 * [Neelu Chawla](https://github.com/nechawla)
 * [Alexander Jarowyj](https://github.com/luigi1000)
 * [Sridath Jeelugula](https://github.com/sridath)
-* [Dania Kalomiris](https://github.com/daniakal)
+* [Dania Kalomiris](https://github.com/daniakalomiris)
 * [Yongtang Lu](https://github.com/luyongtang)
 * [Anita Rai](https://github.com/anitarai)
 
