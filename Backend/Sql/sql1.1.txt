@@ -1,5 +1,0 @@
-1. product table (Update)
-All Category field to the Product Table
-
-ALTER TABLE soen341.product 
-ADD COLUMN ProductCategory VARCHAR(45)

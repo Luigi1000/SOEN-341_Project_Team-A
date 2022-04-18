@@ -1,5 +1,0 @@
-
-1. Change data type of image1 and image 2 product Table
-
-
-ALTER TABLE soen341.product MODIFY COLUMN Image1 BLOB, Image2 BLOB;

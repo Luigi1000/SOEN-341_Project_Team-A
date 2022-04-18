@@ -1,3 +1,0 @@
-1. Drop product_category table
-
-Drop table product_category
