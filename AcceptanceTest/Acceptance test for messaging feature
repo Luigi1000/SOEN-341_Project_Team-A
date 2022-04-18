@@ -1,9 +1,0 @@
-Test Description: To test if messages are displayed on Inbox page.
-
-Test input: The user first clicks on the Listings tab from the Home page. Then, the user clicks on an item displayed on that page. Then, the user clicks on 'Message Seller' and enters a message and submits it through the 'Send' button.
-
-Expected output: The message that the user sent the seller should be displayed on the Inbox page along with the seller's name.
-
-Actual output: When clicking on 'Send', the message is entered into the databse. The Inbox page displays all messages between the user and the seller. The seller's name is also shown.
-
-Results: This test passes since the expected output matches the actual output. 
